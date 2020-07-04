@@ -86,11 +86,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Hexo架构的博客基于node。</p>
+<h4 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h4><p>可从 <a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/</a> 中下载长期支持版，并通过npm指令安装hexo。国内的网络可以通过淘宝来下载npm的镜像，方便之后的操作不受网络问题影响。<br>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p>
+<h4 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h4><p>通过cnpm安装hexo的指令为<br>cnpm install -g hexo-cli</p>
+<hr>
+<h2 id="在本地建立博客"><a href="#在本地建立博客" class="headerlink" title="在本地建立博客"></a>在本地建立博客</h2><h4 id="在本地建立空文件夹"><a href="#在本地建立空文件夹" class="headerlink" title="在本地建立空文件夹"></a>在本地建立空文件夹</h4><p>例 在地址Users/chaohu/处，通过mkdir blog，建立空的文件夹来作为博客本地的存储地址</p>
+<h4 id="在本地生成hexo博客"><a href="#在本地生成hexo博客" class="headerlink" title="在本地生成hexo博客"></a>在本地生成hexo博客</h4><p>进入到新建的文件夹后，输入指令<br>sudo hexo init<br>此时博客框架已经搭好<br>要建立新文章，输入指令<br>hexo new “file name”<br>遍会在blog文件夹中的../source/_posts/ 中生成文档。文档内容可以通过vscode编辑。<br>之后，在清理过之后（hexo clean），输入hexo g指令便可以产生新的博文</p>
+<hr>
+<h2 id="将本地的博客通过github推送至网络"><a href="#将本地的博客通过github推送至网络" class="headerlink" title="将本地的博客通过github推送至网络"></a>将本地的博客通过github推送至网络</h2><h4 id="建立库"><a href="#建立库" class="headerlink" title="建立库"></a>建立库</h4><p>在github的账号中建立库，库的名字必须与用户名一致</p>
+<h4 id="推送部署插件"><a href="#推送部署插件" class="headerlink" title="推送部署插件"></a>推送部署插件</h4><p>第一次操作需在本地安装，可输入指令<br>cnpm install –save hexo-deployer-git<br>并在_config.yml文件中的末尾处设置type：git; repo: 库的地址; branch: master<br>执行推送部署指令<br>hexo d<br>之后输入github账号用户名密码</p>
+<h4 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h4><hr>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/03/Build-My-Blog/" data-id="ckc6zofim0000ivpu5nbw2nk3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/03/Build-My-Blog/" data-id="ckc72w3vr000006pu3b8afzyq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -139,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/03/hello-world/" data-id="ckc6zofiq0001ivpufomn1raw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/03/hello-world/" data-id="ckc72w3w7000106pu84cvf43d" class="article-share-link">Share</a>
       
       
     </footer>
