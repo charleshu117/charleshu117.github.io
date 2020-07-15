@@ -178,7 +178,32 @@
 2. The stack: 也拥有十分高效的读写速度，位于内存，通过stack pointer与处理器互动。需要对位于此的程序设定明确的存在时长；
 3. The heap: 位于内存中的general-purpos pool of memory。不需要设定存在时长，编译器会自动清理并写入，拥有更强的灵活性，但是效率更慢；
 4. Constant storage: ROM中存储需要持续提供相同功能的程序；
-5. Non-RAM storage: 程序运行所需的数据存储位置。包括了streamed object和persistent object；</code></pre><h2 id="原始类别"><a href="#原始类别" class="headerlink" title="原始类别"></a>原始类别</h2>
+5. Non-RAM storage: 程序运行所需的数据存储位置。包括了streamed object和persistent object；</code></pre><p>String s = new String (“abcd”);<br>new 在heap中创建对象，但是指代的变量是被自动创建在stack中，因此更高效。</p>
+<h2 id="原始类别"><a href="#原始类别" class="headerlink" title="原始类别"></a>原始类别</h2><pre><code>| Primitive |  Size   |  Minimum  |    Maximum     |  Warpper  |
+|   type    |         |           |                |   type    |
+| --------- | ------- | --------- | -------------- | --------- |
+| boolean   |         |           |                | Boolean   |
+| --------- | ------- | --------- | -------------- | --------- |
+| char      | 16 bits | Unicode 0 | Unicode 2^16-1 | Character |
+| --------- | ------- | --------- | -------------- | --------- |
+| byte      | 8 bits  | -128      | +127           | Byte      |
+| --------- | ------- | --------- | -------------- | --------- |
+| short     | 16 bits | -2^15     | +2^15-1        | Short     |
+| --------- | ------- | --------- | -------------- | --------- |
+| int       | 32 bits | -2^31     | +2^31-1        | Integer   |
+| --------- | ------- | --------- | -------------- | --------- |
+| long      | 64 bits | -2^63     | +2^63-1        | Long      |
+| --------- | ------- | --------- | -------------- | --------- |
+| float     | 32 bits | IEEE~754~ | IEEE~754~      | Float     |
+| --------- | ------- | --------- | -------------- | --------- |
+| double    | 64 bits | IEEE~754~ | IEEE~754       | Double    |
+| --------- | ------- | --------- | -------------- | --------- |
+| void      |         |           |                | Void      |</code></pre><p> wrapper type允许在heap中创建用于指代原始对象的非原始对象。<br> char c = “x”;<br> Character ch = new Character(c);</p>
+<h4 id="高精度数字"><a href="#高精度数字" class="headerlink" title="高精度数字"></a>高精度数字</h4><p> <strong>BigInteger</strong>，<strong>BigDecimal</strong><br> 两者都是大致符合wrapper class模拟出来的类比物，但是都没有原始对象。<br> 两者可以做int或float的运算，但是只能用method calls，而且速度偏慢。<br> BigInteger的范围要比long大。<br> BigDecimal同样，范围没有限制。</p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p> 数组占用了内存中的一块区域，程序对数组的读取不能超出这块区域或者不能提前读取。JAVA中数组必须被提前产生并且其范围检查总是会在建立的数组之上占用一小块内存空间。<br> 在JAVA中若数组中的内容是无指代的变量，那其本质还是null，JAVA会进行出错。</p>
+<h2 id="Scoping"><a href="#Scoping" class="headerlink" title="Scoping"></a>Scoping</h2><p> 用于确定对象是否可视及其可以存在的时长。用{}表示开始与结束。<br> {<br>     int x = 12;<br>     //Now, only x available<br>     {<br>         int q = 96;<br>         //Now, both x and q available<br>     }<br>     //Now, only x available<br> }</p>
+<h2 id="对象的scope"><a href="#对象的scope" class="headerlink" title="对象的scope"></a>对象的scope</h2><p>原始对象的scope不受{}限制。<br>{<br>    String s = new String(“a string”)<br>}<br>a string是原始对象，s是指代物。s会随着}的出现而消失，”a string”则会继续在heap中存在。</p>
+
       
 
       
