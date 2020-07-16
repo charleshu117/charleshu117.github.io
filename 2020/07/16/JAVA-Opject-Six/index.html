@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Coding Journey</title>
+  <title>JAVA Opject Six | Coding Journey</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Coding Journey">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="Class一段程序内所有动作由对象发出，class则定义了这些对象的类型。    class Name {&#x2F;Class body&#x2F;} Field 和 MethodField：数据与数据相关的对象（reference，primitive object）。reference必须与实际对象连接。每一个对象都有他各自的存储，互不共享。    class DataOnly{        int i;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA Opject Six">
+<meta property="og:url" content="http://yoursite.com/2020/07/16/JAVA-Opject-Six/index.html">
 <meta property="og:site_name" content="Coding Journey">
+<meta property="og:description" content="Class一段程序内所有动作由对象发出，class则定义了这些对象的类型。    class Name {&#x2F;Class body&#x2F;} Field 和 MethodField：数据与数据相关的对象（reference，primitive object）。reference必须与实际对象连接。每一个对象都有他各自的存储，互不共享。    class DataOnly{        int i;">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-16T18:40:54.000Z">
+<meta property="article:modified_time" content="2020-07-16T21:01:25.522Z">
 <meta property="article:author" content="Chao Hu">
+<meta property="article:tag" content="JAVA Note">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Coding Journey" type="application/atom+xml">
@@ -150,36 +155,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-JAVA-Opject-Six" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      JAVA Opject Six
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/16/JAVA-Opject-Six/" class="archive-article-date">
+
+        
+        <a href="/2020/07/16/JAVA-Opject-Six/" class="archive-article-date">
   	<time datetime="2020-07-16T18:40:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-16</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/16/JAVA-Opject-Six/">JAVA Opject Six</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h2><p>一段程序内所有动作由对象发出，<strong>class</strong>则定义了这些对象的类型。<br>    class Name {/Class body/}</p>
+<h2 id="Field-和-Method"><a href="#Field-和-Method" class="headerlink" title="Field 和 Method"></a>Field 和 Method</h2><h4 id="Field：数据与数据相关的对象（reference，primitive-object）。"><a href="#Field：数据与数据相关的对象（reference，primitive-object）。" class="headerlink" title="Field：数据与数据相关的对象（reference，primitive object）。"></a>Field：数据与数据相关的对象（reference，primitive object）。</h4><p>reference必须与实际对象连接。<br>每一个对象都有他各自的存储，互不共享。<br>    class DataOnly{<br>        int i;<br>        double d;<br>        boolean b;<br>    }<br>这个class本身因为没有method而不能做任何功能，但是可以用于存储数据。class中所有对象都可以通过对DataOnly class设置新的对象进行统一操作。<br>    DataOnly data = new DataOnly();<br>再对DataOnly class中的reference对象通过句号连接可以进行引用<br>    data.i = 1;<br>    data.d = 1.1;<br>    data.b = True;<br>如果需要引用的对象有更多的层级，可以通过多个句号来进行引用<br>    myPlane.leftTank.capacity = 100;</p>
+<h4 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h4><p>原始对象的初始设置的值<br>    | Primitive Type               | Default   |<br>    | boolean                      | false     |<br>    | char                         | ‘\uoooo’  |<br>    | byte                         | byte 0    |<br>    | short                        | (short) 0 |<br>    | int                          | 0         |<br>    | long                         | 0L        |<br>    | float                        | 0.0f      |<br>    | double                       | 0.0d      |</p>
+<h4 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h4><p>Method决定了一个对象会接收到什么信息。其构成<br>    ReturnType methodName(/Argument List/){<br>        /Method Body/<br>    }<br>return type描述了这个method执行之后会返回什么类型的值。argument list确定了那些类型和名字的信息会被method用到。<br>method是class的一部分。method可以被对象呼叫使用。<br>    objectName.methodName(/argument list/);<br>假设有一个method没有任何argument，叫做f()，可返回一个整数值。此时有一个a对象，需要呼叫并作用于f(),其返回的值可以被存储到x。<br>    int x = a.f();</p>
+<h4 id="Argument-List"><a href="#Argument-List" class="headerlink" title="Argument List"></a>Argument List</h4><p>决定了什么类型和什么内容的对象会被带入到这个method中并进行动作。其对象的类型和带入的内容的类型必须一致。<br>    int storage(String s){<br>        return s.length()*2;<br>    }<br>这个method返回的整数代表了s字符串所占用的字节长度（一个字符占2个字节或16比特）。String s确定了这个method中只有对象名字为s的字符串会被带入，带入后对象s再作用于length()method。<br>return代表着method执行完毕，同时返回return后的返回值。如果希望返回空值，可以再return后直接结束或者不加return。<br>但是如果method中已经返还了非空值，return却要求返还空值，系统会提示错误。</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,263 +220,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/16/JAVA-Opject-Six/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/14/JAVA-Object-Five/" class="archive-article-date">
-  	<time datetime="2020-07-15T02:52:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/14/JAVA-Object-Five/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JAVA Object Five</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/14/JAVA-Object-Five/">JAVA Object Five</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/14/JAVA-Object-Four/" class="archive-article-date">
-  	<time datetime="2020-07-14T18:46:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/14/JAVA-Object-Four/">JAVA Object Four</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/10/JAVA-Object-Three/" class="archive-article-date">
-  	<time datetime="2020-07-10T19:31:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/10/JAVA-Object-Three/">JAVA Object Three</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/05/JAVA-Object-Two/" class="archive-article-date">
-  	<time datetime="2020-07-06T01:03:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/05/JAVA-Object-Two/">JAVA Object Two</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/04/JAVA-Object-One/" class="archive-article-date">
-  	<time datetime="2020-07-04T21:55:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/04/JAVA-Object-One/">JAVA Object</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/03/Build-My-Blog/" class="archive-article-date">
-  	<time datetime="2020-07-04T01:47:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/03/Build-My-Blog/">Build My Blog</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/03/hello-world/" class="archive-article-date">
-  	<time datetime="2020-07-04T01:19:02.440Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/03/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -470,8 +342,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
