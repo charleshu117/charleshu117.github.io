@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>JAVA Object Eight | Coding Journey</title>
+  <title>JAVA Object Nine | Coding Journey</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Compile 编译编译的过程就是把程序语言通过JDK翻译成机器语言。 comment多行comment &#x2F;* 中间的文字 *&#x2F;单行comment &#x2F;&#x2F;后的文字 风格class name所有单词首字母答谢object name除第一个但此外所有首字母大写 练习1. Create a class containing an int and a char that are not initialize">
+  <meta name="description" content="练习6. Write a program that includes and calls the storage() method defined as a code fragment in this chapter.public class exercise {     public static void main(String[] args) {         &#x2F;* Write a pro">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JAVA Object Eight">
-<meta property="og:url" content="http://yoursite.com/2020/07/18/JAVA-Object-Eight/index.html">
+<meta property="og:title" content="JAVA Object Nine">
+<meta property="og:url" content="http://yoursite.com/2020/07/19/JAVA-Object-Nine/index.html">
 <meta property="og:site_name" content="Coding Journey">
-<meta property="og:description" content="Compile 编译编译的过程就是把程序语言通过JDK翻译成机器语言。 comment多行comment &#x2F;* 中间的文字 *&#x2F;单行comment &#x2F;&#x2F;后的文字 风格class name所有单词首字母答谢object name除第一个但此外所有首字母大写 练习1. Create a class containing an int and a char that are not initialize">
+<meta property="og:description" content="练习6. Write a program that includes and calls the storage() method defined as a code fragment in this chapter.public class exercise {     public static void main(String[] args) {         &#x2F;* Write a pro">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-18T18:34:28.000Z">
-<meta property="article:modified_time" content="2020-07-19T01:48:02.546Z">
+<meta property="article:published_time" content="2020-07-19T13:17:19.000Z">
+<meta property="article:modified_time" content="2020-07-19T18:17:27.684Z">
 <meta property="article:author" content="Chao Hu">
 <meta property="article:tag" content="JAVA Note">
 <meta name="twitter:card" content="summary">
@@ -155,89 +155,108 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JAVA-Object-Eight" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JAVA-Object-Nine" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      JAVA Object Eight
+      JAVA Object Nine
     </h1>
   
 
         
-        <a href="/2020/07/18/JAVA-Object-Eight/" class="archive-article-date">
-  	<time datetime="2020-07-18T18:34:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-18</time>
+        <a href="/2020/07/19/JAVA-Object-Nine/" class="archive-article-date">
+  	<time datetime="2020-07-19T13:17:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Compile-编译"><a href="#Compile-编译" class="headerlink" title="Compile 编译"></a>Compile 编译</h2><p>编译的过程就是把程序语言通过JDK翻译成机器语言。</p>
-<h2 id="comment"><a href="#comment" class="headerlink" title="comment"></a>comment</h2><p>多行comment /* 中间的文字 */<br>单行comment //后的文字</p>
-<h2 id="风格"><a href="#风格" class="headerlink" title="风格"></a>风格</h2><p>class name所有单词首字母答谢<br>object name除第一个但此外所有首字母大写</p>
-<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h4 id="1-Create-a-class-containing-an-int-and-a-char-that-are-not-initialized-and-print-their-values-to-verify-that-Java-performs-default-initialization"><a href="#1-Create-a-class-containing-an-int-and-a-char-that-are-not-initialized-and-print-their-values-to-verify-that-Java-performs-default-initialization" class="headerlink" title="1. Create a class containing an int and a char that are not initialized, and print their values to verify that Java performs default initialization."></a>1. Create a class containing an int and a char that are not initialized, and print their values to verify that Java performs default initialization.</h4><pre><code>package Learnign;
-
-public class exercise {
+        <h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h4 id="6-Write-a-program-that-includes-and-calls-the-storage-method-defined-as-a-code-fragment-in-this-chapter"><a href="#6-Write-a-program-that-includes-and-calls-the-storage-method-defined-as-a-code-fragment-in-this-chapter" class="headerlink" title="6. Write a program that includes and calls the storage() method defined as a code fragment in this chapter."></a>6. Write a program that includes and calls the storage() method defined as a code fragment in this chapter.</h4><pre><code>public class exercise {
     public static void main(String[] args) {
-        /* Create a class containing an int and a char that are not
-         * initialized, and print their values to verify that Java performs
-         * default initialization.
+        /* Write a program that includes and 
+         * calls the storage() method defined as a code 
+         * fragment in this chapter
          */
-        Initiate a = new Initiate();
-        System.out.println(a.charVariable);
-        System.out.println(a.intNum);
+        Store st = new Store();
+        System.out.println(st.storage(&quot;Hello&quot;));
+        }
+}
+class Store {
+    int storage(String s) {
+    return s.length() * 2;
+    }
+}</code></pre><h4 id="7-Turn-the-Incrementable-code-fragments-into-a-working-program"><a href="#7-Turn-the-Incrementable-code-fragments-into-a-working-program" class="headerlink" title="7. Turn the Incrementable code fragments into a working program."></a>7. Turn the Incrementable code fragments into a working program.</h4><pre><code>public class exercise {
+    public static void main(String[] args) {
+        /* Turn the Incrementable code fragments
+         * into a working program.
+         */
+        Incrementable.increment();
+        System.out.println(StaticTest.i);
     }
 }
-class Initiate {
-    char charVariable;
-    int intNum;
-}</code></pre><h4 id="2-Following-the-HelloDate-java-example-in-this-chapter-create-a-“hello-world”-program-that-simply-displays-that-statement-You-need-only-a-single-method-in-your-class-the-“main”-one-that-gets-executed-when-the-program-starts-Remember-to-make-it-static-and-to-include-the-argument-list-even-though-you-don’t-use-the-argument-list-Compile-the-program-with-javac-and-run-it-using-java-If-you-are-using-a-different-development-environment-than-the-JDK-learn-how-to-compile-and-run-programs-in-that-environment"><a href="#2-Following-the-HelloDate-java-example-in-this-chapter-create-a-“hello-world”-program-that-simply-displays-that-statement-You-need-only-a-single-method-in-your-class-the-“main”-one-that-gets-executed-when-the-program-starts-Remember-to-make-it-static-and-to-include-the-argument-list-even-though-you-don’t-use-the-argument-list-Compile-the-program-with-javac-and-run-it-using-java-If-you-are-using-a-different-development-environment-than-the-JDK-learn-how-to-compile-and-run-programs-in-that-environment" class="headerlink" title="2. Following the HelloDate.java example in this chapter, create a “hello, world” program that simply displays that statement. You need only a single method in your class (the “main” one that gets executed when the program starts). Remember to make it static and to include the argument list, even though you don’t use the argument list. Compile the program with javac and run it using java. If you are using a different development environment than the JDK, learn how to compile and run programs in that environment."></a>2. Following the HelloDate.java example in this chapter, create a “hello, world” program that simply displays that statement. You need only a single method in your class (the “main” one that gets executed when the program starts). Remember to make it static and to include the argument list, even though you don’t use the argument list. Compile the program with javac and run it using java. If you are using a different development environment than the JDK, learn how to compile and run programs in that environment.</h4><pre><code>package Learnign;
-
-public class HelloDate {
-    public static void main(String[] args) {
-        System.out.println(&quot;Hello World&quot;);
+class StaticTest {
+    static int i = 47;
+}
+class Incrementable {
+    static void increment() {
+    StaticTest.i++;
     }
-}</code></pre><h4 id="3-Find-the-code-fragments-involving-ATypeName-and-turn-them-into-a-program-that-compiles-and-runs"><a href="#3-Find-the-code-fragments-involving-ATypeName-and-turn-them-into-a-program-that-compiles-and-runs" class="headerlink" title="3. Find the code fragments involving ATypeName and turn them into a program that compiles and runs"></a>3. Find the code fragments involving ATypeName and turn them into a program that compiles and runs</h4><pre><code>package Learnign;
-
-public class exercise {
+}</code></pre><h4 id="8-Write-a-program-that-demonstrates-that-no-matter-how-many-objects-you-create-of-a-particular-class-there-is-only-one-instance-of-a-particular-static-field-in-that-class"><a href="#8-Write-a-program-that-demonstrates-that-no-matter-how-many-objects-you-create-of-a-particular-class-there-is-only-one-instance-of-a-particular-static-field-in-that-class" class="headerlink" title="8. Write a program that demonstrates that, no matter how many objects you create of a particular class, there is only one instance of a particular static field in that class."></a>8. Write a program that demonstrates that, no matter how many objects you create of a particular class, there is only one instance of a particular static field in that class.</h4><pre><code>public class exercise {
     public static void main(String[] args) {
-        /* Find the code fragments involving ATypeName and
-        * turn them into a program that compiles and runs
-        */
-    ATypeName a = new ATypeName();
-    System.out.println(a.intNum);
+        /* Turn the Incrementable code fragments
+         * into a working program.
+         */
+        StaticTest ex1 = new StaticTest();
+        StaticTest ex2 = new StaticTest();
+        System.out.println(ex1.i);
     }
 }
-
-class ATypeName {
-    int intNum;
-}</code></pre><h4 id="4-Turn-the-DataOnly-code-fragments-into-a-program-that-compiles-and-runs"><a href="#4-Turn-the-DataOnly-code-fragments-into-a-program-that-compiles-and-runs" class="headerlink" title="4. Turn the DataOnly code fragments into a program that compiles and runs."></a>4. Turn the DataOnly code fragments into a program that compiles and runs.</h4><h4 id="5-Modify-the-previous-exercise-so-that-the-values-of-the-data-in-DataOnly-are-assigned-and-printed-in-main"><a href="#5-Modify-the-previous-exercise-so-that-the-values-of-the-data-in-DataOnly-are-assigned-and-printed-in-main" class="headerlink" title="5. Modify the previous exercise so that the values of the data in DataOnly are assigned and printed in main()."></a>5. Modify the previous exercise so that the values of the data in DataOnly are assigned and printed in main().</h4><pre><code>package Learnign;
-
-public class exercise {
+class StaticTest {
+    static int i = 47;
+}</code></pre><h4 id="9-2-Write-a-program-that-demonstrates-that-autoboxing-works-for-all-the-primitive-types-and-their-wrappers"><a href="#9-2-Write-a-program-that-demonstrates-that-autoboxing-works-for-all-the-primitive-types-and-their-wrappers" class="headerlink" title="9. (2) Write a program that demonstrates that autoboxing works for all the primitive types and their wrappers."></a>9. (2) Write a program that demonstrates that autoboxing works for all the primitive types and their wrappers.</h4><pre><code>public class exercise {
     public static void main(String[] args) {
-        /* Turn the DataOnly code fragments into 
-         * a program that compiles and runs.
+        /* Write a program that demonstrates 
+         * that autoboxing works for all the 
+         * primitive types and their wrappers. 
          */
-    DataOnly data = new DataOnly();
-    data.i = 47;
-    data.d = 1.1;
-    data.b = false;
-    System.out.println(data.i);
-    System.out.println(data.d);
-    System.out.println(data.b);
-        /* The method does nothing but only hold and print values
-         */
+        boolean b = true;
+        char a = &apos;x&apos;;
+        byte c = 3;
+        short d = 10000;
+        int e = 10;
+        long f = 10000000l;
+        float g = 0.4f;
+        double h = 0.11d;
+        Boolean B = b;
+        Character A = a;
+        Byte C = c;
+        Short D = d;
+        Integer E = e;
+        Long F = f;
+        Float G = g;
+        Double H = h;
+        System.out.println(&quot;boolean b = &quot; + b);
+        System.out.println(&quot;Boolean B = &quot; + B);
+        System.out.println(&quot;char a = &quot; + a);
+        System.out.println(&quot;Character A = &quot; + A);
+        System.out.println(&quot;byte c = &quot; + c);
+        System.out.println(&quot;Byte C = &quot; + C);
+        System.out.println(&quot;short d = &quot; + d);
+        System.out.println(&quot;Short D = &quot; + D);
+        System.out.println(&quot;int e = &quot; + e);
+        System.out.println(&quot;Integer E = &quot; + E);
+        System.out.println(&quot;long f = &quot; + f);
+        System.out.println(&quot;Long F = &quot; + F);
+        System.out.println(&quot;float g = &quot; + g);
+        System.out.println(&quot;Float G = &quot; + G);
+        System.out.println(&quot;double h = &quot; + h);
+        System.out.println(&quot;Double H = &quot; + H);
     }
-}
-
-class DataOnly {
-    int i;
-    double d;
-    boolean b;
-}</code></pre><h4 id=""><a href="#" class="headerlink" title=""></a></h4>
+}</code></pre>
       
 
       
@@ -327,7 +346,7 @@ class DataOnly {
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/18/JAVA-Object-Eight/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/19/JAVA-Object-Nine/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -341,18 +360,9 @@ class DataOnly {
   
 <nav id="article-nav">
   
-    <a href="/2020/07/19/JAVA-Object-Nine/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          JAVA Object Nine
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/07/17/JAVA-Object-Seven/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JAVA Object Seven</div>
+    <a href="/2020/07/18/JAVA-Object-Eight/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JAVA Object Eight</div>
       <i class="icon-circle-right"></i>
     </a>
   

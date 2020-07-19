@@ -152,6 +152,160 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JAVA-Object-Nine" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/19/JAVA-Object-Nine/">JAVA Object Nine</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/19/JAVA-Object-Nine/" class="archive-article-date">
+  	<time datetime="2020-07-19T13:17:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h4 id="6-Write-a-program-that-includes-and-calls-the-storage-method-defined-as-a-code-fragment-in-this-chapter"><a href="#6-Write-a-program-that-includes-and-calls-the-storage-method-defined-as-a-code-fragment-in-this-chapter" class="headerlink" title="6. Write a program that includes and calls the storage() method defined as a code fragment in this chapter."></a>6. Write a program that includes and calls the storage() method defined as a code fragment in this chapter.</h4><pre><code>public class exercise {
+    public static void main(String[] args) {
+        /* Write a program that includes and 
+         * calls the storage() method defined as a code 
+         * fragment in this chapter
+         */
+        Store st = new Store();
+        System.out.println(st.storage(&quot;Hello&quot;));
+        }
+}
+class Store {
+    int storage(String s) {
+    return s.length() * 2;
+    }
+}</code></pre><h4 id="7-Turn-the-Incrementable-code-fragments-into-a-working-program"><a href="#7-Turn-the-Incrementable-code-fragments-into-a-working-program" class="headerlink" title="7. Turn the Incrementable code fragments into a working program."></a>7. Turn the Incrementable code fragments into a working program.</h4><pre><code>public class exercise {
+    public static void main(String[] args) {
+        /* Turn the Incrementable code fragments
+         * into a working program.
+         */
+        Incrementable.increment();
+        System.out.println(StaticTest.i);
+    }
+}
+class StaticTest {
+    static int i = 47;
+}
+class Incrementable {
+    static void increment() {
+    StaticTest.i++;
+    }
+}</code></pre><h4 id="8-Write-a-program-that-demonstrates-that-no-matter-how-many-objects-you-create-of-a-particular-class-there-is-only-one-instance-of-a-particular-static-field-in-that-class"><a href="#8-Write-a-program-that-demonstrates-that-no-matter-how-many-objects-you-create-of-a-particular-class-there-is-only-one-instance-of-a-particular-static-field-in-that-class" class="headerlink" title="8. Write a program that demonstrates that, no matter how many objects you create of a particular class, there is only one instance of a particular static field in that class."></a>8. Write a program that demonstrates that, no matter how many objects you create of a particular class, there is only one instance of a particular static field in that class.</h4><pre><code>public class exercise {
+    public static void main(String[] args) {
+        /* Turn the Incrementable code fragments
+         * into a working program.
+         */
+        StaticTest ex1 = new StaticTest();
+        StaticTest ex2 = new StaticTest();
+        System.out.println(ex1.i);
+    }
+}
+class StaticTest {
+    static int i = 47;
+}</code></pre><h4 id="9-2-Write-a-program-that-demonstrates-that-autoboxing-works-for-all-the-primitive-types-and-their-wrappers"><a href="#9-2-Write-a-program-that-demonstrates-that-autoboxing-works-for-all-the-primitive-types-and-their-wrappers" class="headerlink" title="9. (2) Write a program that demonstrates that autoboxing works for all the primitive types and their wrappers."></a>9. (2) Write a program that demonstrates that autoboxing works for all the primitive types and their wrappers.</h4><pre><code>public class exercise {
+    public static void main(String[] args) {
+        /* Write a program that demonstrates 
+         * that autoboxing works for all the 
+         * primitive types and their wrappers. 
+         */
+        boolean b = true;
+        char a = &apos;x&apos;;
+        byte c = 3;
+        short d = 10000;
+        int e = 10;
+        long f = 10000000l;
+        float g = 0.4f;
+        double h = 0.11d;
+        Boolean B = b;
+        Character A = a;
+        Byte C = c;
+        Short D = d;
+        Integer E = e;
+        Long F = f;
+        Float G = g;
+        Double H = h;
+        System.out.println(&quot;boolean b = &quot; + b);
+        System.out.println(&quot;Boolean B = &quot; + B);
+        System.out.println(&quot;char a = &quot; + a);
+        System.out.println(&quot;Character A = &quot; + A);
+        System.out.println(&quot;byte c = &quot; + c);
+        System.out.println(&quot;Byte C = &quot; + C);
+        System.out.println(&quot;short d = &quot; + d);
+        System.out.println(&quot;Short D = &quot; + D);
+        System.out.println(&quot;int e = &quot; + e);
+        System.out.println(&quot;Integer E = &quot; + E);
+        System.out.println(&quot;long f = &quot; + f);
+        System.out.println(&quot;Long F = &quot; + F);
+        System.out.println(&quot;float g = &quot; + g);
+        System.out.println(&quot;Float G = &quot; + G);
+        System.out.println(&quot;double h = &quot; + h);
+        System.out.println(&quot;Double H = &quot; + H);
+    }
+}</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/19/JAVA-Object-Nine/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JAVA-Object-Eight" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -935,81 +1089,10 @@ class DataOnly {
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/03/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/03/hello-world/" class="archive-article-date">
-  	<time datetime="2020-07-04T01:19:02.440Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/03/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
