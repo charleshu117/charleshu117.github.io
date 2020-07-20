@@ -152,6 +152,123 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JAVA-Operators-Two" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/20/JAVA-Operators-Two/">JAVA Operators Two</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/20/JAVA-Operators-Two/" class="archive-article-date">
+  	<time datetime="2020-07-20T16:51:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="自动加减1"><a href="#自动加减1" class="headerlink" title="自动加减1"></a>自动加减1</h2><p>++ 自动加1；<br>– 自动减1；<br>若a为整数，prefix（++a，–a）先算加减一再显示a加减后的值<br>若a为整数，postfix（a++，a–）先显示a的值，再计算加减一但不显示结果。</p>
+<h2 id="判断符号"><a href="#判断符号" class="headerlink" title="判断符号"></a>判断符号</h2><p>产生boolean值，true/false</p>
+<blockquote>
+<p>大于，&lt; 小于，&lt;= 小于等于， &gt;= 大于等于， == 等于，!= 不等于</p>
+</blockquote>
+<h2 id="对象一致"><a href="#对象一致" class="headerlink" title="对象一致"></a>对象一致</h2><pre><code>public class exercise {
+    public static void main(String[] args) {
+        Integer n1 = new Integer(47);
+        Integer n2 = new Integer(47);
+        System.out.println(n1 == n2);
+        System.out.println(n1 != n2);
+    }
+} /* Output:
+false
+true
+*///:~</code></pre><p>n1 n2 通过wrapper在Integer类建立指代相同但不同代表名字的两个对象。<br>n1 n2 的equivalence的比较不仅比较指代的值，还比较指代物是否一致。</p>
+<p>若不改变对象设置，又要比较指代内容的一致性<br>    public class exercise {<br>        public static void main(String[] args) {<br>            Integer n1 = new Integer(47);<br>            Integer n2 = new Integer(47);<br>            System.out.println(n1.equals(n2));<br>        }<br>    } /* Output:<br>    true<br>    *///:~    </p>
+<p>若也是采用equals(),且不改变对象设置，但是class为自定义<br>    class Value {<br>        int i;<br>    }<br>    public class exercise {<br>        public static void main(String[] args) {<br>            Value v1 = new Value();<br>            Value v2 = new Value();<br>            v1.i = v2.i = 100;<br>            System.out.println(v1.equals(v2));<br>        }<br>    } /* Output:<br>    false<br>    <em>///:~<br>原因：equals()默认是比较reference的，除非</em>override*（后面的章节会回顾）</p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><pre><code>1. Create a class called Dog containing two Strings: name and says. In main(), create two dog objects with names &quot;spot&quot; (who says, &quot;Ruff!&quot;) and &quot;scruffy&quot; (who says, &quot;Wurf!&quot;). Then display their names and what they say.
+    public class exercise {
+        public static void main(String[] args) {
+            Dog spot = new Dog();
+            spot.setName(&quot;Spot&quot;);
+            spot.setSays(&quot;Ruff!&quot;);
+            Dog scruffy = new Dog();
+            scruffy.setName(&quot;Scruffy&quot;);
+            scruffy.setSays(&quot;Wurf!&quot;);
+            spot.speak();
+            scruffy.speak();
+        }
+  }
+    class Dog {
+        String name;
+        void setName(String n) {
+            name = n;
+        }
+        String says;
+        void setSays(String s) {
+            says = s;
+        }
+        void speak() {
+            System.out.println(name + &quot; says: &quot; + says);
+        }
+    }</code></pre><h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>&amp;&amp; AND, || OR, ! NOT<br>产生boolean值</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/20/JAVA-Operators-Two/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JAVA-Operators-One" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1028,84 +1145,6 @@ class DataOnly {
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/07/05/JAVA-Object-Two/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JAVA-Object-One" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/04/JAVA-Object-One/">JAVA Object</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/04/JAVA-Object-One/" class="archive-article-date">
-  	<time datetime="2020-07-04T21:55:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="抽象化的过程"><a href="#抽象化的过程" class="headerlink" title="抽象化的过程"></a>抽象化的过程</h2><h4 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h4><p>计算机语言相对于人类语言是抽象的，反过来也成立。而计算机语言就是对计算机能识别的机器代码的逆向抽象化的过程。抽象化程度越高，则每一个单词所承载的计算机逻辑就越抽象。与此同时每个单词被赋予的实际意义也就越多，更方便阅读。因此计算机语言从低级到高级也就是抽象化程度从低到高的过程。</p>
-<h4 id="解决问题的模型"><a href="#解决问题的模型" class="headerlink" title="解决问题的模型"></a>解决问题的模型</h4><p>使用计算机语言时，考虑问题解法是从计算机的逻辑出发。通过庞杂且难以维护的逻辑语言将计算机的计算结果与实际问题进行匹配。与此同时，另一解体思路是将实际问题简化模型化。复杂的问题的解，成为了一系列的选择。在这个思路中，计算机语言的作用是在一系列的限制条件中找到最优最终解。<br>面向对象程序设计语言（OOP）是现在绝大多数计算机语言的原则，也是抽象方针之一。OOP将实际问题中的各个细节看作是不同类型的对象。同时也是程序的基本单元。就像是活字印刷术，可以用有限的提前雕刻好的活字，来印刷几万几十万字的书籍。而同时又能保证这个“印刷”的过程足够通俗易懂。</p>
-<h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><p>所有东西都可以成为对象。对象就是一个承载了数据的变量。存储的数据可以是这个实际问题中的任何元素。<br>对象之间可以相互交流并作出回应。<br>对象也可以是很多其他对对象的集合。<br>每一个对象都有他所对应的类。同一个类的对象可以收取同一信息。</p>
-<h2 id="类别"><a href="#类别" class="headerlink" title="类别"></a>类别</h2><p>尽管面向对象变成将变量具象成了有限数量的对象，但是类别的出现将数量庞杂的对象的数量进一步限制。属于同一类别的对象将会拥有相似的属性和行为。</p>
-<h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><p>在OOP中，同一类的属性是有限个数的可互动的接口。<br>例如：灯作为一个类，属于它的通用接口就是on(), off(), brighten(), dim()。那么，当有一个新的灯（对象）出现，可使的计算机对其作出操作的指令就是<br>Light lt = ABC Light();<br>lt.on()</p>
-<h4 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h4>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/04/JAVA-Object-One/">展开全文 >></a>
         </p>
       
 
