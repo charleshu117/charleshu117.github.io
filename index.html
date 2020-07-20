@@ -152,6 +152,124 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JAVA-Operators-One" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/19/JAVA-Operators-One/">JAVA Operators One</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/19/JAVA-Operators-One/" class="archive-article-date">
+  	<time datetime="2020-07-20T02:28:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Operators"><a href="#Operators" class="headerlink" title="Operators"></a>Operators</h1><h2 id="副作用"><a href="#副作用" class="headerlink" title="副作用"></a>副作用</h2><p>运算符号和函数都可能会对主调用函数或被操作数产生附加影响。<br>除了“=”，“==”，“!=”可以作用于所有的对象，“+”和“+=”可以支援字符串，其他的运算符号只能作用于原始对象。</p>
+<h2 id="优先"><a href="#优先" class="headerlink" title="优先"></a>优先</h2><pre><code>public class exercise {
+    public static void main(String[] args) {
+        int x = 1, y = 2, z = 3;
+        int a = x + y - 2/2 +z;
+        int b = x + (y-2)/(2 + z);
+        System.out.println(&quot;a = &quot; + a + &quot; b = &quot; + b);
+    }
+}</code></pre><p>“+”作用是concatenate，但是如果一个string后跟着“+”那么后面的对象如果不是字符串会被自动转换为字符串。</p>
+<h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><p>“=”右边的值被覆盖到左边的对象<br>常数不能被lvalue赋值<br>a赋值给b之后，对b的改动不会影响a</p>
+<h2 id="aliasing"><a href="#aliasing" class="headerlink" title="aliasing:"></a>aliasing:</h2><pre><code>public class exercise {
+    public static void main(String[] args) {
+        Tank a = new Tank();
+        Tank b = new Tank();
+        a.level = 0.1f;
+        b.level = 1.9f;
+        System.out.println(&quot;a.level = &quot; + a.level +
+                &quot; b.level&quot; + b.level);
+        a = b;
+        System.out.println(&quot;a.level = &quot; + a.level +
+                &quot; b.level&quot; + b.level);
+        a.level = 2.1f;
+        System.out.println(&quot;a.level = &quot; + a.level +
+                &quot; b.level&quot; + b.level);
+    }
+}   
+class Tank {
+    float level;
+}</code></pre><h2 id="当使用method时发生的aliasing"><a href="#当使用method时发生的aliasing" class="headerlink" title="当使用method时发生的aliasing"></a>当使用method时发生的aliasing</h2><pre><code>public class exercise {
+    static void f(Letter y) {
+        y.c = &apos;z&apos;;
+    }
+    public static void main(String[] args) {
+        Letter x = new Letter();
+        x.c = &apos;a&apos;;
+        System.out.println(&quot;x.c: &quot; + x.c);
+        f(x);
+        System.out.println(&quot;x.c: &quot; + x.c);
+    }
+}   
+class Letter {
+    char c;
+}</code></pre><p>当x被带入f(), 作为函数外的对象x，也被修改了。</p>
+<h2 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h2><p>+，-，<em>，/，%（余数），+=（右加左），-=，</em>=，/=</p>
+<h4 id="随机数"><a href="#随机数" class="headerlink" title="随机数"></a>随机数</h4><p>a = rand.nextInt();<br>如果没有参数，当前的时间就是seed<br>nextFloat(), nextLong(), nextDouble()</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/19/JAVA-Operators-One/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JAVA-Object-Nine" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -988,78 +1106,6 @@ class DataOnly {
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/07/04/JAVA-Object-One/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Build-My-Blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/03/Build-My-Blog/">Build My Blog</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/03/Build-My-Blog/" class="archive-article-date">
-  	<time datetime="2020-07-04T01:47:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Hexo架构的博客基于node。</p>
-<h4 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h4><p>可从 <a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/</a> 中下载长期支持版，并通过npm指令安装hexo。国内的网络可以通过淘宝来下载npm的镜像，方便之后的操作不受网络问题影响。<br>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p>
-<h4 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h4><p>通过cnpm安装hexo的指令为<br>cnpm install -g hexo-cli</p>
-<hr>
-<h2 id="在本地建立博客"><a href="#在本地建立博客" class="headerlink" title="在本地建立博客"></a>在本地建立博客</h2><h4 id="在本地建立空文件夹"><a href="#在本地建立空文件夹" class="headerlink" title="在本地建立空文件夹"></a>在本地建立空文件夹</h4><p>例 在地址Users/chaohu/处，通过mkdir blog，建立空的文件夹来作为博客本地的存储地址</p>
-<h4 id="在本地生成hexo博客"><a href="#在本地生成hexo博客" class="headerlink" title="在本地生成hexo博客"></a>在本地生成hexo博客</h4><p>进入到新建的文件夹后，输入指令<br>sudo hexo init<br>此时博客框架已经搭好<br>要建立新文章，输入指令<br>hexo new “file name”<br>遍会在blog文件夹中的../source/_posts/ 中生成文档。文档内容可以通过vscode编辑。<br>之后，在清理过之后（hexo clean），输入hexo g指令便可以产生新的博文</p>
-<hr>
-<h2 id="将本地的博客通过github推送至网络"><a href="#将本地的博客通过github推送至网络" class="headerlink" title="将本地的博客通过github推送至网络"></a>将本地的博客通过github推送至网络</h2><h4 id="建立库"><a href="#建立库" class="headerlink" title="建立库"></a>建立库</h4><p>在github的账号中建立库，库的名字必须与用户名一致</p>
-<h4 id="推送部署插件"><a href="#推送部署插件" class="headerlink" title="推送部署插件"></a>推送部署插件</h4><p>第一次操作需在本地安装，可输入指令<br>cnpm install –save hexo-deployer-git<br>并在_config.yml文件中的末尾处设置type：git; repo: 库的地址; branch: master<br>执行推送部署指令<br>hexo d<br>之后输入github账号用户名密码</p>
-<h4 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h4><hr>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/03/Build-My-Blog/">展开全文 >></a>
         </p>
       
 
