@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Coding Journey</title>
+  <title>JAVA Operators Three | Coding Journey</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Coding Journey">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="位运算符是程序设计中对位模式或二进制数的一元和二元操作。即对使用二进制表达的十进制整数进行每个二进制位上的0或1的逻辑判断，然后在整合成为一个新的二进制表达的十进制整数。从而提高运算效率。AND: &amp; (两个相应的二进位都为1，该位的结果值才为1，否则为0)OR: | (两个相应的二进位中只要有一个为1，该位的结果值为1。)EXCLUSIVE OR 或 XOR: ^ (操作的结果是如果某位">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA Operators Three">
+<meta property="og:url" content="http://yoursite.com/2020/07/21/JAVA-Operators-Three/index.html">
 <meta property="og:site_name" content="Coding Journey">
+<meta property="og:description" content="位运算符是程序设计中对位模式或二进制数的一元和二元操作。即对使用二进制表达的十进制整数进行每个二进制位上的0或1的逻辑判断，然后在整合成为一个新的二进制表达的十进制整数。从而提高运算效率。AND: &amp; (两个相应的二进位都为1，该位的结果值才为1，否则为0)OR: | (两个相应的二进位中只要有一个为1，该位的结果值为1。)EXCLUSIVE OR 或 XOR: ^ (操作的结果是如果某位">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-21T20:28:20.000Z">
+<meta property="article:modified_time" content="2020-07-21T22:52:49.170Z">
 <meta property="article:author" content="Chao Hu">
+<meta property="article:tag" content="JAVA Note">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Coding Journey" type="application/atom+xml">
@@ -150,36 +155,87 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-JAVA-Operators-Three" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      JAVA Operators Three
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/21/JAVA-Operators-Three/" class="archive-article-date">
+
+        
+        <a href="/2020/07/21/JAVA-Operators-Three/" class="archive-article-date">
   	<time datetime="2020-07-21T20:28:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-21</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/21/JAVA-Operators-Three/">JAVA Operators Three</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h2><p>是程序设计中对位模式或二进制数的一元和二元操作。即对使用二进制表达的十进制整数进行每个二进制位上的0或1的逻辑判断，然后在整合成为一个新的二进制表达的十进制整数。从而提高运算效率。<br>AND: &amp; (两个相应的二进位都为1，该位的结果值才为1，否则为0)<br>OR: | (两个相应的二进位中只要有一个为1，该位的结果值为1。)<br>EXCLUSIVE OR 或 XOR: ^ (操作的结果是如果某位不同则该位为1，否则该位为0)<br>NOT: ~ unary operator (如负号) (使数字1成为0，0成为1。)<br>可以和=结合<br>&amp;=, |=, ^=<br>对于boolean type, 可以执行AND, OR, XOR, 但是不能执行NOT为了不和逻辑运算符相冲突。对于boolean type，位运算符的效果虽然与逻辑运算符一致但不会产生短路。<br>    public class exercise {<br>        public static void main(String[] args) {<br>            int a = 1000;<br>            int b = 1001;<br>            System.out.println(Integer.toBinaryString(a));<br>            System.out.println(Integer.toBinaryString(b));<br>            System.out.println(Integer.toBinaryString(a &amp; b));<br>            System.out.println(Integer.toBinaryString(a | b));<br>            System.out.println(Integer.toBinaryString(a ^ b));<br>            System.out.println(Integer.toBinaryString(<del>a));<br>            System.out.println(Integer.toBinaryString(</del>b));<br>        }<br>    }<br>    1111101000<br>    1111101001<br>    1111101000<br>    1111101001<br>    1<br>    11111111111111111111110000010111<br>    11111111111111111111110000010110</p>
+<h2 id="移位"><a href="#移位" class="headerlink" title="移位"></a>移位</h2><blockquote>
+<blockquote>
+<p>, &lt;&lt; 用来将一个二进制数中的每一位全部都向一个方向移动指定位数，溢出的部分将被舍弃，而空缺的部分填入一定的值</p>
+</blockquote>
+</blockquote>
+<h4 id="unsigned-right-shift-operator"><a href="#unsigned-right-shift-operator" class="headerlink" title="unsigned right shift operator"></a>unsigned right shift operator</h4><blockquote>
+<blockquote>
+<blockquote>
+<p>忽略原数字的正负的二进制代表，将所有二进制位向右移指定位数后，在高位插入相应位数的0<br> char,byte,short 也可以移位，但是会被转化为整数</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p> 移位也可以和=结合<br> 但是如果原对象是byte或short，在做unsigned right shift时，会被转化为整数，新加入的0会得到错误的结果。</p>
+<h2 id="if-else"><a href="#if-else" class="headerlink" title="if-else"></a>if-else</h2><p> 除了常见格式，还可以是<br> boolean-exp ? value0 : value1;<br>    条件        如果条件true    如果条件false</p>
+<pre><code>public class exercise {
+    public static void main(String[] args) {
+        System.out.println(ternary(9));
+        System.out.println(ternary(10));
+        System.out.println(standard(9));
+        System.out.println(standard(10));
+    }
+    static int ternary(int i) {
+        return i &lt; 10 ? i * 100 : i * 10;
+    }
+    static int standard(int i) {
+        if(i &lt; 10)
+            return i * 100;
+        else
+            return i * 10;
+    }
+}</code></pre><h2 id="String-operator"><a href="#String-operator" class="headerlink" title="String operator"></a>String operator</h2><p>+, +=<br>concatenate<br>如果string object + int object<br>会返回string值<br>如果“”+int object 等价于 Integer.toString()</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,364 +247,105 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/21/JAVA-Operators-Three/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/20/JAVA-Operators-Two/" class="archive-article-date">
-  	<time datetime="2020-07-20T16:51:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-20</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/20/JAVA-Operators-Two/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JAVA Operators Two</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/20/JAVA-Operators-Two/">JAVA Operators Two</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/19/JAVA-Operators-One/" class="archive-article-date">
-  	<time datetime="2020-07-20T02:28:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/19/JAVA-Operators-One/">JAVA Operators One</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/19/JAVA-Object-Nine/" class="archive-article-date">
-  	<time datetime="2020-07-19T13:17:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/19/JAVA-Object-Nine/">JAVA Object Nine</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/18/JAVA-Object-Eight/" class="archive-article-date">
-  	<time datetime="2020-07-18T18:34:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/18/JAVA-Object-Eight/">JAVA Object Eight</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/17/JAVA-Object-Seven/" class="archive-article-date">
-  	<time datetime="2020-07-17T20:28:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/17/JAVA-Object-Seven/">JAVA Object Seven</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/16/JAVA-Opject-Six/" class="archive-article-date">
-  	<time datetime="2020-07-16T18:40:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/16/JAVA-Opject-Six/">JAVA Opject Six</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/14/JAVA-Object-Five/" class="archive-article-date">
-  	<time datetime="2020-07-15T02:52:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/14/JAVA-Object-Five/">JAVA Object Five</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/14/JAVA-Object-Four/" class="archive-article-date">
-  	<time datetime="2020-07-14T18:46:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/14/JAVA-Object-Four/">JAVA Object Four</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/10/JAVA-Object-Three/" class="archive-article-date">
-  	<time datetime="2020-07-10T19:31:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/10/JAVA-Object-Three/">JAVA Object Three</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -572,8 +369,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
