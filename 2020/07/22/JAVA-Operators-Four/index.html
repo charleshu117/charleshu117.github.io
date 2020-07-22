@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Coding Journey</title>
+  <title>JAVA Operators Four | Coding Journey</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Coding Journey">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="Casting Operatorint i &#x3D; 200; long lng &#x3D; (long)i;将原本是int的i定义为long的操作符，这个操作符如果作用于widening，casting一个承载更少信息的原始变量到一个承载更多信息的原始变量，则不需要除了boolean不能实行casting，其他原始变量都可以casting 截断(truncation)与四舍五入public class exe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA Operators Four">
+<meta property="og:url" content="http://yoursite.com/2020/07/22/JAVA-Operators-Four/index.html">
 <meta property="og:site_name" content="Coding Journey">
+<meta property="og:description" content="Casting Operatorint i &#x3D; 200; long lng &#x3D; (long)i;将原本是int的i定义为long的操作符，这个操作符如果作用于widening，casting一个承载更少信息的原始变量到一个承载更多信息的原始变量，则不需要除了boolean不能实行casting，其他原始变量都可以casting 截断(truncation)与四舍五入public class exe">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-22T22:10:58.000Z">
+<meta property="article:modified_time" content="2020-07-22T22:49:17.486Z">
 <meta property="article:author" content="Chao Hu">
+<meta property="article:tag" content="JAVA Note">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Coding Journey" type="application/atom+xml">
@@ -150,35 +155,69 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-JAVA-Object-Three" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-JAVA-Operators-Four" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/10/JAVA-Object-Three/">JAVA Object Three</a>
+    <h1 class="article-title" itemprop="name">
+      JAVA Operators Four
     </h1>
   
 
         
-        <a href="/2020/07/10/JAVA-Object-Three/" class="archive-article-date">
-  	<time datetime="2020-07-10T19:31:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-10</time>
+        <a href="/2020/07/22/JAVA-Operators-Four/" class="archive-article-date">
+  	<time datetime="2020-07-22T22:10:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><h4 id="单一根对象发展出的层级系统"><a href="#单一根对象发展出的层级系统" class="headerlink" title="单一根对象发展出的层级系统"></a>单一根对象发展出的层级系统</h4><p>JAVA 中，Object就是所有衍生类别所共有的单一母类别。<br>好处：<br>所有的对象都基于同一根对象的结构是的向后兼容更容易实现。且因为这些对象的最基础的接口都是统一且一致，初学者不需要自行构建独有且逻辑自洽的分层结构。<br>在这个分层结构下的所有对象同属于一个堆栈，指令能够快速传达。<br>因为所有对象都能够被定义，系统级的功能都能找到对象。</p>
-<h4 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h4><p>在设计一个程序之前，并不能准确知道要用到多少对象。容器的作用就是可以指代所有可能用到的对象。JAVA中，List存储数列，Map是关联数组，Set代表了一个种类的对象，此外还有queue，tree，stack之类<br>选择容器：<br>    1. 不同种类的容器有不同的基础功能<br>    2. 不同种类的容器的执行效率也各有不同</p>
-<h4 id="参数化类型"><a href="#参数化类型" class="headerlink" title="参数化类型"></a>参数化类型</h4><p>当潜在对象比较确定是属于同类别是，upcasting相当容易，但是如果并不能确定，对一个特定对象downcasting就显得更为必要，也更不容易出错。然而参数化对象这一机制既不需要downcasting也不会让程序因为对象出错而降低运行效率。比如参数化容器将能够自动筛选同一种类的对象。</p>
-<h4 id="对象的创建和销毁"><a href="#对象的创建和销毁" class="headerlink" title="对象的创建和销毁"></a>对象的创建和销毁</h4><p>当一个对象被创建且使用完毕后，应当及时销毁。否则会占用额外的系统资源。当一个对象被二次引用且作用于另一程序，这个问题就显得更为棘手。<br>解决方法：<br>    1. 根据存储速度和程序响应时间来决定最长需要的存储时间。<br>    2. 在动态内存的堆栈中创建对象。这一方法不需要提前判断程序的运行时间，对象存在时长受内存剩余空间大小决定。JAVA中，new指令能够在动态内存中生成对象。<br>在JAVA中，garbage collector被设计为应对释放内存的问题。</p>
+        <h2 id="Casting-Operator"><a href="#Casting-Operator" class="headerlink" title="Casting Operator"></a>Casting Operator</h2><pre><code>int i = 200;
+long lng = (long)i;</code></pre><p>将原本是int的i定义为long的操作符，这个操作符如果作用于widening，casting一个承载更少信息的原始变量到一个承载更多信息的原始变量，则不需要<br>除了boolean不能实行casting，其他原始变量都可以casting</p>
+<h4 id="截断-truncation-与四舍五入"><a href="#截断-truncation-与四舍五入" class="headerlink" title="截断(truncation)与四舍五入"></a>截断(truncation)与四舍五入</h4><pre><code>public class exercise {
+    public static void main(String[] args) {
+        double above = 0.7, below = 0.4;
+        float fabove = 0.7f, fbelow = 0.4f;
+        System.out.println(&quot;(int)above &quot;+ (int)above);
+        System.out.println(&quot;(int)below &quot;+ (int)below);
+        System.out.println(&quot;(int)fabove &quot;+ (int)fabove);
+        System.out.println(&quot;(int)fbelow &quot;+ (int)fbelow);
+    }
+} /* Output:
+(int)above 0
+(int)below 0
+(int)fabove 0
+(int)fbelow 0
+*///~</code></pre><p>如果是double或float的变量casting到int，都是取整，舍弃小数<br>round的操作通过：<br>    Math.round();</p>
+<h4 id="Promotion"><a href="#Promotion" class="headerlink" title="Promotion"></a>Promotion</h4><p>在进行数学计算或位运算时，比整数承载能力小的原始变量会先被转换为整数后在进行计算，其结果返还的是整数，需要手动添加casting<br>而不同承载能力的原始变量相互计算时，返还的结果位更大承载能力的类型。</p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>Write a method that takes two String arguments and uses all the boolean comparisons to compare the two Strings and print the results. For the == and !=, also perform the equals() test. In main(), call your method with some differet String objects.</p>
 
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -189,7 +228,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA note</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
         		</li>
       		
 		</ul>
@@ -198,16 +237,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/10/JAVA-Object-Three/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/22/JAVA-Operators-Four/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/21/JAVA-Operators-Three/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JAVA Operators Three</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -227,314 +325,14 @@
 
 
 
-
-  
-    <article id="post-JAVA-Object-Two" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/05/JAVA-Object-Two/">JAVA Object Two</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/05/JAVA-Object-Two/" class="archive-article-date">
-  	<time datetime="2020-07-06T01:03:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="类别"><a href="#类别" class="headerlink" title="类别"></a>类别</h2><h4 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h4><p>程序本身为用户提供了一系列的服务。同样的，作为基础单位的对象，也可以被视为为程序提供的服务。不同功能的服务排列组合最终达到解决问题的作用。<br>对象即服务使得程序语言拥有了很好的连贯性。每一个对象往往提供了单一的服务功能。一个好的程序并不是包含了少量的承载了很多功能的对象，而是包含很多单一功能的对象且每一个对象之间又能进行连贯的配合。</p>
-<h4 id="隐藏"><a href="#隐藏" class="headerlink" title="隐藏"></a>隐藏</h4><p>原因之一：用户不能对内部运行进行修改。原因之二：库设计者进行内部运行的修改时不会对用户产生影响。<br>JAVA提供了public，private，prtected三种隔离方式。</p>
-<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>设置好一个类别之后，这个类可以被复制，复制后的类继承了本体原有的属性并可以进行进一步的修改。只是当本体被修改时，复制也会相应的改变。基础类别囊括了所有被包括物件的共同特征，衍生类别则可以在共同特征基础上加入独有的特征。<br>OOP同一了现实意义和编程意义，使代码更容易被理解。OOP中衍生类别继承了基础类别的特性后，使得接口统一，指令能更加通用，执行效率更高。在主类别下执行通用指令，例BirdController，不需要知道具体对象是谁。<br>创造衍生类别的方法：<br>1、 在基础类别下添加额外的属性。适用于基础类被不能被满足需求的情况。(is-like-a)已有的系统在没有拓展的情况下不能对新产生的类别进行指令下达。例：cooling system作为基础类别可以对air conditioner下达指令，但是不能对同为衍生类别的heat pump下达所有指令。要完善这一系统，必须将原有的cooling system扩充加入温度上升调节功能。<br>2、 基础类别包含了更多的特性，而衍生类别只包含了其中的几种。(override)(is-a)</p>
-<h4 id="late-binding"><a href="#late-binding" class="headerlink" title="late binding"></a>late binding</h4><p>编译时，属性控件的绑定可以是early binding，即指令的绑定类别在编译之前就已经确定。early binding执行效率更高，但是并不能灵活套用不同的对象变量，使得代码编写的难度提升。因此late binding不再需要引用某个库，而是可以任意指定指令发出对象，指令的调用也更加灵活。<br>例：<br>void doSomething(Shape shape){<br>    shape.erase();<br>    // …<br>    shape.draw();<br>}<br>doSomething()就是这个库（类别）中的指令集，但是因为有void，它是一个late binding的指令集，而()中需要加入相应对象来实现指令。Shape规定了对象类别，而shape类别下的任意变量。<br>Circle circle = new Circle();<br>doSomething(circle);<br>绑定之后，doSomething就可以对指定的母类别下的子类别下达指令。在上述例子中，Circle is a Shape，因此Shape能接收到的doSomething指令也能被Circle接收并执行。这一过程，即指令下达对象为子类别，但是执行动作是母类别就规定好的，被称为upcasting。这一过程省略了判断的，使得执行效率提升。但是同时的，相同的指令又能根据不同子类别的对象而自动进行调整具体的行为。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/05/JAVA-Object-Two/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JAVA-Object-One" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/04/JAVA-Object-One/">JAVA Object</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/04/JAVA-Object-One/" class="archive-article-date">
-  	<time datetime="2020-07-04T21:55:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="抽象化的过程"><a href="#抽象化的过程" class="headerlink" title="抽象化的过程"></a>抽象化的过程</h2><h4 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h4><p>计算机语言相对于人类语言是抽象的，反过来也成立。而计算机语言就是对计算机能识别的机器代码的逆向抽象化的过程。抽象化程度越高，则每一个单词所承载的计算机逻辑就越抽象。与此同时每个单词被赋予的实际意义也就越多，更方便阅读。因此计算机语言从低级到高级也就是抽象化程度从低到高的过程。</p>
-<h4 id="解决问题的模型"><a href="#解决问题的模型" class="headerlink" title="解决问题的模型"></a>解决问题的模型</h4><p>使用计算机语言时，考虑问题解法是从计算机的逻辑出发。通过庞杂且难以维护的逻辑语言将计算机的计算结果与实际问题进行匹配。与此同时，另一解体思路是将实际问题简化模型化。复杂的问题的解，成为了一系列的选择。在这个思路中，计算机语言的作用是在一系列的限制条件中找到最优最终解。<br>面向对象程序设计语言（OOP）是现在绝大多数计算机语言的原则，也是抽象方针之一。OOP将实际问题中的各个细节看作是不同类型的对象。同时也是程序的基本单元。就像是活字印刷术，可以用有限的提前雕刻好的活字，来印刷几万几十万字的书籍。而同时又能保证这个“印刷”的过程足够通俗易懂。</p>
-<h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><p>所有东西都可以成为对象。对象就是一个承载了数据的变量。存储的数据可以是这个实际问题中的任何元素。<br>对象之间可以相互交流并作出回应。<br>对象也可以是很多其他对对象的集合。<br>每一个对象都有他所对应的类。同一个类的对象可以收取同一信息。</p>
-<h2 id="类别"><a href="#类别" class="headerlink" title="类别"></a>类别</h2><p>尽管面向对象变成将变量具象成了有限数量的对象，但是类别的出现将数量庞杂的对象的数量进一步限制。属于同一类别的对象将会拥有相似的属性和行为。</p>
-<h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><p>在OOP中，同一类的属性是有限个数的可互动的接口。<br>例如：灯作为一个类，属于它的通用接口就是on(), off(), brighten(), dim()。那么，当有一个新的灯（对象）出现，可使的计算机对其作出操作的指令就是<br>Light lt = ABC Light();<br>lt.on()</p>
-<h4 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h4>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/04/JAVA-Object-One/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Build-My-Blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/03/Build-My-Blog/">Build My Blog</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/03/Build-My-Blog/" class="archive-article-date">
-  	<time datetime="2020-07-04T01:47:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Hexo架构的博客基于node。</p>
-<h4 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h4><p>可从 <a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/</a> 中下载长期支持版，并通过npm指令安装hexo。国内的网络可以通过淘宝来下载npm的镜像，方便之后的操作不受网络问题影响。<br>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p>
-<h4 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h4><p>通过cnpm安装hexo的指令为<br>cnpm install -g hexo-cli</p>
-<hr>
-<h2 id="在本地建立博客"><a href="#在本地建立博客" class="headerlink" title="在本地建立博客"></a>在本地建立博客</h2><h4 id="在本地建立空文件夹"><a href="#在本地建立空文件夹" class="headerlink" title="在本地建立空文件夹"></a>在本地建立空文件夹</h4><p>例 在地址Users/chaohu/处，通过mkdir blog，建立空的文件夹来作为博客本地的存储地址</p>
-<h4 id="在本地生成hexo博客"><a href="#在本地生成hexo博客" class="headerlink" title="在本地生成hexo博客"></a>在本地生成hexo博客</h4><p>进入到新建的文件夹后，输入指令<br>sudo hexo init<br>此时博客框架已经搭好<br>要建立新文章，输入指令<br>hexo new “file name”<br>遍会在blog文件夹中的../source/_posts/ 中生成文档。文档内容可以通过vscode编辑。<br>之后，在清理过之后（hexo clean），输入hexo g指令便可以产生新的博文</p>
-<hr>
-<h2 id="将本地的博客通过github推送至网络"><a href="#将本地的博客通过github推送至网络" class="headerlink" title="将本地的博客通过github推送至网络"></a>将本地的博客通过github推送至网络</h2><h4 id="建立库"><a href="#建立库" class="headerlink" title="建立库"></a>建立库</h4><p>在github的账号中建立库，库的名字必须与用户名一致</p>
-<h4 id="推送部署插件"><a href="#推送部署插件" class="headerlink" title="推送部署插件"></a>推送部署插件</h4><p>第一次操作需在本地安装，可输入指令<br>cnpm install –save hexo-deployer-git<br>并在_config.yml文件中的末尾处设置type：git; repo: 库的地址; branch: master<br>执行推送部署指令<br>hexo d<br>之后输入github账号用户名密码</p>
-<h4 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h4><hr>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/03/Build-My-Blog/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/03/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/03/hello-world/" class="archive-article-date">
-  	<time datetime="2020-07-04T01:19:02.440Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/03/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -557,8 +355,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
