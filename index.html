@@ -190,8 +190,21 @@ long lng = (long)i;</code></pre><p>将原本是int的i定义为long的操作符�
 (int)fbelow 0
 *///~</code></pre><p>如果是double或float的变量casting到int，都是取整，舍弃小数<br>round的操作通过：<br>    Math.round();</p>
 <h4 id="Promotion"><a href="#Promotion" class="headerlink" title="Promotion"></a>Promotion</h4><p>在进行数学计算或位运算时，比整数承载能力小的原始变量会先被转换为整数后在进行计算，其结果返还的是整数，需要手动添加casting<br>而不同承载能力的原始变量相互计算时，返还的结果位更大承载能力的类型。</p>
-<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>Write a method that takes two String arguments and uses all the boolean comparisons to compare the two Strings and print the results. For the == and !=, also perform the equals() test. In main(), call your method with some differet String objects.</p>
-
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>Write a method that takes two String arguments and uses all the boolean comparisons to compare the two Strings and print the results. For the == and !=, also perform the equals() test. In main(), call your method with some different String objects.<br>    public class exercise {</p>
+<pre><code>    public static void main(String[] args) {
+        StringCompare newCompare = new StringCompare();
+        newCompare.comparison(&quot;abc&quot;, &quot;def&quot;);
+    }
+}
+class StringCompare {
+    void comparison (String s1, String s2) {
+        System.out.println(s1 == s2);
+        System.out.println(s1.equals(s2));
+    }
+} /* Output:
+false
+false
+*///~</code></pre>
       
 
       
