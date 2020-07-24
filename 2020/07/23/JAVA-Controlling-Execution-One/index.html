@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: JAVA Note | Coding Journey</title>
+  <title>JAVA Controlling Execution One | Coding Journey</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Coding Journey">
-<meta property="og:url" content="http://yoursite.com/tags/JAVA-Note/index.html">
+  <meta name="description" content="if-elseif(boolean-expression)     statement;or    if(boolean-expression)        statement;    else        statement;boolean-expression一定产生boolean值，statement可以是单行代码以；结束，也可以是复合代码以}结束。例：比大小    public cla">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA Controlling Execution One">
+<meta property="og:url" content="http://yoursite.com/2020/07/23/JAVA-Controlling-Execution-One/index.html">
 <meta property="og:site_name" content="Coding Journey">
+<meta property="og:description" content="if-elseif(boolean-expression)     statement;or    if(boolean-expression)        statement;    else        statement;boolean-expression一定产生boolean值，statement可以是单行代码以；结束，也可以是复合代码以}结束。例：比大小    public cla">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-23T18:54:18.000Z">
+<meta property="article:modified_time" content="2020-07-24T21:06:12.290Z">
 <meta property="article:author" content="Chao Hu">
+<meta property="article:tag" content="JAVA Note">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Coding Journey" type="application/atom+xml">
@@ -150,36 +155,75 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-JAVA-Controlling-Execution-One" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      JAVA Controlling Execution One
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/23/JAVA-Controlling-Execution-One/" class="archive-article-date">
+
+        
+        <a href="/2020/07/23/JAVA-Controlling-Execution-One/" class="archive-article-date">
   	<time datetime="2020-07-23T18:54:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-23</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/23/JAVA-Controlling-Execution-One/">JAVA Controlling Execution One</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="if-else"><a href="#if-else" class="headerlink" title="if-else"></a>if-else</h2><pre><code>if(boolean-expression)
+    statement;</code></pre><p>or<br>    if(boolean-expression)<br>        statement;<br>    else<br>        statement;<br>boolean-expression一定产生boolean值，statement可以是单行代码以；结束，也可以是复合代码以}结束。<br>例：比大小<br>    public class exercise {<br>        static int result = 0;<br>        static void test(int testval, int target) {<br>            if(testval &gt; target)<br>                result = 1;<br>            else if(testval &lt; target)<br>                result = -1;<br>            else<br>                result = 0;<br>        }<br>        public static void main(String[] args) {<br>            test(10, 5);<br>            System.out.println(result);<br>            test(5, 10);<br>            System.out.println(result);<br>            test(5, 5);<br>            System.out.println(result);<br>        }<br>    }/* Output:<br>    1<br>    -1<br>    0<br>    *///~</p>
+<h2 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h2><p>while, do-while, for<br>重复一个描述，直到判断语句为false</p>
+<pre><code>while(boolean-expression)
+    statement</code></pre><p>例：<br>    public class exercise {<br>        static boolean condition( ) {<br>            boolean result = Math.random() &lt; 0.99;<br>            System.out.println(result + “, “);<br>            return result;<br>        }<br>        public static void main(String[] args) {<br>            while(condition())<br>                System.out.println(“Inside ‘while’”);<br>            System.out.println(“Exited ‘while’”);<br>        }<br>    }/* Output:<br>    true,<br>    Inside ‘while’<br>    true,<br>    Inside ‘while’<br>    true,<br>    Inside ‘while’<br>    false,<br>    Exited ‘while’<br>    *///~<br>condition()产生boolean值，random()产生0～1之间的随机数，包括0不包括1。</p>
+<pre><code>do
+    statement
+while(boolean-expression)</code></pre><p>do-while 循环即使boolean expression不满足也会至少执行一次循环</p>
+<pre><code>for(initialization; boolean-expression; step)
+    statement</code></pre><p>initialization, boolean-expression, step可以为空<br>例：通过for loop打印ASCII小写字母<br>    public class exercise {<br>        public static void main(String[] args) {<br>            for(char c = 0; c &lt; 128; c++)<br>                if(Character.isLowerCase(c))<br>                    System.out.println(“value: “ + (int)c +” character: “ + c);<br>        }<br>    }<br><em>小写字母从第97位开始122位结束</em><br><em>character在ASCII中以整数指代</em><br>char c = 0初始化c, c &lt; 128为循环条件, c++一次循环满足之后c增加一<br>isLowerCase()检测c指代的character是否为小写</p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><ol>
+<li><p>Write a program that prints values from 1 to 100.<br> public class exercise {</p>
+<pre><code>public static void main(String[] args) {
+    for(int i = 1; i &lt;= 100; i++)
+        System.out.println(i);
+}</code></pre><p> }</p>
+</li>
+<li><p>Write a program that uses two nested for loops and the modulus operator (%) to detect and print the prime numbers from 1 to 10,000. (Prime numbers are natural numbers that are not evenly divisible by any other number except for themselves and one). Display all the primes found.</p>
+</li>
+</ol>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,361 +235,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/23/JAVA-Controlling-Execution-One/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/22/JAVA-Operators-Four/" class="archive-article-date">
-  	<time datetime="2020-07-22T22:10:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-22</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/22/JAVA-Operators-Four/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JAVA Operators Four</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/22/JAVA-Operators-Four/">JAVA Operators Four</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/21/JAVA-Operators-Three/" class="archive-article-date">
-  	<time datetime="2020-07-21T20:28:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/21/JAVA-Operators-Three/">JAVA Operators Three</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/20/JAVA-Operators-Two/" class="archive-article-date">
-  	<time datetime="2020-07-20T16:51:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/20/JAVA-Operators-Two/">JAVA Operators Two</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/19/JAVA-Operators-One/" class="archive-article-date">
-  	<time datetime="2020-07-20T02:28:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/19/JAVA-Operators-One/">JAVA Operators One</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/19/JAVA-Object-Nine/" class="archive-article-date">
-  	<time datetime="2020-07-19T13:17:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/19/JAVA-Object-Nine/">JAVA Object Nine</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/18/JAVA-Object-Eight/" class="archive-article-date">
-  	<time datetime="2020-07-18T18:34:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/18/JAVA-Object-Eight/">JAVA Object Eight</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/17/JAVA-Object-Seven/" class="archive-article-date">
-  	<time datetime="2020-07-17T20:28:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/17/JAVA-Object-Seven/">JAVA Object Seven</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/16/JAVA-Opject-Six/" class="archive-article-date">
-  	<time datetime="2020-07-16T18:40:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/16/JAVA-Opject-Six/">JAVA Opject Six</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/14/JAVA-Object-Five/" class="archive-article-date">
-  	<time datetime="2020-07-15T02:52:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/14/JAVA-Object-Five/">JAVA Object Five</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -568,9 +357,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
