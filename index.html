@@ -152,6 +152,93 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JAVA-Controlling-Execution-Two" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/27/JAVA-Controlling-Execution-Two/">JAVA Controlling Execution Two</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/27/JAVA-Controlling-Execution-Two/" class="archive-article-date">
+  	<time datetime="2020-07-27T19:19:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Comma-Operator"><a href="#Comma-Operator" class="headerlink" title="Comma Operator"></a>Comma Operator</h2><p>comma operator只在for loop中的initialization和step部分中使用。被comma operator隔开的statemen会被按顺序执行。<br>例：<br>    public class exercise {<br>        public static void main(String[] args) {<br>            for(int i = 1, j = i +10; i &lt; 5; i++, j = i * 2)<br>                System.out.println(“i = “ + i + “ j = “ + j);<br>        }<br>    }<br>j=i+10只适用于初始j值，从第二次开始后的j为前一次执行后的j值<br>如果i和j的原始类别一致，一个int就可以同时代表i和j<br>initializtion中，每一个原始类别只需要一个defination</p>
+<h2 id="Foreach"><a href="#Foreach" class="headerlink" title="Foreach"></a>Foreach</h2><p>在array或container中，for循环可以提供位置指代<br>例：<br>    import java.util.Random;</p>
+<pre><code>public class exercise {
+    public static void main(String[] args) {
+        Random rand = new Random(47);
+        float f[] = new float[10];
+        for(int i = 0; i &lt; 10; i++)
+            f[i] = rand.nextFloat();
+        for(float x : f)
+            System.out.println(x);
+    }
+}</code></pre><p>foreach: for(float x : f)<br>按顺序将f内的每一个元素依次assign到x<br>任何array都适用，如将一个string中的每一个字母都作为单独的元素并放入array中<br>例：<br>    public class exercise {<br>        public static void main(String[] args) {<br>            for(char c : “Charles Hu”.toCharArray())<br>                System.out.print(c + “ “);<br>        }<br>    }</p>
+<h2 id="Return"><a href="#Return" class="headerlink" title="Return"></a>Return</h2><p>return, break, continue可以不通过判断条件而执行loop<br>return的作用：<br>    1. 如果method返还的值不是void，明确一个method返还什么值；<br>    2. 退出当前正在执行的method；<br>例：<br>    public class exercise {<br>        public static void main(String[] args) {<br>            System.out.println(test(10, 5));<br>            System.out.println(test(5, 10));<br>            System.out.println(test(5, 5));<br>        }<br>        static int test(int testval, int target) {<br>            if(testval &gt; target)<br>                return +1;<br>            else if(testval &lt; target)<br>                return -1;<br>            else<br>                return 0;<br>        }<br>    }<br>如果一个method返还的事void值，return并不需要<br>如果一个method返还非void值，return必须有</p>
+<h2 id="Break-与-Continue"><a href="#Break-与-Continue" class="headerlink" title="Break 与 Continue"></a>Break 与 Continue</h2><p>break会强制退出循环<br>continue会退出当前迭代并返回到循环开头执行下一次迭代<br>例：</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/27/JAVA-Controlling-Execution-Two/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JAVA-Controlling-Execution-One" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1134,110 +1221,6 @@ class DataOnly {
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/07/16/JAVA-Opject-Six/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JAVA-Object-Five" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/14/JAVA-Object-Five/">JAVA Object Five</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/14/JAVA-Object-Five/" class="archive-article-date">
-  	<time datetime="2020-07-15T02:52:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>String s;<br>String是对象属性，s是对象的指代。<br>但是指代唔不能单独存在，完整的写法为<br>String s = “abcd”;</p>
-<p>JAVA允许直接用引号内文字创建字符对象，更为通用的办法是：<br>String s = new String (“abcd”);<br>等号前后的对象类型一致</p>
-<h2 id="存储位置"><a href="#存储位置" class="headerlink" title="存储位置"></a>存储位置</h2><pre><code>1. Register: 最快，也最无法控制，位于处理器内部；
-2. The stack: 也拥有十分高效的读写速度，位于内存，通过stack pointer与处理器互动。需要对位于此的程序设定明确的存在时长；
-3. The heap: 位于内存中的general-purpos pool of memory。不需要设定存在时长，编译器会自动清理并写入，拥有更强的灵活性，但是效率更慢；
-4. Constant storage: ROM中存储需要持续提供相同功能的程序；
-5. Non-RAM storage: 程序运行所需的数据存储位置。包括了streamed object和persistent object；</code></pre><p>String s = new String (“abcd”);<br>new 在heap中创建对象，但是指代的变量是被自动创建在stack中，因此更高效。</p>
-<h2 id="原始类别"><a href="#原始类别" class="headerlink" title="原始类别"></a>原始类别</h2><pre><code>| Primitive |  Size   |  Minimum  |    Maximum     |  Warpper  |
-|   type    |         |           |                |   type    |
-| --------- | ------- | --------- | -------------- | --------- |
-| boolean   |         |           |                | Boolean   |
-| --------- | ------- | --------- | -------------- | --------- |
-| char      | 16 bits | Unicode 0 | Unicode 2^16-1 | Character |
-| --------- | ------- | --------- | -------------- | --------- |
-| byte      | 8 bits  | -128      | +127           | Byte      |
-| --------- | ------- | --------- | -------------- | --------- |
-| short     | 16 bits | -2^15     | +2^15-1        | Short     |
-| --------- | ------- | --------- | -------------- | --------- |
-| int       | 32 bits | -2^31     | +2^31-1        | Integer   |
-| --------- | ------- | --------- | -------------- | --------- |
-| long      | 64 bits | -2^63     | +2^63-1        | Long      |
-| --------- | ------- | --------- | -------------- | --------- |
-| float     | 32 bits | IEEE~754~ | IEEE~754~      | Float     |
-| --------- | ------- | --------- | -------------- | --------- |
-| double    | 64 bits | IEEE~754~ | IEEE~754       | Double    |
-| --------- | ------- | --------- | -------------- | --------- |
-| void      |         |           |                | Void      |</code></pre><p> wrapper type允许在heap中创建用于指代原始对象的非原始对象。<br> char c = “x”;<br> Character ch = new Character(c);</p>
-<h4 id="高精度数字"><a href="#高精度数字" class="headerlink" title="高精度数字"></a>高精度数字</h4><p> <strong>BigInteger</strong>，<strong>BigDecimal</strong><br> 两者都是大致符合wrapper class模拟出来的类比物，但是都没有原始对象。<br> 两者可以做int或float的运算，但是只能用method calls，而且速度偏慢。<br> BigInteger的范围要比long大。<br> BigDecimal同样，范围没有限制。</p>
-<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p> 数组占用了内存中的一块区域，程序对数组的读取不能超出这块区域或者不能提前读取。JAVA中数组必须被提前产生并且其范围检查总是会在建立的数组之上占用一小块内存空间。<br> 在JAVA中若数组中的内容是无指代的变量，那其本质还是null，JAVA会进行出错。</p>
-<h2 id="Scoping"><a href="#Scoping" class="headerlink" title="Scoping"></a>Scoping</h2><p> 用于确定对象是否可视及其可以存在的时长。用{}表示开始与结束。<br> {<br>     int x = 12;<br>     //Now, only x available<br>     {<br>         int q = 96;<br>         //Now, both x and q available<br>     }<br>     //Now, only x available<br> }</p>
-<h2 id="对象的scope"><a href="#对象的scope" class="headerlink" title="对象的scope"></a>对象的scope</h2><p>原始对象的scope不受{}限制。<br>{<br>    String s = new String(“a string”)<br>}<br>a string是原始对象，s是指代物。s会随着}的出现而消失，”a string”则会继续在heap中存在。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/14/JAVA-Object-Five/">展开全文 >></a>
         </p>
       
 
