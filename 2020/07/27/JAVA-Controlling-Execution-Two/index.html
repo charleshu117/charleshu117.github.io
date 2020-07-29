@@ -16,7 +16,7 @@
 <meta property="og:description" content="Comma Operatorcomma operator只在for loop中的initialization和step部分中使用。被comma operator隔开的statemen会被按顺序执行。例：    public class exercise {        public static void main(String[] args) {            for(int i &#x3D;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-27T19:19:47.000Z">
-<meta property="article:modified_time" content="2020-07-27T22:37:32.064Z">
+<meta property="article:modified_time" content="2020-07-28T20:05:45.318Z">
 <meta property="article:author" content="Chao Hu">
 <meta property="article:tag" content="JAVA Note">
 <meta name="twitter:card" content="summary">
@@ -188,7 +188,7 @@
     }
 }</code></pre><p>foreach: for(float x : f)<br>按顺序将f内的每一个元素依次assign到x<br>任何array都适用，如将一个string中的每一个字母都作为单独的元素并放入array中<br>例：<br>    public class exercise {<br>        public static void main(String[] args) {<br>            for(char c : “Charles Hu”.toCharArray())<br>                System.out.print(c + “ “);<br>        }<br>    }</p>
 <h2 id="Return"><a href="#Return" class="headerlink" title="Return"></a>Return</h2><p>return, break, continue可以不通过判断条件而执行loop<br>return的作用：<br>    1. 如果method返还的值不是void，明确一个method返还什么值；<br>    2. 退出当前正在执行的method；<br>例：<br>    public class exercise {<br>        public static void main(String[] args) {<br>            System.out.println(test(10, 5));<br>            System.out.println(test(5, 10));<br>            System.out.println(test(5, 5));<br>        }<br>        static int test(int testval, int target) {<br>            if(testval &gt; target)<br>                return +1;<br>            else if(testval &lt; target)<br>                return -1;<br>            else<br>                return 0;<br>        }<br>    }<br>如果一个method返还的事void值，return并不需要<br>如果一个method返还非void值，return必须有</p>
-<h2 id="Break-与-Continue"><a href="#Break-与-Continue" class="headerlink" title="Break 与 Continue"></a>Break 与 Continue</h2><p>break会强制退出循环<br>continue会退出当前迭代并返回到循环开头执行下一次迭代<br>例：</p>
+<h2 id="Break-与-Continue"><a href="#Break-与-Continue" class="headerlink" title="Break 与 Continue"></a>Break 与 Continue</h2><p>break会强制退出循环<br>continue会退出当前迭代并返回到循环开头执行下一次迭代<br>例：<br>    public class exercise {<br>        public static void main(String[] args) {<br>            for(int i = 0; i &lt; 100; i++) {<br>                if(i == 74) break; // out of the loop<br>                if(i % 9 != 0) continue; // next iteration<br>                System.out.print(i + “ “);<br>            }<br>            System.out.println();<br>            // foreach<br>            int f[] = new int[101];<br>            for(int x = 0; x &lt;= 100; x++) {<br>                f[x] = x;<br>            }<br>            for (int i : f) {<br>                if(i == 74) break;<br>                if(i % 9 != 0) continue;<br>                System.out.print(i + “ “);<br>            }<br>            System.out.println();<br>            //infinite loop<br>            int i = 0;<br>            while(true) {<br>                i++;<br>                int j =  i * 27;<br>                if(j == 1269) break;<br>                if(i % 10 != 0) continue;<br>                System.out.print(i + “ “);<br>            }<br>        }<br>    }/* Output<br>    0 9 18 27 36 45 54 63 72<br>    0 9 18 27 36 45 54 63 72<br>    10 20 30 40<br>    ///~</p>
 
       
 
@@ -292,6 +292,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/07/28/JAVA-Controlling-Execution-Three/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JAVA Controlling Execution Three
+        
+      </div>
+    </a>
   
   
     <a href="/2020/07/23/JAVA-Controlling-Execution-One/" id="article-nav-older" class="article-nav-link-wrap">
