@@ -152,6 +152,85 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JAVA-Initialization-Cleanup-One" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/29/JAVA-Initialization-Cleanup-One/">JAVA Initialization &amp; Cleanup One</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/29/JAVA-Initialization-Cleanup-One/" class="archive-article-date">
+  	<time datetime="2020-07-29T21:49:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Constructor"><a href="#Constructor" class="headerlink" title="Constructor"></a>Constructor</h2><p>一个特殊的method，在建立一个新的对象时用<br>例：class obj = new class();</p>
+<h2 id="garbage-collector"><a href="#garbage-collector" class="headerlink" title="garbage collector"></a>garbage collector</h2><p>当method结束使用时自动释放内存</p>
+<h2 id="guaranteed-initialization"><a href="#guaranteed-initialization" class="headerlink" title="guaranteed initialization"></a>guaranteed initialization</h2><p>如果一个class本身就有constructor，java会自动使用。<br>java中constructor的名字与class一致<br>例：<br>    public class exercise {<br>        public static void main(String[] args) {<br>            for(int i = 0; i &lt; 10; i++) {<br>                new Rock(); //initialization, storage is allocated<br>            }<br>        }<br>    }<br>    class Rock {<br>        Rock() { //constructor<br>            System.out.print(“Rock “);<br>        }<br>    }<br>没有argument的constructor是default constructor<br>与其他method一样，constructor也可以有arg<br>例<br>    public class exercise {<br>        public static void main(String[] args) {<br>            for(int i = 0; i &lt; 8; i++)<br>                new Rock2(i);<br>        }<br>    }<br>    class Rock2 {<br>        Rock2(int i) { //constructor<br>            System.out.print(“Rock “ + i + “ “);<br>        }<br>    } /* Output<br>    Rock 0 Rock 1 Rock 2 Rock 3 Rock 4 Rock 5 Rock 6 Rock 7<br>    ///~</p>
+<p>constructor arg为初始化这个对象提供了可能的参数类型</p>
+<p>constructor没有return value，也不return void</p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>create a class containing an uninitialized String reference. Demonstrate that this reference is initialized by Java to null.</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/29/JAVA-Initialization-Cleanup-One/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JAVA-Controlling-Execution-Three" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -201,7 +280,7 @@
     }
 }</code></pre><p>int c = rand.nextInt(26) + ‘a’;<br>生成0-26之间任意整数后再加上字符a代表的ascii码的值</p>
 <h2 id="练习-1"><a href="#练习-1" class="headerlink" title="练习"></a>练习</h2><p>create a switch statement that prints a message for each case, and put the switch inside a for loop that tries each case.<br>    public class exercise {<br>        public static void main(String[] args) {<br>             for(int i = 0; i &lt; 7; i++) {<br>                 switch(i) {<br>                 case 1: System.out.println(1); break;<br>                 case 2: System.out.println(2); break;<br>                 case 3: System.out.println(3); break;<br>                 case 4: System.out.println(4); break;<br>                 case 5: System.out.println(5); break;<br>                 case 6: System.out.println(6); break;<br>                 default: System.out.println(“consonant”);<br>                 }<br>             }<br>        }<br>    }        </p>
-<p>Create a method that takes an integer as an argument and displays that many Fibonacci numbers starting from the beginning.</p>
+<p>Create a method that takes an integer as an argument and displays that many Fibonacci numbers starting from the beginning.<br>    public class exercise {<br>        public static void main(String[] args) {<br>            for(int i = 0; i &lt; 6; i++) {<br>                if(i == 0) continue;<br>                else if(i == 1) {<br>                    new Fibona(1);<br>                }<br>                else if(i == 2) {<br>                    new Fibona(1);<br>                }<br>                else<br>                    new Fibona((i-2)+(i-1));<br>            }<br>        }<br>    }<br>    class Fibona {<br>        Fibona(int i) { //constructor<br>            System.out.print(i + “ “);<br>        }<br>    }</p>
 
       
 
@@ -1163,89 +1242,6 @@ class DataOnly {
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/07/18/JAVA-Object-Eight/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JAVA-Object-Seven" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/17/JAVA-Object-Seven/">JAVA Object Seven</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/17/JAVA-Object-Seven/" class="archive-article-date">
-  	<time datetime="2020-07-17T20:28:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h2><p>通常情况下一个class中的名字不会和另一个class中的名字冲突，但是不排除与全局function name冲突。解决这一问题可以通过在名字前加入逆写的域名。</p>
-<h2 id="使用功能"><a href="#使用功能" class="headerlink" title="使用功能"></a>使用功能</h2><p>如果要使用统一源代码文件中的其他功能可以直接call，如果是其他文件中的功能需要先在编译器里import。<br>    例：import java.util.ArrayList;<br>    意味从standard java library调用ArrayList class<br>    若有多于一个的功能需要import，则：import java.util.*;</p>
-<h2 id="静态关键字"><a href="#静态关键字" class="headerlink" title="静态关键字"></a>静态关键字</h2><p>复：创建一个class，实际上是在描述这个class中的对象是什么样子并且会发出什么行为。而对象不会被实际存储，除非使用了new。<br>但有的情况：<br>    1. 只需要一个空间存储field，而不存储其他对象；<br>    2. 需要call与当前class中的对象无关的method；<br>建立static的field或method：<br>    class StaticTest{<br>        static int i = 5;<br>    }<br>在建立上述class之后，即使在建立同为StaticTest这个class下的新的对象，如：<br>    StaticTest st1 = new StaticTest();<br>    StaticTest st2 = new StaticTest();<br>它们实际只有一个存储单位，即StaticTest.i，而st1.i与st2.i与前者共享相同的值。<br>需要引用静态变量，既可以通过object名字引用，如st1.i，或可以通过它的class引用，如StaticTest.i<br>当静态field变动，如：<br>    StaticTest.i++; /++是原值加1/<br>那么共享统一变量的st1.i, st2.i的值也为48.<br>这些特性同样也可以应用在静态method，如：<br>    class Incrementable{<br>        static void increment(){StaticTest.i++;}<br>    }<br>需要引用这个incerment()功能，可以直接通过他的class：<br>    Incrementable.increment();<br>也可以与其他non-static对象一样，通过将static对象赋值给在同一class下的新对象进行引用：<br>    Incrementable sf = new Incrementable();<br>    sf.increment();</p>
-<h2 id="第一个程序"><a href="#第一个程序" class="headerlink" title="第一个程序"></a>第一个程序</h2><p>打印一串字符和日期<br>    // HelloDate.java<br>    import java.util*;</p>
-<pre><code>public class HelloDate {
-    public static void main(String[] args) {
-        System.out.println(&quot;Hello, it&apos;s: &quot;);
-        System.out.println(new Date());
-    }
-}</code></pre><p>out是一个static对象，因此可以直接通过class名字，System，引用。而println()是out中的功能之一。独立的程序的class名字最好要和文件名一致，且必须包含main()功能，且固定为static void的signature与return类型。<br>public的意思是这个程序可以被外部使用。<br>    System.out.println(new Date());<br>Date对象被引用后其返回值自动被转换成了字符串发送给了println()。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/17/JAVA-Object-Seven/">展开全文 >></a>
         </p>
       
 

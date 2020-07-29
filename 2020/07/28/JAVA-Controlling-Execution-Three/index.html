@@ -16,7 +16,7 @@
 <meta property="og:description" content="练习Modify Exercise 1 so that the program exits by using the break keyward at value 99.    public class exercise {        public static void main(String[] args) {               for(int i &#x3D; 1; i &lt;&#x3D; 10">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-28T20:06:21.000Z">
-<meta property="article:modified_time" content="2020-07-29T03:29:11.329Z">
+<meta property="article:modified_time" content="2020-07-29T22:28:43.307Z">
 <meta property="article:author" content="Chao Hu">
 <meta property="article:tag" content="JAVA Note">
 <meta name="twitter:card" content="summary">
@@ -204,7 +204,7 @@
     }
 }</code></pre><p>int c = rand.nextInt(26) + ‘a’;<br>生成0-26之间任意整数后再加上字符a代表的ascii码的值</p>
 <h2 id="练习-1"><a href="#练习-1" class="headerlink" title="练习"></a>练习</h2><p>create a switch statement that prints a message for each case, and put the switch inside a for loop that tries each case.<br>    public class exercise {<br>        public static void main(String[] args) {<br>             for(int i = 0; i &lt; 7; i++) {<br>                 switch(i) {<br>                 case 1: System.out.println(1); break;<br>                 case 2: System.out.println(2); break;<br>                 case 3: System.out.println(3); break;<br>                 case 4: System.out.println(4); break;<br>                 case 5: System.out.println(5); break;<br>                 case 6: System.out.println(6); break;<br>                 default: System.out.println(“consonant”);<br>                 }<br>             }<br>        }<br>    }        </p>
-<p>Create a method that takes an integer as an argument and displays that many Fibonacci numbers starting from the beginning.</p>
+<p>Create a method that takes an integer as an argument and displays that many Fibonacci numbers starting from the beginning.<br>    public class exercise {<br>        public static void main(String[] args) {<br>            for(int i = 0; i &lt; 6; i++) {<br>                if(i == 0) continue;<br>                else if(i == 1) {<br>                    new Fibona(1);<br>                }<br>                else if(i == 2) {<br>                    new Fibona(1);<br>                }<br>                else<br>                    new Fibona((i-2)+(i-1));<br>            }<br>        }<br>    }<br>    class Fibona {<br>        Fibona(int i) { //constructor<br>            System.out.print(i + “ “);<br>        }<br>    }</p>
 
       
 
@@ -308,6 +308,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/07/29/JAVA-Initialization-Cleanup-One/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JAVA Initialization &amp; Cleanup One
+        
+      </div>
+    </a>
   
   
     <a href="/2020/07/27/JAVA-Controlling-Execution-Two/" id="article-nav-older" class="article-nav-link-wrap">
