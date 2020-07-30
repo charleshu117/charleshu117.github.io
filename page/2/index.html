@@ -152,6 +152,141 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JAVA-Object-Eight" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/18/JAVA-Object-Eight/">JAVA Object Eight</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/18/JAVA-Object-Eight/" class="archive-article-date">
+  	<time datetime="2020-07-18T18:34:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Compile-编译"><a href="#Compile-编译" class="headerlink" title="Compile 编译"></a>Compile 编译</h2><p>编译的过程就是把程序语言通过JDK翻译成机器语言。</p>
+<h2 id="comment"><a href="#comment" class="headerlink" title="comment"></a>comment</h2><p>多行comment /* 中间的文字 */<br>单行comment //后的文字</p>
+<h2 id="风格"><a href="#风格" class="headerlink" title="风格"></a>风格</h2><p>class name所有单词首字母答谢<br>object name除第一个但此外所有首字母大写</p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h4 id="1-Create-a-class-containing-an-int-and-a-char-that-are-not-initialized-and-print-their-values-to-verify-that-Java-performs-default-initialization"><a href="#1-Create-a-class-containing-an-int-and-a-char-that-are-not-initialized-and-print-their-values-to-verify-that-Java-performs-default-initialization" class="headerlink" title="1. Create a class containing an int and a char that are not initialized, and print their values to verify that Java performs default initialization."></a>1. Create a class containing an int and a char that are not initialized, and print their values to verify that Java performs default initialization.</h4><pre><code>package Learnign;
+
+public class exercise {
+    public static void main(String[] args) {
+        /* Create a class containing an int and a char that are not
+         * initialized, and print their values to verify that Java performs
+         * default initialization.
+         */
+        Initiate a = new Initiate();
+        System.out.println(a.charVariable);
+        System.out.println(a.intNum);
+    }
+}
+class Initiate {
+    char charVariable;
+    int intNum;
+}</code></pre><h4 id="2-Following-the-HelloDate-java-example-in-this-chapter-create-a-“hello-world”-program-that-simply-displays-that-statement-You-need-only-a-single-method-in-your-class-the-“main”-one-that-gets-executed-when-the-program-starts-Remember-to-make-it-static-and-to-include-the-argument-list-even-though-you-don’t-use-the-argument-list-Compile-the-program-with-javac-and-run-it-using-java-If-you-are-using-a-different-development-environment-than-the-JDK-learn-how-to-compile-and-run-programs-in-that-environment"><a href="#2-Following-the-HelloDate-java-example-in-this-chapter-create-a-“hello-world”-program-that-simply-displays-that-statement-You-need-only-a-single-method-in-your-class-the-“main”-one-that-gets-executed-when-the-program-starts-Remember-to-make-it-static-and-to-include-the-argument-list-even-though-you-don’t-use-the-argument-list-Compile-the-program-with-javac-and-run-it-using-java-If-you-are-using-a-different-development-environment-than-the-JDK-learn-how-to-compile-and-run-programs-in-that-environment" class="headerlink" title="2. Following the HelloDate.java example in this chapter, create a “hello, world” program that simply displays that statement. You need only a single method in your class (the “main” one that gets executed when the program starts). Remember to make it static and to include the argument list, even though you don’t use the argument list. Compile the program with javac and run it using java. If you are using a different development environment than the JDK, learn how to compile and run programs in that environment."></a>2. Following the HelloDate.java example in this chapter, create a “hello, world” program that simply displays that statement. You need only a single method in your class (the “main” one that gets executed when the program starts). Remember to make it static and to include the argument list, even though you don’t use the argument list. Compile the program with javac and run it using java. If you are using a different development environment than the JDK, learn how to compile and run programs in that environment.</h4><pre><code>package Learnign;
+
+public class HelloDate {
+    public static void main(String[] args) {
+        System.out.println(&quot;Hello World&quot;);
+    }
+}</code></pre><h4 id="3-Find-the-code-fragments-involving-ATypeName-and-turn-them-into-a-program-that-compiles-and-runs"><a href="#3-Find-the-code-fragments-involving-ATypeName-and-turn-them-into-a-program-that-compiles-and-runs" class="headerlink" title="3. Find the code fragments involving ATypeName and turn them into a program that compiles and runs"></a>3. Find the code fragments involving ATypeName and turn them into a program that compiles and runs</h4><pre><code>package Learnign;
+
+public class exercise {
+    public static void main(String[] args) {
+        /* Find the code fragments involving ATypeName and
+        * turn them into a program that compiles and runs
+        */
+    ATypeName a = new ATypeName();
+    System.out.println(a.intNum);
+    }
+}
+
+class ATypeName {
+    int intNum;
+}</code></pre><h4 id="4-Turn-the-DataOnly-code-fragments-into-a-program-that-compiles-and-runs"><a href="#4-Turn-the-DataOnly-code-fragments-into-a-program-that-compiles-and-runs" class="headerlink" title="4. Turn the DataOnly code fragments into a program that compiles and runs."></a>4. Turn the DataOnly code fragments into a program that compiles and runs.</h4><h4 id="5-Modify-the-previous-exercise-so-that-the-values-of-the-data-in-DataOnly-are-assigned-and-printed-in-main"><a href="#5-Modify-the-previous-exercise-so-that-the-values-of-the-data-in-DataOnly-are-assigned-and-printed-in-main" class="headerlink" title="5. Modify the previous exercise so that the values of the data in DataOnly are assigned and printed in main()."></a>5. Modify the previous exercise so that the values of the data in DataOnly are assigned and printed in main().</h4><pre><code>package Learnign;
+
+public class exercise {
+    public static void main(String[] args) {
+        /* Turn the DataOnly code fragments into 
+         * a program that compiles and runs.
+         */
+    DataOnly data = new DataOnly();
+    data.i = 47;
+    data.d = 1.1;
+    data.b = false;
+    System.out.println(data.i);
+    System.out.println(data.d);
+    System.out.println(data.b);
+        /* The method does nothing but only hold and print values
+         */
+    }
+}
+
+class DataOnly {
+    int i;
+    double d;
+    boolean b;
+}</code></pre><h4 id=""><a href="#" class="headerlink" title=""></a></h4>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/18/JAVA-Object-Eight/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JAVA-Object-Seven" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

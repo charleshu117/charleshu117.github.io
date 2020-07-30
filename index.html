@@ -152,6 +152,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JAVA-Initialization-Cleanup-Two" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/30/JAVA-Initialization-Cleanup-Two/">JAVA Initialization &amp; Cleanup Two</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/30/JAVA-Initialization-Cleanup-Two/" class="archive-article-date">
+  	<time datetime="2020-07-30T16:26:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Overload"><a href="#Overload" class="headerlink" title="Overload"></a>Overload</h2><p>same word expresses a number of different meanings<br>constructor是一个重要因素导致method重名，因为constructor的名字与class一致。 如果需要有不同的引用办法就设置with or without arg constructor<br>例：<br>    public class exercise {<br>        public static void main(String[] args) {<br>            for(int i = 0; i &lt; 5; i++) {<br>                Tree t = new Tree(i);<br>                t.info();<br>                t.info(“overloaded method”);<br>            }<br>            new Tree(); //overloarded constructor<br>        }<br>    }<br>    class Tree{<br>        int height;<br>        Tree(){<br>            System.out.println(“Planting a seedling”);<br>            height = 0;<br>        }<br>        Tree(int initialHeight){<br>            height = initialHeight;<br>            System.out.println(“Creating new Tree that is “ + height + “ feet tall”);<br>        }<br>        void info() {<br>            System.out.println(“Tree is “ + height + “ feet tall”);<br>        }<br>        void info(String s) {<br>            System.out.println(s + “: Tree is “ + height + “ feet tall”);<br>        }<br>    }</p>
+<h2 id="区分"><a href="#区分" class="headerlink" title="区分"></a>区分</h2><p>可以通过有无arguement 区分同名method，也可以通过argument顺序的不同而区分。<br>例：<br>    public class exercise {<br>        static void f(String s, int i) {<br>            System.out.println(“String: “ + s + “, int: “ + i);<br>        }<br>        static void f(int i, String s) {<br>            System.out.println(“Int: “ + i + “, String: “ + s);<br>        }<br>        public static void main(String[] args) {<br>            f(“String first”, 11);<br>            f(11, “Int first”);<br>        }<br>    }</p>
+<h2 id="overloading-with-primitives"><a href="#overloading-with-primitives" class="headerlink" title="overloading with primitives"></a>overloading with primitives</h2><p>同样的method名字但是不同的对象范围，<br>如果assign的arguement为该method所没有的，则自动将这个primitive变成范围最小的 的。</p>
+<h2 id="overloading-on-return-value"><a href="#overloading-on-return-value" class="headerlink" title="overloading on return value"></a>overloading on return value</h2><p>如果两个method有一样的名字和arg但是不同的return value<br>那就无法区分</p>
+<h2 id="default-constructors"><a href="#default-constructors" class="headerlink" title="default constructors"></a>default constructors</h2><p>如果定义了一个class 但是没有给他设置constructor，编译器会自动assign一个default constructor<br>例：<br>    public class exercise {<br>        public static void main(String[] args) {<br>            Bird b = new Bird();<br>        }<br>    }<br>    class Bird {}<br>但是如果设置了非default constructor，那么在initialization时，default construction并不能实行</p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>Create a class with default constructor that prints a message. Create an object of this class.<br>    public class exercise {<br>        public static void main(String[] args) {<br>            new printS();<br>        }<br>    }<br>    class printS {<br>        printS(){<br>            System.out.println(“abc”);<br>        }<br>    }</p>
+<p>Add an overloaded constructor to the previous exercise that takes a String argument and prints it along with your message.<br>    public class exercise {<br>        public static void main(String[] args) {<br>            new printS();<br>            new printS(“def”);<br>        }<br>    }<br>    class printS {<br>        printS(){<br>            System.out.print(“abc”);<br>        }<br>        printS(String a) {<br>            System.out.print(a);<br>        }<br>    }</p>
+<p>Create a class called Dog with an overloaded bark() method. This method should be overloaded based on various primitive data types, and print different types of barking, howling, etc depending on which overloaded version is called. Write a main() that calles all the different versions.</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/30/JAVA-Initialization-Cleanup-Two/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JAVA-Initialization-Cleanup-One" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -177,7 +258,7 @@
 <h2 id="guaranteed-initialization"><a href="#guaranteed-initialization" class="headerlink" title="guaranteed initialization"></a>guaranteed initialization</h2><p>如果一个class本身就有constructor，java会自动使用。<br>java中constructor的名字与class一致<br>例：<br>    public class exercise {<br>        public static void main(String[] args) {<br>            for(int i = 0; i &lt; 10; i++) {<br>                new Rock(); //initialization, storage is allocated<br>            }<br>        }<br>    }<br>    class Rock {<br>        Rock() { //constructor<br>            System.out.print(“Rock “);<br>        }<br>    }<br>没有argument的constructor是default constructor<br>与其他method一样，constructor也可以有arg<br>例<br>    public class exercise {<br>        public static void main(String[] args) {<br>            for(int i = 0; i &lt; 8; i++)<br>                new Rock2(i);<br>        }<br>    }<br>    class Rock2 {<br>        Rock2(int i) { //constructor<br>            System.out.print(“Rock “ + i + “ “);<br>        }<br>    } /* Output<br>    Rock 0 Rock 1 Rock 2 Rock 3 Rock 4 Rock 5 Rock 6 Rock 7<br>    ///~</p>
 <p>constructor arg为初始化这个对象提供了可能的参数类型</p>
 <p>constructor没有return value，也不return void</p>
-<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>create a class containing an uninitialized String reference. Demonstrate that this reference is initialized by Java to null.</p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>create a class containing an uninitialized String reference. Demonstrate that this reference is initialized by Java to null.<br>    public class exercise {<br>        public static void main(String[] args) {<br>            new ref(“”);<br>        }<br>    }<br>    class ref{<br>        ref(String a){<br>            System.out.println(a);<br>        }<br>    }</p>
 
       
 
@@ -1107,141 +1188,6 @@ class StaticTest {
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/07/19/JAVA-Object-Nine/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JAVA-Object-Eight" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/18/JAVA-Object-Eight/">JAVA Object Eight</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/18/JAVA-Object-Eight/" class="archive-article-date">
-  	<time datetime="2020-07-18T18:34:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Compile-编译"><a href="#Compile-编译" class="headerlink" title="Compile 编译"></a>Compile 编译</h2><p>编译的过程就是把程序语言通过JDK翻译成机器语言。</p>
-<h2 id="comment"><a href="#comment" class="headerlink" title="comment"></a>comment</h2><p>多行comment /* 中间的文字 */<br>单行comment //后的文字</p>
-<h2 id="风格"><a href="#风格" class="headerlink" title="风格"></a>风格</h2><p>class name所有单词首字母答谢<br>object name除第一个但此外所有首字母大写</p>
-<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h4 id="1-Create-a-class-containing-an-int-and-a-char-that-are-not-initialized-and-print-their-values-to-verify-that-Java-performs-default-initialization"><a href="#1-Create-a-class-containing-an-int-and-a-char-that-are-not-initialized-and-print-their-values-to-verify-that-Java-performs-default-initialization" class="headerlink" title="1. Create a class containing an int and a char that are not initialized, and print their values to verify that Java performs default initialization."></a>1. Create a class containing an int and a char that are not initialized, and print their values to verify that Java performs default initialization.</h4><pre><code>package Learnign;
-
-public class exercise {
-    public static void main(String[] args) {
-        /* Create a class containing an int and a char that are not
-         * initialized, and print their values to verify that Java performs
-         * default initialization.
-         */
-        Initiate a = new Initiate();
-        System.out.println(a.charVariable);
-        System.out.println(a.intNum);
-    }
-}
-class Initiate {
-    char charVariable;
-    int intNum;
-}</code></pre><h4 id="2-Following-the-HelloDate-java-example-in-this-chapter-create-a-“hello-world”-program-that-simply-displays-that-statement-You-need-only-a-single-method-in-your-class-the-“main”-one-that-gets-executed-when-the-program-starts-Remember-to-make-it-static-and-to-include-the-argument-list-even-though-you-don’t-use-the-argument-list-Compile-the-program-with-javac-and-run-it-using-java-If-you-are-using-a-different-development-environment-than-the-JDK-learn-how-to-compile-and-run-programs-in-that-environment"><a href="#2-Following-the-HelloDate-java-example-in-this-chapter-create-a-“hello-world”-program-that-simply-displays-that-statement-You-need-only-a-single-method-in-your-class-the-“main”-one-that-gets-executed-when-the-program-starts-Remember-to-make-it-static-and-to-include-the-argument-list-even-though-you-don’t-use-the-argument-list-Compile-the-program-with-javac-and-run-it-using-java-If-you-are-using-a-different-development-environment-than-the-JDK-learn-how-to-compile-and-run-programs-in-that-environment" class="headerlink" title="2. Following the HelloDate.java example in this chapter, create a “hello, world” program that simply displays that statement. You need only a single method in your class (the “main” one that gets executed when the program starts). Remember to make it static and to include the argument list, even though you don’t use the argument list. Compile the program with javac and run it using java. If you are using a different development environment than the JDK, learn how to compile and run programs in that environment."></a>2. Following the HelloDate.java example in this chapter, create a “hello, world” program that simply displays that statement. You need only a single method in your class (the “main” one that gets executed when the program starts). Remember to make it static and to include the argument list, even though you don’t use the argument list. Compile the program with javac and run it using java. If you are using a different development environment than the JDK, learn how to compile and run programs in that environment.</h4><pre><code>package Learnign;
-
-public class HelloDate {
-    public static void main(String[] args) {
-        System.out.println(&quot;Hello World&quot;);
-    }
-}</code></pre><h4 id="3-Find-the-code-fragments-involving-ATypeName-and-turn-them-into-a-program-that-compiles-and-runs"><a href="#3-Find-the-code-fragments-involving-ATypeName-and-turn-them-into-a-program-that-compiles-and-runs" class="headerlink" title="3. Find the code fragments involving ATypeName and turn them into a program that compiles and runs"></a>3. Find the code fragments involving ATypeName and turn them into a program that compiles and runs</h4><pre><code>package Learnign;
-
-public class exercise {
-    public static void main(String[] args) {
-        /* Find the code fragments involving ATypeName and
-        * turn them into a program that compiles and runs
-        */
-    ATypeName a = new ATypeName();
-    System.out.println(a.intNum);
-    }
-}
-
-class ATypeName {
-    int intNum;
-}</code></pre><h4 id="4-Turn-the-DataOnly-code-fragments-into-a-program-that-compiles-and-runs"><a href="#4-Turn-the-DataOnly-code-fragments-into-a-program-that-compiles-and-runs" class="headerlink" title="4. Turn the DataOnly code fragments into a program that compiles and runs."></a>4. Turn the DataOnly code fragments into a program that compiles and runs.</h4><h4 id="5-Modify-the-previous-exercise-so-that-the-values-of-the-data-in-DataOnly-are-assigned-and-printed-in-main"><a href="#5-Modify-the-previous-exercise-so-that-the-values-of-the-data-in-DataOnly-are-assigned-and-printed-in-main" class="headerlink" title="5. Modify the previous exercise so that the values of the data in DataOnly are assigned and printed in main()."></a>5. Modify the previous exercise so that the values of the data in DataOnly are assigned and printed in main().</h4><pre><code>package Learnign;
-
-public class exercise {
-    public static void main(String[] args) {
-        /* Turn the DataOnly code fragments into 
-         * a program that compiles and runs.
-         */
-    DataOnly data = new DataOnly();
-    data.i = 47;
-    data.d = 1.1;
-    data.b = false;
-    System.out.println(data.i);
-    System.out.println(data.d);
-    System.out.println(data.b);
-        /* The method does nothing but only hold and print values
-         */
-    }
-}
-
-class DataOnly {
-    int i;
-    double d;
-    boolean b;
-}</code></pre><h4 id=""><a href="#" class="headerlink" title=""></a></h4>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/18/JAVA-Object-Eight/">展开全文 >></a>
         </p>
       
 

@@ -16,7 +16,7 @@
 <meta property="og:description" content="Constructor一个特殊的method，在建立一个新的对象时用例：class obj &#x3D; new class(); garbage collector当method结束使用时自动释放内存 guaranteed initialization如果一个class本身就有constructor，java会自动使用。java中constructor的名字与class一致例：    public cla">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-29T21:49:54.000Z">
-<meta property="article:modified_time" content="2020-07-29T22:49:51.870Z">
+<meta property="article:modified_time" content="2020-07-30T17:20:02.104Z">
 <meta property="article:author" content="Chao Hu">
 <meta property="article:tag" content="JAVA Note">
 <meta name="twitter:card" content="summary">
@@ -180,7 +180,7 @@
 <h2 id="guaranteed-initialization"><a href="#guaranteed-initialization" class="headerlink" title="guaranteed initialization"></a>guaranteed initialization</h2><p>如果一个class本身就有constructor，java会自动使用。<br>java中constructor的名字与class一致<br>例：<br>    public class exercise {<br>        public static void main(String[] args) {<br>            for(int i = 0; i &lt; 10; i++) {<br>                new Rock(); //initialization, storage is allocated<br>            }<br>        }<br>    }<br>    class Rock {<br>        Rock() { //constructor<br>            System.out.print(“Rock “);<br>        }<br>    }<br>没有argument的constructor是default constructor<br>与其他method一样，constructor也可以有arg<br>例<br>    public class exercise {<br>        public static void main(String[] args) {<br>            for(int i = 0; i &lt; 8; i++)<br>                new Rock2(i);<br>        }<br>    }<br>    class Rock2 {<br>        Rock2(int i) { //constructor<br>            System.out.print(“Rock “ + i + “ “);<br>        }<br>    } /* Output<br>    Rock 0 Rock 1 Rock 2 Rock 3 Rock 4 Rock 5 Rock 6 Rock 7<br>    ///~</p>
 <p>constructor arg为初始化这个对象提供了可能的参数类型</p>
 <p>constructor没有return value，也不return void</p>
-<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>create a class containing an uninitialized String reference. Demonstrate that this reference is initialized by Java to null.</p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>create a class containing an uninitialized String reference. Demonstrate that this reference is initialized by Java to null.<br>    public class exercise {<br>        public static void main(String[] args) {<br>            new ref(“”);<br>        }<br>    }<br>    class ref{<br>        ref(String a){<br>            System.out.println(a);<br>        }<br>    }</p>
 
       
 
@@ -284,6 +284,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/07/30/JAVA-Initialization-Cleanup-Two/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JAVA Initialization &amp; Cleanup Two
+        
+      </div>
+    </a>
   
   
     <a href="/2020/07/28/JAVA-Controlling-Execution-Three/" id="article-nav-older" class="article-nav-link-wrap">
