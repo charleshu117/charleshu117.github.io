@@ -152,6 +152,166 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JAVA-Youtube" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/11/JAVA-Youtube/">JAVA Youtube</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/11/JAVA-Youtube/" class="archive-article-date">
+  	<time datetime="2020-08-11T19:43:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/11/JAVA-Youtube/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JAVA-Initialization-Clean-Three" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/30/JAVA-Initialization-Clean-Three/">JAVA Initialization &amp; Clean Three</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/30/JAVA-Initialization-Clean-Three/" class="archive-article-date">
+  	<time datetime="2020-07-30T20:58:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="This"><a href="#This" class="headerlink" title="This"></a>This</h2><p>例：<br>    public class exercise {<br>        public static void main(String[] args) {<br>            Banana a = new Banana();<br>            Banana b = new Banana();<br>            a.peel(1);<br>            b.peel(2);<br>        }<br>    }<br>    class Banana {<br>        void peel(int i) {</p>
+<pre><code>    }
+}</code></pre><p>a.peel(1); 与 b.peel(2)为不同对象对同一method的引用，引用时编译器的底层逻辑里，peel()加入了一个隐藏元素<br>    Banana.peel(a, 1);<br>    Banana.peel(b, 2)；</p>
+<p>这个隐藏的元素可以被想象成this这个关键词，用于在non-static的class中进行对不同对象的指代<br>如果是在同一class中的一个method指代另一个method，this是被省略的<br>    public class Apricot {<br>        void pick() {}<br>        void pit {pick();}<br>    }<br>而在一些需要明确指出当前对象的非明确指代物时，this需要被使用<br>    public class exercise {<br>        int i = 0;<br>        exercise increment() {<br>            i++;<br>            return this;<br>        }<br>        void print() {<br>            System.out.println(“i = “ + i);<br>        }<br>        public static void main(String[] args) {<br>            exercise x = new exercise();<br>            x.increment().increment().increment().print();<br>        }<br>    }<br>其中this指代了increment()这一method的返回值.因为increment()将其返回值进行了对本身的指代，因此其他或者其相同的method可以对其本身进行对象指代，从而进行多method运行。</p>
+<pre><code>public class exercise {
+    public static void main(String[] args) {
+        new Person().eat(new Apple());
+    }
+}
+class Person {
+    public void eat(Apple apple) {
+        Apple peeled = apple.getPeeled();
+        System.out.println(&quot;Yummy&quot;);
+    }
+}
+class Peeler{
+    static Apple peel(Apple apple) {
+        return apple;
+    }
+}
+class Apple {
+    Apple getPeeled() {
+        return Peeler.peel(this);
+    }
+}</code></pre><p>class Apple{}与class Peeler{}中的method相互作用，其中getPeeled()的返回值是对Apple()这个class进行对本身的peel()</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/30/JAVA-Initialization-Clean-Three/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JAVA-Initialization-Cleanup-Two" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -947,281 +1107,9 @@ true
 
 
   
-    <article id="post-JAVA-Operators-One" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/19/JAVA-Operators-One/">JAVA Operators One</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/19/JAVA-Operators-One/" class="archive-article-date">
-  	<time datetime="2020-07-20T02:28:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Operators"><a href="#Operators" class="headerlink" title="Operators"></a>Operators</h1><h2 id="副作用"><a href="#副作用" class="headerlink" title="副作用"></a>副作用</h2><p>运算符号和函数都可能会对主调用函数或被操作数产生附加影响。<br>除了“=”，“==”，“!=”可以作用于所有的对象，“+”和“+=”可以支援字符串，其他的运算符号只能作用于原始对象。</p>
-<h2 id="优先"><a href="#优先" class="headerlink" title="优先"></a>优先</h2><pre><code>public class exercise {
-    public static void main(String[] args) {
-        int x = 1, y = 2, z = 3;
-        int a = x + y - 2/2 +z;
-        int b = x + (y-2)/(2 + z);
-        System.out.println(&quot;a = &quot; + a + &quot; b = &quot; + b);
-    }
-}</code></pre><p>“+”作用是concatenate，但是如果一个string后跟着“+”那么后面的对象如果不是字符串会被自动转换为字符串。</p>
-<h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><p>“=”右边的值被覆盖到左边的对象<br>常数不能被lvalue赋值<br>a赋值给b之后，对b的改动不会影响a</p>
-<h2 id="aliasing"><a href="#aliasing" class="headerlink" title="aliasing:"></a>aliasing:</h2><pre><code>public class exercise {
-    public static void main(String[] args) {
-        Tank a = new Tank();
-        Tank b = new Tank();
-        a.level = 0.1f;
-        b.level = 1.9f;
-        System.out.println(&quot;a.level = &quot; + a.level +
-                &quot; b.level&quot; + b.level);
-        a = b;
-        System.out.println(&quot;a.level = &quot; + a.level +
-                &quot; b.level&quot; + b.level);
-        a.level = 2.1f;
-        System.out.println(&quot;a.level = &quot; + a.level +
-                &quot; b.level&quot; + b.level);
-    }
-}   
-class Tank {
-    float level;
-}</code></pre><h2 id="当使用method时发生的aliasing"><a href="#当使用method时发生的aliasing" class="headerlink" title="当使用method时发生的aliasing"></a>当使用method时发生的aliasing</h2><pre><code>public class exercise {
-    static void f(Letter y) {
-        y.c = &apos;z&apos;;
-    }
-    public static void main(String[] args) {
-        Letter x = new Letter();
-        x.c = &apos;a&apos;;
-        System.out.println(&quot;x.c: &quot; + x.c);
-        f(x);
-        System.out.println(&quot;x.c: &quot; + x.c);
-    }
-}   
-class Letter {
-    char c;
-}</code></pre><p>当x被带入f(), 作为函数外的对象x，也被修改了。</p>
-<h2 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h2><p>+，-，<em>，/，%（余数），+=（右加左），-=，</em>=，/=</p>
-<h4 id="随机数"><a href="#随机数" class="headerlink" title="随机数"></a>随机数</h4><p>a = rand.nextInt();<br>如果没有参数，当前的时间就是seed<br>nextFloat(), nextLong(), nextDouble()</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/19/JAVA-Operators-One/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JAVA-Object-Nine" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/19/JAVA-Object-Nine/">JAVA Object Nine</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/19/JAVA-Object-Nine/" class="archive-article-date">
-  	<time datetime="2020-07-19T13:17:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h4 id="6-Write-a-program-that-includes-and-calls-the-storage-method-defined-as-a-code-fragment-in-this-chapter"><a href="#6-Write-a-program-that-includes-and-calls-the-storage-method-defined-as-a-code-fragment-in-this-chapter" class="headerlink" title="6. Write a program that includes and calls the storage() method defined as a code fragment in this chapter."></a>6. Write a program that includes and calls the storage() method defined as a code fragment in this chapter.</h4><pre><code>public class exercise {
-    public static void main(String[] args) {
-        /* Write a program that includes and 
-         * calls the storage() method defined as a code 
-         * fragment in this chapter
-         */
-        Store st = new Store();
-        System.out.println(st.storage(&quot;Hello&quot;));
-        }
-}
-class Store {
-    int storage(String s) {
-    return s.length() * 2;
-    }
-}</code></pre><h4 id="7-Turn-the-Incrementable-code-fragments-into-a-working-program"><a href="#7-Turn-the-Incrementable-code-fragments-into-a-working-program" class="headerlink" title="7. Turn the Incrementable code fragments into a working program."></a>7. Turn the Incrementable code fragments into a working program.</h4><pre><code>public class exercise {
-    public static void main(String[] args) {
-        /* Turn the Incrementable code fragments
-         * into a working program.
-         */
-        Incrementable.increment();
-        System.out.println(StaticTest.i);
-    }
-}
-class StaticTest {
-    static int i = 47;
-}
-class Incrementable {
-    static void increment() {
-    StaticTest.i++;
-    }
-}</code></pre><h4 id="8-Write-a-program-that-demonstrates-that-no-matter-how-many-objects-you-create-of-a-particular-class-there-is-only-one-instance-of-a-particular-static-field-in-that-class"><a href="#8-Write-a-program-that-demonstrates-that-no-matter-how-many-objects-you-create-of-a-particular-class-there-is-only-one-instance-of-a-particular-static-field-in-that-class" class="headerlink" title="8. Write a program that demonstrates that, no matter how many objects you create of a particular class, there is only one instance of a particular static field in that class."></a>8. Write a program that demonstrates that, no matter how many objects you create of a particular class, there is only one instance of a particular static field in that class.</h4><pre><code>public class exercise {
-    public static void main(String[] args) {
-        /* Turn the Incrementable code fragments
-         * into a working program.
-         */
-        StaticTest ex1 = new StaticTest();
-        StaticTest ex2 = new StaticTest();
-        System.out.println(ex1.i);
-    }
-}
-class StaticTest {
-    static int i = 47;
-}</code></pre><h4 id="9-2-Write-a-program-that-demonstrates-that-autoboxing-works-for-all-the-primitive-types-and-their-wrappers"><a href="#9-2-Write-a-program-that-demonstrates-that-autoboxing-works-for-all-the-primitive-types-and-their-wrappers" class="headerlink" title="9. (2) Write a program that demonstrates that autoboxing works for all the primitive types and their wrappers."></a>9. (2) Write a program that demonstrates that autoboxing works for all the primitive types and their wrappers.</h4><pre><code>public class exercise {
-    public static void main(String[] args) {
-        /* Write a program that demonstrates 
-         * that autoboxing works for all the 
-         * primitive types and their wrappers. 
-         */
-        boolean b = true;
-        char a = &apos;x&apos;;
-        byte c = 3;
-        short d = 10000;
-        int e = 10;
-        long f = 10000000l;
-        float g = 0.4f;
-        double h = 0.11d;
-        Boolean B = b;
-        Character A = a;
-        Byte C = c;
-        Short D = d;
-        Integer E = e;
-        Long F = f;
-        Float G = g;
-        Double H = h;
-        System.out.println(&quot;boolean b = &quot; + b);
-        System.out.println(&quot;Boolean B = &quot; + B);
-        System.out.println(&quot;char a = &quot; + a);
-        System.out.println(&quot;Character A = &quot; + A);
-        System.out.println(&quot;byte c = &quot; + c);
-        System.out.println(&quot;Byte C = &quot; + C);
-        System.out.println(&quot;short d = &quot; + d);
-        System.out.println(&quot;Short D = &quot; + D);
-        System.out.println(&quot;int e = &quot; + e);
-        System.out.println(&quot;Integer E = &quot; + E);
-        System.out.println(&quot;long f = &quot; + f);
-        System.out.println(&quot;Long F = &quot; + F);
-        System.out.println(&quot;float g = &quot; + g);
-        System.out.println(&quot;Float G = &quot; + G);
-        System.out.println(&quot;double h = &quot; + h);
-        System.out.println(&quot;Double H = &quot; + H);
-    }
-}</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/19/JAVA-Object-Nine/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
