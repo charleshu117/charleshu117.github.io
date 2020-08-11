@@ -172,7 +172,45 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="阵列"><a href="#阵列" class="headerlink" title="阵列"></a>阵列</h2><p>适用于同时存储一组内容<br>是一个连续的存储空间<br>阵列的符号是[]<br>例<br>    int[] x = int[10];<br>    x[0] = 1;<br>    x[1] = 2;<br>    …<br>阵列的初始值是0<br>简化的写法：<br>    int[] x = new int[]{1,2,3,4,5,6,7,8,9,10};<br>如果阵列发生改变，重新定义一个新的阵列</p>
+<pre><code>public class exercise {
+    public static void main(String[] args) {
+        int[] dicecounter = new int[6];
+        int Num_Rolls = 10000000;
+        float average = (float)Num_Rolls / 6.0f;
+        for(int i = 0; i &lt; Num_Rolls; i++) {
+            int number = (int)(Math.random() * 5.999999); 
+            //0-1的随机数乘以5.99999再取整，结果为大于等于0但是小于6的整数。用于模拟骰子的1-6
+            //骰子的结果同时作为骰子的索引
+            dicecounter[number]++; //计算0-5的整数出现次数
+        }
+        System.out.println(&quot;One:    &quot; + dicecounter[0] + &quot; 误差: &quot; + (((float)dicecounter[0] - average) / average) *100.0f + &quot;%&quot;);
+        System.out.println(&quot;Two:    &quot; + dicecounter[1] + &quot; 误差: &quot; + (((float)dicecounter[1] - average) / average) *100.0f + &quot;%&quot;);
+        System.out.println(&quot;Three：    &quot; + dicecounter[2] + &quot; 误差: &quot; + (((float)dicecounter[2] - average) / average) *100.0f + &quot;%&quot;);
+        System.out.println(&quot;Four：    &quot; + dicecounter[3] + &quot; 误差: &quot; + (((float)dicecounter[3] - average) / average) *100.0f + &quot;%&quot;);
+        System.out.println(&quot;Five:    &quot; + dicecounter[4] + &quot; 误差: &quot; + (((float)dicecounter[4] - average) / average) *100.0f + &quot;%&quot;);
+        System.out.println(&quot;Six:    &quot; + dicecounter[5] + &quot; 误差: &quot; + (((float)dicecounter[5] - average) / average) *100.0f + &quot;%&quot;);
+    }
+}</code></pre><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>需要重复调用的功能<br>例：输入一个数字，通过调用方法打印出它的平方<br>    public class exercise {<br>        public static void main(String[] args) {<br>            int number = 9;<br>            System.out.println(square(number));<br>        }<br>        public static int square(int input) {<br>            return input * input;<br>        }<br>    }<br>如果方法不回传任何内容<br>    public static void xxxx(){}</p>
+<h4 id="找质数"><a href="#找质数" class="headerlink" title="找质数"></a>找质数</h4><pre><code>public class exercise {
+    public static void main(String[] args) {
+        int LIMIT = 100; //需要找出x以内的所有质数
+
+        for(int i = 2; i &lt; LIMIT; i++) {
+            if(isPrime(i)) {
+                System.out.print(i + &quot;, &quot;);
+            }
+        }
+    }
+    public static boolean isPrime(int x) {
+        for(int i = 2; i &lt; x; i++) {
+            if(x % i == 0) {
+                return false;//如果可以被1或本身以外的数字整除，则返回否
+            }
+        }
+        return true;
+    }
+}</code></pre>
       
 
       
@@ -180,6 +218,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
