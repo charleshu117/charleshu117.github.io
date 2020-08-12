@@ -8,14 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>JAVA Youtube Two | Coding Journey</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="referencepublic class exercise {     public static void main(String[] args) {         int[] arrayA &#x3D; {10, 20, 30};         int[] arrayB &#x3D; arrayA;          arrayB[1] &#x3D; 5;         System.out.println(arr">
+<meta property="og:type" content="article">
 <meta property="og:title" content="JAVA Youtube Two">
 <meta property="og:url" content="http://yoursite.com/2020/08/11/JAVA-Youtube-Two/index.html">
 <meta property="og:site_name" content="Coding Journey">
+<meta property="og:description" content="referencepublic class exercise {     public static void main(String[] args) {         int[] arrayA &#x3D; {10, 20, 30};         int[] arrayB &#x3D; arrayA;          arrayB[1] &#x3D; 5;         System.out.println(arr">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-11T21:21:31.000Z">
-<meta property="article:modified_time" content="2020-08-11T21:21:31.846Z">
+<meta property="article:modified_time" content="2020-08-12T22:13:20.207Z">
 <meta property="article:author" content="Chao Hu">
+<meta property="article:tag" content="JAVA Note">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Coding Journey" type="application/atom+xml">
@@ -172,7 +175,62 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><pre><code>public class exercise {
+    public static void main(String[] args) {
+        int[] arrayA = {10, 20, 30};
+        int[] arrayB = arrayA;
+
+        arrayB[1] = 5;
+        System.out.println(arrayA[1]);
+    }
+}</code></pre><p>int[] arrayA 是一个标签，, {10, 20, 30}是阵列这个物件<br>因此呼叫arrayA时是呼叫了标签<br>    int[] arrayB = arrayA;<br>这一行的作用仅仅是将arrayA这个标签存储在了arrayB这个标签，所以对arrayB做改动也就是对arrayA做改动，也就是对arrayA所代表的物件所作改动</p>
+<h2 id="基本类型和变量"><a href="#基本类型和变量" class="headerlink" title="基本类型和变量"></a>基本类型和变量</h2><p>变量：先写类型，在写名字。名字是物件的参考，这个参考所对应的是存储的物件<br>基本类型：存储的是基本类型本身，可以看作标签本身就是存储空间。包括int, long, float, double, boolean, short, char, byte</p>
+<h2 id="物件与方法"><a href="#物件与方法" class="headerlink" title="物件与方法"></a>物件与方法</h2><pre><code>public class exercise {
+    public static void main(String[] args) {
+        int i = 0;
+        int[] A = {0};
+        method(A);
+        System.out.println(A[0]);
+    }
+    public static void method(int[] array) {
+        array[0] = 5;
+    }
+}</code></pre><p>因为array和A是标签，因此方法里对A的改变，就对物件本身进行了改变，因为array和A索引的物件是同一个</p>
+<pre><code>public class exercise {
+    public static void main(String[] args) {
+        int i = 0;
+        int[] A = {0};
+        int[] B = {10};
+        int[] C;
+        C = A;
+        A = B; //B的物件也被A参考
+        B = C;
+        System.out.println(A[0]+&quot;, &quot;+ B[0]);
+    }
+}</code></pre><p>标签所对应的物件的交换功能<br>    public class exercise {<br>        public static void main(String[] args) {<br>            int i = 0;<br>            int[] A = {0};<br>            int[] B = {10};</p>
+<pre><code>        exchange(A, B);
+
+        System.out.println(A[0]+&quot;, &quot;+ B[0]);
+    }
+    public static void exchange(int[] array1, int[] array2) {
+        int[] temp = array1;
+        array1 = array2;
+        array2 = temp;
+        System.out.println(array1[0]+&quot;, &quot;+ array2[0]);
+    }
+}</code></pre><p>调用了方法之后A，B代表的物件被array1和array2代表，但是方法外的A，B并没有变动</p>
+<h2 id="变数"><a href="#变数" class="headerlink" title="变数"></a>变数</h2><p>基本形态的变数，是复制内容本身<br>变数的适用范围<br>    public class exercise {<br>        public static void main(String[] args) {<br>            int x = 0;<br>            if(10&gt;0) {<br>                int y = 5;<br>                System.out.println(y);<br>            }<br>            int y = 10;<br>            System.out.println(x);<br>            System.out.println(y);<br>        }<br>    }<br>x是全局存在，第一个y在if中存在，第二个y在if后且在if之外存在。因此可以打印出2个y<br>若：<br>    public class exercise {<br>        public static void main(String[] args) {<br>            int x = 0;<br>            int y = 10;<br>            if(10&gt;0) {<br>                int y = 5;<br>                System.out.println(y);<br>            }<br>            System.out.println(x);<br>            System.out.println(y);<br>        }<br>    }<br>y在执行if前就存在，但是运行到if时，if中的y与if外的y前后矛盾，不管y的值是否一致</p>
+<pre><code>public class exercise {
+    public static void main(String[] args) {
+        method();
+        int x = a;
+        System.out.println(a);
+    }
+    public static void method() {
+        a = 100;
+    }
+}</code></pre><p>同样的，若a存在与方法中，那么方法外无法调取a。</p>
+
       
 
       
@@ -201,6 +259,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
