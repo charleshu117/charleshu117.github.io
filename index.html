@@ -152,6 +152,147 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JAVA-Youtube-Three" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/13/JAVA-Youtube-Three/">JAVA Youtube Three</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/13/JAVA-Youtube-Three/" class="archive-article-date">
+  	<time datetime="2020-08-13T19:37:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="建立对象"><a href="#建立对象" class="headerlink" title="建立对象"></a>建立对象</h2><p>创造一个物件对应显示中的事物，并通过程序逻辑来模仿它的动作或反馈<br>创造对象的动作为<br>    public class name {}</p>
+<ol>
+<li>建立constructor<br>定义对象初始化的状态，如果是自定义的对象，就需要先建立constructor<br> a. public<br> b. 名字，必须与class名字一样<br> c. (参数类型 及参数符号)</li>
+<li>呼叫自定义对象<ol>
+<li>类型名称 自定义名称 = new 物件名称();</li>
+<li>呼叫之后就会执行物件中的程序逻辑</li>
+</ol>
+</li>
+</ol>
+<h2 id="为对象创建变量"><a href="#为对象创建变量" class="headerlink" title="为对象创建变量"></a>为对象创建变量</h2><h4 id="非静态"><a href="#非静态" class="headerlink" title="非静态"></a>非静态</h4><pre><code>public class Student {
+    public float weight;
+    public float height;
+    public Student() {
+        System.out.println(&quot;student created&quot;);
+    }
+}    </code></pre><p>自定义对象，及其初始化状态 (对自定义物件的描述)<br>    public class exercise {<br>        public static void main(String[] args) {<br>            Student A = new Student();<br>            Student B = new Student();<br>            Student C = new Student();<br>            A.height = 100.0f; //使用自定义物件变数,整体为名字，不同的名字相互独立<br>            A.weight = 30.0f;<br>            B.height = 120.0f;<br>            B.weight = 50.0f;<br>            C.height = 150.0f;<br>            C.weight = 70.0f;</p>
+<pre><code>        System.out.println(A.height);
+        System.out.println(B.height);
+        System.out.println(C.height);
+    }
+}</code></pre><p>对自定对象调用，并存储不同的个体的数据(创造一个叫A， B， C的自定义物件)<br>很直观</p>
+<h4 id="静态"><a href="#静态" class="headerlink" title="静态"></a>静态</h4><p>静态变量属于自定义对象的class，并不属于创造出的自定义对象<br>不需要在创造物件时进行创造静态变量，就可以直接存取<br>存在的意义：是这个自定义对象的class中通用的属性<br>例：<br>    public class Student {<br>        public static float x;<br>        }<br>    }<br>    public class exercise {<br>        public static void main(String[] args) {</p>
+<pre><code>        Student.x = 10; //Student.x就是名字
+
+    }
+}</code></pre><p>例： 建立一个叫做Monster的自定义对象，这个对象中有通用变量Num_Monsters(静态变量)，和各个属于这个class的独立对象的属性(非静态变量)<br>    public class Monster {<br>        public static int Num_Monsters; //定义静态变量，非创造<br>        public int HP;<br>        public int ID;<br>        public int DAMAGE; //定义非静态变量，非创造<br>        public Monster() { //constructor<br>        }<br>    }<br>可以理解为设计图纸<br>    public class exercise {<br>        public static void main(String[] args) {</p>
+<pre><code>        Monster.Num_Monsters = 386; //Monster class通用的变量
+
+        Monster Pikachu =  new Monster(); //建立一个叫做Pikachu的属于Monster的独立对象，可以理解为创建了一个特有姓名的独立底子
+        Pikachu.HP = 100;
+        Pikachu.DAMAGE = 10;  //定义属于Pikachu的属性
+        Monster Fire =  new Monster();
+        Fire.HP = 120;
+        Fire.DAMAGE = 8;
+    }
+}</code></pre><h2 id="为物件添加方法"><a href="#为物件添加方法" class="headerlink" title="为物件添加方法"></a>为物件添加方法</h2><pre><code>public class Student {
+    public static float x;
+
+    public float weight;
+    public float height;
+    public Student() {
+
+    }
+    public void print() {
+        System.out.println(&quot;A&quot;);
+    } //非静态方法，必须在新建的独立的物件基础上呼叫
+    public static void someprint() {
+        System.out.println(&quot;I am a student&quot;);
+    } //静态方法，通过class直接呼叫
+}</code></pre><p>例<br>    public class Student {<br>        public float weight;<br>        public float height;<br>        public float BMI() {<br>            return weight / (height * height);<br>        }<br>    }</p>
+<pre><code>public class exercise {
+    public static void main(String[] args) {
+        Student A = new Student();
+        Student B = new Student();
+        Student C = new Student();
+        A.height = 100.0f; //使用自定义物件变数,整体为名字，不同的名字相互独立
+        A.weight = 30.0f;
+        B.height = 120.0f;
+        B.weight = 50.0f;
+        C.height = 150.0f;
+        C.weight = 70.0f;
+
+        System.out.println(A.BMI());
+    }
+}</code></pre><p>非静态方法必须有非静态变量来实现，呼叫时需要先新建立特有对象</p>
+<h2 id="封装，修饰子"><a href="#封装，修饰子" class="headerlink" title="封装，修饰子"></a>封装，修饰子</h2><h4 id="public"><a href="#public" class="headerlink" title="public"></a>public</h4><p>有public修饰的变量或方法可以被另外的class的对象直接呼叫</p>
+<h4 id="private"><a href="#private" class="headerlink" title="private"></a>private</h4><p>不能被其他class中的对象存取。目的是为了将这个变量设定一个范围，而不是被公开的存取，但是这个私有变量的存取要通过一个公开的封装于物件类别中的方法</p>
+<h4 id="物件封装"><a href="#物件封装" class="headerlink" title="物件封装"></a>物件封装</h4><p>将属于这个物件类别的动作，封装在物件类别中，而不是主程式<br>例：<br>    public class product {<br>        public float oriprice;<br>        public String name;<br>        private int discount; //私有的变量，不能被其他类别存取<br>        public product() { //物件的初始状态<br>            name = “??”;<br>            oriprice = 0;<br>            discount = 10;<br>        }<br>        public float getprice() {<br>            return oriprice * (discount / 10.0f);<br>        }<br>        public void setDiscount(int inputdiscount) { //通过if判断用户输入的变量是否在预设的合理范围内<br>            if(inputdiscount &gt;=  0 &amp;&amp; inputdiscount &lt;=10) {<br>                discount = inputdiscount; //如果合理则将用户输入的变量值赋予私有变量并进行预封装的计算<br>            } else {<br>                System.out.println(“Invalid Discount”); //如果不合理则输出对应的内容<br>            }<br>        }<br>        public void print() {<br>            System.out.println(“name: “ + name + “ , price: “ + getprice()); //物件中的预设方法可以呼叫其他预设方法<br>        }<br>    }<br>    public class exercise {<br>        public static void main(String[] args) {<br>            product A = new product();<br>            A.name = “Apple”;<br>            A.oriprice = 10.0f;<br>            A.setDiscount(5);<br>            A.print();<br>            product B = new product();<br>            B.name = “Banana”;<br>            B.oriprice = 15.0f;<br>            B.setDiscount(-8);<br>            B.print();<br>        }<br>    }</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/13/JAVA-Youtube-Three/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JAVA-Youtube-Two" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1010,111 +1151,6 @@ false
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/07/22/JAVA-Operators-Four/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JAVA-Operators-Three" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/21/JAVA-Operators-Three/">JAVA Operators Three</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/21/JAVA-Operators-Three/" class="archive-article-date">
-  	<time datetime="2020-07-21T20:28:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h2><p>是程序设计中对位模式或二进制数的一元和二元操作。即对使用二进制表达的十进制整数进行每个二进制位上的0或1的逻辑判断，然后在整合成为一个新的二进制表达的十进制整数。从而提高运算效率。<br>AND: &amp; (两个相应的二进位都为1，该位的结果值才为1，否则为0)<br>OR: | (两个相应的二进位中只要有一个为1，该位的结果值为1。)<br>EXCLUSIVE OR 或 XOR: ^ (操作的结果是如果某位不同则该位为1，否则该位为0)<br>NOT: ~ unary operator (如负号) (使数字1成为0，0成为1。)<br>可以和=结合<br>&amp;=, |=, ^=<br>对于boolean type, 可以执行AND, OR, XOR, 但是不能执行NOT为了不和逻辑运算符相冲突。对于boolean type，位运算符的效果虽然与逻辑运算符一致但不会产生短路。<br>    public class exercise {<br>        public static void main(String[] args) {<br>            int a = 1000;<br>            int b = 1001;<br>            System.out.println(Integer.toBinaryString(a));<br>            System.out.println(Integer.toBinaryString(b));<br>            System.out.println(Integer.toBinaryString(a &amp; b));<br>            System.out.println(Integer.toBinaryString(a | b));<br>            System.out.println(Integer.toBinaryString(a ^ b));<br>            System.out.println(Integer.toBinaryString(<del>a));<br>            System.out.println(Integer.toBinaryString(</del>b));<br>        }<br>    }<br>    1111101000<br>    1111101001<br>    1111101000<br>    1111101001<br>    1<br>    11111111111111111111110000010111<br>    11111111111111111111110000010110</p>
-<h2 id="移位"><a href="#移位" class="headerlink" title="移位"></a>移位</h2><blockquote>
-<blockquote>
-<p>, &lt;&lt; 用来将一个二进制数中的每一位全部都向一个方向移动指定位数，溢出的部分将被舍弃，而空缺的部分填入一定的值</p>
-</blockquote>
-</blockquote>
-<h4 id="unsigned-right-shift-operator"><a href="#unsigned-right-shift-operator" class="headerlink" title="unsigned right shift operator"></a>unsigned right shift operator</h4><blockquote>
-<blockquote>
-<blockquote>
-<p>忽略原数字的正负的二进制代表，将所有二进制位向右移指定位数后，在高位插入相应位数的0<br> char,byte,short 也可以移位，但是会被转化为整数</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p> 移位也可以和=结合<br> 但是如果原对象是byte或short，在做unsigned right shift时，会被转化为整数，新加入的0会得到错误的结果。</p>
-<h2 id="if-else"><a href="#if-else" class="headerlink" title="if-else"></a>if-else</h2><p> 除了常见格式，还可以是<br> boolean-exp ? value0 : value1;<br>    条件        如果条件true    如果条件false</p>
-<pre><code>public class exercise {
-    public static void main(String[] args) {
-        System.out.println(ternary(9));
-        System.out.println(ternary(10));
-        System.out.println(standard(9));
-        System.out.println(standard(10));
-    }
-    static int ternary(int i) {
-        return i &lt; 10 ? i * 100 : i * 10;
-    }
-    static int standard(int i) {
-        if(i &lt; 10)
-            return i * 100;
-        else
-            return i * 10;
-    }
-}</code></pre><h2 id="String-operator"><a href="#String-operator" class="headerlink" title="String operator"></a>String operator</h2><p>+, +=<br>concatenate<br>如果string object + int object<br>会返回string值<br>如果“”+int object 等价于 Integer.toString()</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/21/JAVA-Operators-Three/">展开全文 >></a>
         </p>
       
 

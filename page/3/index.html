@@ -152,6 +152,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JAVA-Object-Two" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/05/JAVA-Object-Two/">JAVA Object Two</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/05/JAVA-Object-Two/" class="archive-article-date">
+  	<time datetime="2020-07-06T01:03:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="类别"><a href="#类别" class="headerlink" title="类别"></a>类别</h2><h4 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h4><p>程序本身为用户提供了一系列的服务。同样的，作为基础单位的对象，也可以被视为为程序提供的服务。不同功能的服务排列组合最终达到解决问题的作用。<br>对象即服务使得程序语言拥有了很好的连贯性。每一个对象往往提供了单一的服务功能。一个好的程序并不是包含了少量的承载了很多功能的对象，而是包含很多单一功能的对象且每一个对象之间又能进行连贯的配合。</p>
+<h4 id="隐藏"><a href="#隐藏" class="headerlink" title="隐藏"></a>隐藏</h4><p>原因之一：用户不能对内部运行进行修改。原因之二：库设计者进行内部运行的修改时不会对用户产生影响。<br>JAVA提供了public，private，prtected三种隔离方式。</p>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>设置好一个类别之后，这个类可以被复制，复制后的类继承了本体原有的属性并可以进行进一步的修改。只是当本体被修改时，复制也会相应的改变。基础类别囊括了所有被包括物件的共同特征，衍生类别则可以在共同特征基础上加入独有的特征。<br>OOP同一了现实意义和编程意义，使代码更容易被理解。OOP中衍生类别继承了基础类别的特性后，使得接口统一，指令能更加通用，执行效率更高。在主类别下执行通用指令，例BirdController，不需要知道具体对象是谁。<br>创造衍生类别的方法：<br>1、 在基础类别下添加额外的属性。适用于基础类被不能被满足需求的情况。(is-like-a)已有的系统在没有拓展的情况下不能对新产生的类别进行指令下达。例：cooling system作为基础类别可以对air conditioner下达指令，但是不能对同为衍生类别的heat pump下达所有指令。要完善这一系统，必须将原有的cooling system扩充加入温度上升调节功能。<br>2、 基础类别包含了更多的特性，而衍生类别只包含了其中的几种。(override)(is-a)</p>
+<h4 id="late-binding"><a href="#late-binding" class="headerlink" title="late binding"></a>late binding</h4><p>编译时，属性控件的绑定可以是early binding，即指令的绑定类别在编译之前就已经确定。early binding执行效率更高，但是并不能灵活套用不同的对象变量，使得代码编写的难度提升。因此late binding不再需要引用某个库，而是可以任意指定指令发出对象，指令的调用也更加灵活。<br>例：<br>void doSomething(Shape shape){<br>    shape.erase();<br>    // …<br>    shape.draw();<br>}<br>doSomething()就是这个库（类别）中的指令集，但是因为有void，它是一个late binding的指令集，而()中需要加入相应对象来实现指令。Shape规定了对象类别，而shape类别下的任意变量。<br>Circle circle = new Circle();<br>doSomething(circle);<br>绑定之后，doSomething就可以对指定的母类别下的子类别下达指令。在上述例子中，Circle is a Shape，因此Shape能接收到的doSomething指令也能被Circle接收并执行。这一过程，即指令下达对象为子类别，但是执行动作是母类别就规定好的，被称为upcasting。这一过程省略了判断的，使得执行效率提升。但是同时的，相同的指令又能根据不同子类别的对象而自动进行调整具体的行为。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA note</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/05/JAVA-Object-Two/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JAVA-Object-One" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
