@@ -152,6 +152,141 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JAVA-Youtube-Four" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/14/JAVA-Youtube-Four/">JAVA Youtube Four</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/14/JAVA-Youtube-Four/" class="archive-article-date">
+  	<time datetime="2020-08-14T18:05:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h2><p>用于存储class<br>src文件夹之下的文件夹</p>
+<ol>
+<li>同名的class可以存在于不同的package中</li>
+<li>可以更有结构性</li>
+</ol>
+<p>package中可以再创造package<br>    pre_package_name.xxx</p>
+<p>需要再一个package中的class里呼叫另一个package的class需要先import</p>
+<h4 id="Fully-Qualified-Name-FQN"><a href="#Fully-Qualified-Name-FQN" class="headerlink" title="Fully Qualified Name (FQN)"></a>Fully Qualified Name (FQN)</h4><p>如果出现需要引用不同package中相同的class，相同的对象或功能，使用FQN引用。<br>package_name.class_name.reference_name</p>
+<h2 id="Overload"><a href="#Overload" class="headerlink" title="Overload"></a>Overload</h2><ol>
+<li>public class Number {<pre><code>private long number; //定义 number的属性
+public Number() {
+    number = 0;
+} //设定number的初始状态
+public void print() {
+    System.out.println(&quot;From Number: &quot; + number);
+}
+public void setlong(long input) {
+    number = input;
+}
+public void setfloat(float input) {
+    number = (long)input;
+}
+public void setstring(String input) {
+    number = Long.valueOf(input);
+} //字串转换为long</code></pre>}<br>public class exercise {<pre><code>public static void main(String[] args) {
+    long myLong = 10;
+    float myFloat = 100.10f;
+    String myString = &quot;777&quot;;
+    Number x = new Number();
+    x.setlong(myLong);
+    x.setfloat(myFloat);
+    x.setstring(myString);
+    x.print();
+}</code></pre>}</li>
+<li> public class Number {<pre><code>private long number;
+public Number() {
+    number = 0;
+}
+public void print() {
+    System.out.println(&quot;From Number: &quot; + number);
+}
+public void set(long input) {
+    number = input;
+}
+public void set(float input) {
+    number = (long)input;
+}
+public void set(String input) {
+    number = Long.valueOf(input);
+} //字串转换为long</code></pre> }<br> public class exercise {<pre><code>public static void main(String[] args) {
+    long myLong = 10;
+    float myFloat = 100.10f;
+    String myString = &quot;777&quot;;
+    Number x = new Number();
+    x.set(myLong);
+    x.set(myFloat);
+    x.set(myString);
+    x.print();
+}</code></pre> }<br>写法1与写法2的执行与输出是一样的， 之所以封装的方法可以有一样的名字是因为他们的输入值的类别是不一样的<br>即overloading</li>
+</ol>
+<p>overload同样也可以应用与constructor， constructor也可有参数</p>
+<p>注意：<br>    1. 不能以回传值的不同类型做overloading<br>    2. constructor不能在创造之后被呼叫，只能创建时被呼叫；constructor name一定与class name 一样</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/14/JAVA-Youtube-Four/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JAVA-Youtube-Three" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1046,111 +1181,6 @@ while(boolean-expression)</code></pre><p>do-while 循环即使boolean expression
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/07/23/JAVA-Controlling-Execution-One/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JAVA-Operators-Four" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/22/JAVA-Operators-Four/">JAVA Operators Four</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/22/JAVA-Operators-Four/" class="archive-article-date">
-  	<time datetime="2020-07-22T22:10:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Casting-Operator"><a href="#Casting-Operator" class="headerlink" title="Casting Operator"></a>Casting Operator</h2><pre><code>int i = 200;
-long lng = (long)i;</code></pre><p>将原本是int的i定义为long的操作符，这个操作符如果作用于widening，casting一个承载更少信息的原始变量到一个承载更多信息的原始变量，则不需要<br>除了boolean不能实行casting，其他原始变量都可以casting</p>
-<h4 id="截断-truncation-与四舍五入"><a href="#截断-truncation-与四舍五入" class="headerlink" title="截断(truncation)与四舍五入"></a>截断(truncation)与四舍五入</h4><pre><code>public class exercise {
-    public static void main(String[] args) {
-        double above = 0.7, below = 0.4;
-        float fabove = 0.7f, fbelow = 0.4f;
-        System.out.println(&quot;(int)above &quot;+ (int)above);
-        System.out.println(&quot;(int)below &quot;+ (int)below);
-        System.out.println(&quot;(int)fabove &quot;+ (int)fabove);
-        System.out.println(&quot;(int)fbelow &quot;+ (int)fbelow);
-    }
-} /* Output:
-(int)above 0
-(int)below 0
-(int)fabove 0
-(int)fbelow 0
-*///~</code></pre><p>如果是double或float的变量casting到int，都是取整，舍弃小数<br>round的操作通过：<br>    Math.round();</p>
-<h4 id="Promotion"><a href="#Promotion" class="headerlink" title="Promotion"></a>Promotion</h4><p>在进行数学计算或位运算时，比整数承载能力小的原始变量会先被转换为整数后在进行计算，其结果返还的是整数，需要手动添加casting<br>而不同承载能力的原始变量相互计算时，返还的结果位更大承载能力的类型。</p>
-<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>Write a method that takes two String arguments and uses all the boolean comparisons to compare the two Strings and print the results. For the == and !=, also perform the equals() test. In main(), call your method with some different String objects.<br>    public class exercise {</p>
-<pre><code>    public static void main(String[] args) {
-        StringCompare newCompare = new StringCompare();
-        newCompare.comparison(&quot;abc&quot;, &quot;def&quot;);
-    }
-}
-class StringCompare {
-    void comparison (String s1, String s2) {
-        System.out.println(s1 == s2);
-        System.out.println(s1.equals(s2));
-    }
-} /* Output:
-false
-false
-*///~</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/22/JAVA-Operators-Four/">展开全文 >></a>
         </p>
       
 

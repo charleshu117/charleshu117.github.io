@@ -152,6 +152,111 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JAVA-Operators-Four" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/22/JAVA-Operators-Four/">JAVA Operators Four</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/22/JAVA-Operators-Four/" class="archive-article-date">
+  	<time datetime="2020-07-22T22:10:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Casting-Operator"><a href="#Casting-Operator" class="headerlink" title="Casting Operator"></a>Casting Operator</h2><pre><code>int i = 200;
+long lng = (long)i;</code></pre><p>将原本是int的i定义为long的操作符，这个操作符如果作用于widening，casting一个承载更少信息的原始变量到一个承载更多信息的原始变量，则不需要<br>除了boolean不能实行casting，其他原始变量都可以casting</p>
+<h4 id="截断-truncation-与四舍五入"><a href="#截断-truncation-与四舍五入" class="headerlink" title="截断(truncation)与四舍五入"></a>截断(truncation)与四舍五入</h4><pre><code>public class exercise {
+    public static void main(String[] args) {
+        double above = 0.7, below = 0.4;
+        float fabove = 0.7f, fbelow = 0.4f;
+        System.out.println(&quot;(int)above &quot;+ (int)above);
+        System.out.println(&quot;(int)below &quot;+ (int)below);
+        System.out.println(&quot;(int)fabove &quot;+ (int)fabove);
+        System.out.println(&quot;(int)fbelow &quot;+ (int)fbelow);
+    }
+} /* Output:
+(int)above 0
+(int)below 0
+(int)fabove 0
+(int)fbelow 0
+*///~</code></pre><p>如果是double或float的变量casting到int，都是取整，舍弃小数<br>round的操作通过：<br>    Math.round();</p>
+<h4 id="Promotion"><a href="#Promotion" class="headerlink" title="Promotion"></a>Promotion</h4><p>在进行数学计算或位运算时，比整数承载能力小的原始变量会先被转换为整数后在进行计算，其结果返还的是整数，需要手动添加casting<br>而不同承载能力的原始变量相互计算时，返还的结果位更大承载能力的类型。</p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>Write a method that takes two String arguments and uses all the boolean comparisons to compare the two Strings and print the results. For the == and !=, also perform the equals() test. In main(), call your method with some different String objects.<br>    public class exercise {</p>
+<pre><code>    public static void main(String[] args) {
+        StringCompare newCompare = new StringCompare();
+        newCompare.comparison(&quot;abc&quot;, &quot;def&quot;);
+    }
+}
+class StringCompare {
+    void comparison (String s1, String s2) {
+        System.out.println(s1 == s2);
+        System.out.println(s1.equals(s2));
+    }
+} /* Output:
+false
+false
+*///~</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/22/JAVA-Operators-Four/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JAVA-Operators-Three" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1119,83 +1224,6 @@ class DataOnly {
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/07/14/JAVA-Object-Four/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JAVA-Object-Three" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/10/JAVA-Object-Three/">JAVA Object Three</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/10/JAVA-Object-Three/" class="archive-article-date">
-  	<time datetime="2020-07-10T19:31:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><h4 id="单一根对象发展出的层级系统"><a href="#单一根对象发展出的层级系统" class="headerlink" title="单一根对象发展出的层级系统"></a>单一根对象发展出的层级系统</h4><p>JAVA 中，Object就是所有衍生类别所共有的单一母类别。<br>好处：<br>所有的对象都基于同一根对象的结构是的向后兼容更容易实现。且因为这些对象的最基础的接口都是统一且一致，初学者不需要自行构建独有且逻辑自洽的分层结构。<br>在这个分层结构下的所有对象同属于一个堆栈，指令能够快速传达。<br>因为所有对象都能够被定义，系统级的功能都能找到对象。</p>
-<h4 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h4><p>在设计一个程序之前，并不能准确知道要用到多少对象。容器的作用就是可以指代所有可能用到的对象。JAVA中，List存储数列，Map是关联数组，Set代表了一个种类的对象，此外还有queue，tree，stack之类<br>选择容器：<br>    1. 不同种类的容器有不同的基础功能<br>    2. 不同种类的容器的执行效率也各有不同</p>
-<h4 id="参数化类型"><a href="#参数化类型" class="headerlink" title="参数化类型"></a>参数化类型</h4><p>当潜在对象比较确定是属于同类别是，upcasting相当容易，但是如果并不能确定，对一个特定对象downcasting就显得更为必要，也更不容易出错。然而参数化对象这一机制既不需要downcasting也不会让程序因为对象出错而降低运行效率。比如参数化容器将能够自动筛选同一种类的对象。</p>
-<h4 id="对象的创建和销毁"><a href="#对象的创建和销毁" class="headerlink" title="对象的创建和销毁"></a>对象的创建和销毁</h4><p>当一个对象被创建且使用完毕后，应当及时销毁。否则会占用额外的系统资源。当一个对象被二次引用且作用于另一程序，这个问题就显得更为棘手。<br>解决方法：<br>    1. 根据存储速度和程序响应时间来决定最长需要的存储时间。<br>    2. 在动态内存的堆栈中创建对象。这一方法不需要提前判断程序的运行时间，对象存在时长受内存剩余空间大小决定。JAVA中，new指令能够在动态内存中生成对象。<br>在JAVA中，garbage collector被设计为应对释放内存的问题。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/10/JAVA-Object-Three/">展开全文 >></a>
         </p>
       
 
