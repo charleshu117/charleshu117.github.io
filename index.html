@@ -152,6 +152,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JAVA-Initialization-Cleanup-Four" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/15/JAVA-Initialization-Cleanup-Four/">JAVA Initialization &amp; Cleanup Four</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/15/JAVA-Initialization-Cleanup-Four/" class="archive-article-date">
+  	<time datetime="2020-08-15T19:26:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><h4 id="允许用户输入的指令"><a href="#允许用户输入的指令" class="headerlink" title="允许用户输入的指令"></a>允许用户输入的指令</h4><pre><code>import java.util.Scanner;
+Scanner name = new Scanner(System.in);
+类型 名字 = name.next();</code></pre><h4 id="判断字符串是否与另一字符串一致"><a href="#判断字符串是否与另一字符串一致" class="headerlink" title="判断字符串是否与另一字符串一致"></a>判断字符串是否与另一字符串一致</h4><pre><code>String a = &quot;aaa&quot;;
+if(a.equals(&quot;aaa&quot;)) {}</code></pre><h2 id="Garbage-Collector"><a href="#Garbage-Collector" class="headerlink" title="Garbage Collector"></a>Garbage Collector</h2><p>在Java中，由于所有对象都在堆内存区，废弃对象所占用的内存都由Java中的垃圾回收器来回收，Java的设计者认为不需要析构函数的存在，这关键在于Java的“不需要人工参与”的垃圾回收机制。<br>当你不再需要使用一个对象，或者说，当不存在引用指向某一个对象时，Java虚拟机(JVM)会将该对象标记为释放状态。但是，这并不意味着JVM一定会释放这些对象所占用的内存，或许只有到程序濒临存储空间被用完的那一刻，对象占用的空间才会得到释放，即使你调用System.gc()方法也不见得一定有效，因为这只是给JVM一个建议，而非命令。<br>    1. 对象可能不会被回收；<br>    2. GC不是destruction<br>    3. GC只针对内存空间</p>
+<h2 id="finalize"><a href="#finalize" class="headerlink" title="finalize()"></a>finalize()</h2><p>垃圾回收器虽然可以自动回收不再被使用的对象的内存，但是它却也仅限于能够释放通过使用new而获得的存储区域。换句话说，若要释放通过某种创建对象方式以外的方式为对象分配的存储空间，这便是finalize()的用处所在。<br>但是，你不可能知道何时——甚至是否——finalize()被调用，因此你不应该依赖于使用finalize方法来回收某些短缺的资源，而必须创建其他的“清理”方法，并且明确地调用它们。<br>不过，finalize()还有一个并不依赖于每次都要被调用的用法，那就是对象终结条件的验证。通俗地讲就是：某个对象要么不被销毁，一旦要被销毁，就应该满足某种终结条件。finalize()可以用来检查要被销毁的对象是否满足这种条件。</p>
+<h2 id="initialization"><a href="#initialization" class="headerlink" title="initialization"></a>initialization</h2><p>建立一个primitive 对象时，如果不设定初始值，则会给一个默认值<br>除了hard code，也可以在初始化时通过方法设定初始值<br>    public class Number {<br>        int i = f();<br>        int j = g(i); //注意，j只有在现有i的情况下才能被初始化，因此j的定义应该在i之后。<br>        int f() {return 11;}<br>        int g(int n) {return n * 10;}<br>        //    System.out.println(“From Number: “ + number);</p>
+<pre><code>    //} 
+}</code></pre><p>如果一个class中有对其他class的constructor进行呼叫，同时也包含了自己的constructor<br>那么在呼叫这个class时，回先进行除自身的constructor以外的对象初始化，再进行对自身的constructor的初始化</p>
+<p>static对象会在一个class被呼叫之后初始化，并且所有static对象都会被初始化，但是只有一次</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/15/JAVA-Initialization-Cleanup-Four/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JAVA-Youtube-Four" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1088,99 +1170,6 @@ class Apple {
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/07/27/JAVA-Controlling-Execution-Two/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JAVA-Controlling-Execution-One" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/23/JAVA-Controlling-Execution-One/">JAVA Controlling Execution One</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/23/JAVA-Controlling-Execution-One/" class="archive-article-date">
-  	<time datetime="2020-07-23T18:54:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="if-else"><a href="#if-else" class="headerlink" title="if-else"></a>if-else</h2><pre><code>if(boolean-expression)
-    statement;</code></pre><p>or<br>    if(boolean-expression)<br>        statement;<br>    else<br>        statement;<br>boolean-expression一定产生boolean值，statement可以是单行代码以；结束，也可以是复合代码以}结束。<br>例：比大小<br>    public class exercise {<br>        static int result = 0;<br>        static void test(int testval, int target) {<br>            if(testval &gt; target)<br>                result = 1;<br>            else if(testval &lt; target)<br>                result = -1;<br>            else<br>                result = 0;<br>        }<br>        public static void main(String[] args) {<br>            test(10, 5);<br>            System.out.println(result);<br>            test(5, 10);<br>            System.out.println(result);<br>            test(5, 5);<br>            System.out.println(result);<br>        }<br>    }/* Output:<br>    1<br>    -1<br>    0<br>    *///~</p>
-<h2 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h2><p>while, do-while, for<br>重复一个描述，直到判断语句为false</p>
-<pre><code>while(boolean-expression)
-    statement</code></pre><p>例：<br>    public class exercise {<br>        static boolean condition( ) {<br>            boolean result = Math.random() &lt; 0.99;<br>            System.out.println(result + “, “);<br>            return result;<br>        }<br>        public static void main(String[] args) {<br>            while(condition())<br>                System.out.println(“Inside ‘while’”);<br>            System.out.println(“Exited ‘while’”);<br>        }<br>    }/* Output:<br>    true,<br>    Inside ‘while’<br>    true,<br>    Inside ‘while’<br>    true,<br>    Inside ‘while’<br>    false,<br>    Exited ‘while’<br>    *///~<br>condition()产生boolean值，random()产生0～1之间的随机数，包括0不包括1。</p>
-<pre><code>do
-    statement
-while(boolean-expression)</code></pre><p>do-while 循环即使boolean expression不满足也会至少执行一次循环</p>
-<pre><code>for(initialization; boolean-expression; step)
-    statement</code></pre><p>initialization, boolean-expression, step可以为空<br>例：通过for loop打印ASCII小写字母<br>    public class exercise {<br>        public static void main(String[] args) {<br>            for(char c = 0; c &lt; 128; c++)<br>                if(Character.isLowerCase(c))<br>                    System.out.println(“value: “ + (int)c +” character: “ + c);<br>        }<br>    }<br><em>小写字母从第97位开始122位结束</em><br><em>character在ASCII中以整数指代</em><br>char c = 0初始化c, c &lt; 128为循环条件, c++一次循环满足之后c增加一<br>isLowerCase()检测c指代的character是否为小写</p>
-<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><ol>
-<li><p>Write a program that prints values from 1 to 100.<br> public class exercise {</p>
-<pre><code>public static void main(String[] args) {
-    for(int i = 1; i &lt;= 100; i++)
-        System.out.println(i);
-}</code></pre><p> }</p>
-</li>
-<li><p>Write a program that uses two nested for loops and the modulus operator (%) to detect and print the prime numbers from 1 to 10,000. (Prime numbers are natural numbers that are not evenly divisible by any other number except for themselves and one). Display all the primes found.</p>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/23/JAVA-Controlling-Execution-One/">展开全文 >></a>
         </p>
       
 

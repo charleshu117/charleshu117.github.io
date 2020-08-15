@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Coding Journey</title>
+  <title>JAVA Initialization &amp; Cleanup Four | Coding Journey</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Coding Journey">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="补充允许用户输入的指令import java.util.Scanner; Scanner name &#x3D; new Scanner(System.in); 类型 名字 &#x3D; name.next();判断字符串是否与另一字符串一致String a &#x3D; &quot;aaa&quot;; if(a.equals(&quot;aaa&quot;)) {}Garbage Collector在Java中，由于所有对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA Initialization &amp; Cleanup Four">
+<meta property="og:url" content="http://yoursite.com/2020/08/15/JAVA-Initialization-Cleanup-Four/index.html">
 <meta property="og:site_name" content="Coding Journey">
+<meta property="og:description" content="补充允许用户输入的指令import java.util.Scanner; Scanner name &#x3D; new Scanner(System.in); 类型 名字 &#x3D; name.next();判断字符串是否与另一字符串一致String a &#x3D; &quot;aaa&quot;; if(a.equals(&quot;aaa&quot;)) {}Garbage Collector在Java中，由于所有对">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-15T19:26:49.000Z">
+<meta property="article:modified_time" content="2020-08-15T21:43:20.528Z">
 <meta property="article:author" content="Chao Hu">
+<meta property="article:tag" content="JAVA Note">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Coding Journey" type="application/atom+xml">
@@ -150,51 +155,59 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-JAVA-Controlling-Execution-One" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-JAVA-Initialization-Cleanup-Four" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/23/JAVA-Controlling-Execution-One/">JAVA Controlling Execution One</a>
+    <h1 class="article-title" itemprop="name">
+      JAVA Initialization &amp; Cleanup Four
     </h1>
   
 
         
-        <a href="/2020/07/23/JAVA-Controlling-Execution-One/" class="archive-article-date">
-  	<time datetime="2020-07-23T18:54:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-23</time>
+        <a href="/2020/08/15/JAVA-Initialization-Cleanup-Four/" class="archive-article-date">
+  	<time datetime="2020-08-15T19:26:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="if-else"><a href="#if-else" class="headerlink" title="if-else"></a>if-else</h2><pre><code>if(boolean-expression)
-    statement;</code></pre><p>or<br>    if(boolean-expression)<br>        statement;<br>    else<br>        statement;<br>boolean-expression一定产生boolean值，statement可以是单行代码以；结束，也可以是复合代码以}结束。<br>例：比大小<br>    public class exercise {<br>        static int result = 0;<br>        static void test(int testval, int target) {<br>            if(testval &gt; target)<br>                result = 1;<br>            else if(testval &lt; target)<br>                result = -1;<br>            else<br>                result = 0;<br>        }<br>        public static void main(String[] args) {<br>            test(10, 5);<br>            System.out.println(result);<br>            test(5, 10);<br>            System.out.println(result);<br>            test(5, 5);<br>            System.out.println(result);<br>        }<br>    }/* Output:<br>    1<br>    -1<br>    0<br>    *///~</p>
-<h2 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h2><p>while, do-while, for<br>重复一个描述，直到判断语句为false</p>
-<pre><code>while(boolean-expression)
-    statement</code></pre><p>例：<br>    public class exercise {<br>        static boolean condition( ) {<br>            boolean result = Math.random() &lt; 0.99;<br>            System.out.println(result + “, “);<br>            return result;<br>        }<br>        public static void main(String[] args) {<br>            while(condition())<br>                System.out.println(“Inside ‘while’”);<br>            System.out.println(“Exited ‘while’”);<br>        }<br>    }/* Output:<br>    true,<br>    Inside ‘while’<br>    true,<br>    Inside ‘while’<br>    true,<br>    Inside ‘while’<br>    false,<br>    Exited ‘while’<br>    *///~<br>condition()产生boolean值，random()产生0～1之间的随机数，包括0不包括1。</p>
-<pre><code>do
-    statement
-while(boolean-expression)</code></pre><p>do-while 循环即使boolean expression不满足也会至少执行一次循环</p>
-<pre><code>for(initialization; boolean-expression; step)
-    statement</code></pre><p>initialization, boolean-expression, step可以为空<br>例：通过for loop打印ASCII小写字母<br>    public class exercise {<br>        public static void main(String[] args) {<br>            for(char c = 0; c &lt; 128; c++)<br>                if(Character.isLowerCase(c))<br>                    System.out.println(“value: “ + (int)c +” character: “ + c);<br>        }<br>    }<br><em>小写字母从第97位开始122位结束</em><br><em>character在ASCII中以整数指代</em><br>char c = 0初始化c, c &lt; 128为循环条件, c++一次循环满足之后c增加一<br>isLowerCase()检测c指代的character是否为小写</p>
-<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><ol>
-<li><p>Write a program that prints values from 1 to 100.<br> public class exercise {</p>
-<pre><code>public static void main(String[] args) {
-    for(int i = 1; i &lt;= 100; i++)
-        System.out.println(i);
-}</code></pre><p> }</p>
-</li>
-<li><p>Write a program that uses two nested for loops and the modulus operator (%) to detect and print the prime numbers from 1 to 10,000. (Prime numbers are natural numbers that are not evenly divisible by any other number except for themselves and one). Display all the primes found.</p>
-</li>
-</ol>
+        <h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><h4 id="允许用户输入的指令"><a href="#允许用户输入的指令" class="headerlink" title="允许用户输入的指令"></a>允许用户输入的指令</h4><pre><code>import java.util.Scanner;
+Scanner name = new Scanner(System.in);
+类型 名字 = name.next();</code></pre><h4 id="判断字符串是否与另一字符串一致"><a href="#判断字符串是否与另一字符串一致" class="headerlink" title="判断字符串是否与另一字符串一致"></a>判断字符串是否与另一字符串一致</h4><pre><code>String a = &quot;aaa&quot;;
+if(a.equals(&quot;aaa&quot;)) {}</code></pre><h2 id="Garbage-Collector"><a href="#Garbage-Collector" class="headerlink" title="Garbage Collector"></a>Garbage Collector</h2><p>在Java中，由于所有对象都在堆内存区，废弃对象所占用的内存都由Java中的垃圾回收器来回收，Java的设计者认为不需要析构函数的存在，这关键在于Java的“不需要人工参与”的垃圾回收机制。<br>当你不再需要使用一个对象，或者说，当不存在引用指向某一个对象时，Java虚拟机(JVM)会将该对象标记为释放状态。但是，这并不意味着JVM一定会释放这些对象所占用的内存，或许只有到程序濒临存储空间被用完的那一刻，对象占用的空间才会得到释放，即使你调用System.gc()方法也不见得一定有效，因为这只是给JVM一个建议，而非命令。<br>    1. 对象可能不会被回收；<br>    2. GC不是destruction<br>    3. GC只针对内存空间</p>
+<h2 id="finalize"><a href="#finalize" class="headerlink" title="finalize()"></a>finalize()</h2><p>垃圾回收器虽然可以自动回收不再被使用的对象的内存，但是它却也仅限于能够释放通过使用new而获得的存储区域。换句话说，若要释放通过某种创建对象方式以外的方式为对象分配的存储空间，这便是finalize()的用处所在。<br>但是，你不可能知道何时——甚至是否——finalize()被调用，因此你不应该依赖于使用finalize方法来回收某些短缺的资源，而必须创建其他的“清理”方法，并且明确地调用它们。<br>不过，finalize()还有一个并不依赖于每次都要被调用的用法，那就是对象终结条件的验证。通俗地讲就是：某个对象要么不被销毁，一旦要被销毁，就应该满足某种终结条件。finalize()可以用来检查要被销毁的对象是否满足这种条件。</p>
+<h2 id="initialization"><a href="#initialization" class="headerlink" title="initialization"></a>initialization</h2><p>建立一个primitive 对象时，如果不设定初始值，则会给一个默认值<br>除了hard code，也可以在初始化时通过方法设定初始值<br>    public class Number {<br>        int i = f();<br>        int j = g(i); //注意，j只有在现有i的情况下才能被初始化，因此j的定义应该在i之后。<br>        int f() {return 11;}<br>        int g(int n) {return n * 10;}<br>        //    System.out.println(“From Number: “ + number);</p>
+<pre><code>    //} 
+}</code></pre><p>如果一个class中有对其他class的constructor进行呼叫，同时也包含了自己的constructor<br>那么在呼叫这个class时，回先进行除自身的constructor以外的对象初始化，再进行对自身的constructor的初始化</p>
+<p>static对象会在一个class被呼叫之后初始化，并且所有static对象都会被初始化，但是只有一次</p>
 
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -214,16 +227,75 @@ while(boolean-expression)</code></pre><p>do-while 循环即使boolean expression
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/23/JAVA-Controlling-Execution-One/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/15/JAVA-Initialization-Cleanup-Four/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/08/14/JAVA-Youtube-Four/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JAVA Youtube Four</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -243,1034 +315,14 @@ while(boolean-expression)</code></pre><p>do-while 循环即使boolean expression
 
 
 
-
-  
-    <article id="post-JAVA-Operators-Four" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/22/JAVA-Operators-Four/">JAVA Operators Four</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/22/JAVA-Operators-Four/" class="archive-article-date">
-  	<time datetime="2020-07-22T22:10:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Casting-Operator"><a href="#Casting-Operator" class="headerlink" title="Casting Operator"></a>Casting Operator</h2><pre><code>int i = 200;
-long lng = (long)i;</code></pre><p>将原本是int的i定义为long的操作符，这个操作符如果作用于widening，casting一个承载更少信息的原始变量到一个承载更多信息的原始变量，则不需要<br>除了boolean不能实行casting，其他原始变量都可以casting</p>
-<h4 id="截断-truncation-与四舍五入"><a href="#截断-truncation-与四舍五入" class="headerlink" title="截断(truncation)与四舍五入"></a>截断(truncation)与四舍五入</h4><pre><code>public class exercise {
-    public static void main(String[] args) {
-        double above = 0.7, below = 0.4;
-        float fabove = 0.7f, fbelow = 0.4f;
-        System.out.println(&quot;(int)above &quot;+ (int)above);
-        System.out.println(&quot;(int)below &quot;+ (int)below);
-        System.out.println(&quot;(int)fabove &quot;+ (int)fabove);
-        System.out.println(&quot;(int)fbelow &quot;+ (int)fbelow);
-    }
-} /* Output:
-(int)above 0
-(int)below 0
-(int)fabove 0
-(int)fbelow 0
-*///~</code></pre><p>如果是double或float的变量casting到int，都是取整，舍弃小数<br>round的操作通过：<br>    Math.round();</p>
-<h4 id="Promotion"><a href="#Promotion" class="headerlink" title="Promotion"></a>Promotion</h4><p>在进行数学计算或位运算时，比整数承载能力小的原始变量会先被转换为整数后在进行计算，其结果返还的是整数，需要手动添加casting<br>而不同承载能力的原始变量相互计算时，返还的结果位更大承载能力的类型。</p>
-<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>Write a method that takes two String arguments and uses all the boolean comparisons to compare the two Strings and print the results. For the == and !=, also perform the equals() test. In main(), call your method with some different String objects.<br>    public class exercise {</p>
-<pre><code>    public static void main(String[] args) {
-        StringCompare newCompare = new StringCompare();
-        newCompare.comparison(&quot;abc&quot;, &quot;def&quot;);
-    }
-}
-class StringCompare {
-    void comparison (String s1, String s2) {
-        System.out.println(s1 == s2);
-        System.out.println(s1.equals(s2));
-    }
-} /* Output:
-false
-false
-*///~</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/22/JAVA-Operators-Four/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JAVA-Operators-Three" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/21/JAVA-Operators-Three/">JAVA Operators Three</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/21/JAVA-Operators-Three/" class="archive-article-date">
-  	<time datetime="2020-07-21T20:28:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h2><p>是程序设计中对位模式或二进制数的一元和二元操作。即对使用二进制表达的十进制整数进行每个二进制位上的0或1的逻辑判断，然后在整合成为一个新的二进制表达的十进制整数。从而提高运算效率。<br>AND: &amp; (两个相应的二进位都为1，该位的结果值才为1，否则为0)<br>OR: | (两个相应的二进位中只要有一个为1，该位的结果值为1。)<br>EXCLUSIVE OR 或 XOR: ^ (操作的结果是如果某位不同则该位为1，否则该位为0)<br>NOT: ~ unary operator (如负号) (使数字1成为0，0成为1。)<br>可以和=结合<br>&amp;=, |=, ^=<br>对于boolean type, 可以执行AND, OR, XOR, 但是不能执行NOT为了不和逻辑运算符相冲突。对于boolean type，位运算符的效果虽然与逻辑运算符一致但不会产生短路。<br>    public class exercise {<br>        public static void main(String[] args) {<br>            int a = 1000;<br>            int b = 1001;<br>            System.out.println(Integer.toBinaryString(a));<br>            System.out.println(Integer.toBinaryString(b));<br>            System.out.println(Integer.toBinaryString(a &amp; b));<br>            System.out.println(Integer.toBinaryString(a | b));<br>            System.out.println(Integer.toBinaryString(a ^ b));<br>            System.out.println(Integer.toBinaryString(<del>a));<br>            System.out.println(Integer.toBinaryString(</del>b));<br>        }<br>    }<br>    1111101000<br>    1111101001<br>    1111101000<br>    1111101001<br>    1<br>    11111111111111111111110000010111<br>    11111111111111111111110000010110</p>
-<h2 id="移位"><a href="#移位" class="headerlink" title="移位"></a>移位</h2><blockquote>
-<blockquote>
-<p>, &lt;&lt; 用来将一个二进制数中的每一位全部都向一个方向移动指定位数，溢出的部分将被舍弃，而空缺的部分填入一定的值</p>
-</blockquote>
-</blockquote>
-<h4 id="unsigned-right-shift-operator"><a href="#unsigned-right-shift-operator" class="headerlink" title="unsigned right shift operator"></a>unsigned right shift operator</h4><blockquote>
-<blockquote>
-<blockquote>
-<p>忽略原数字的正负的二进制代表，将所有二进制位向右移指定位数后，在高位插入相应位数的0<br> char,byte,short 也可以移位，但是会被转化为整数</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p> 移位也可以和=结合<br> 但是如果原对象是byte或short，在做unsigned right shift时，会被转化为整数，新加入的0会得到错误的结果。</p>
-<h2 id="if-else"><a href="#if-else" class="headerlink" title="if-else"></a>if-else</h2><p> 除了常见格式，还可以是<br> boolean-exp ? value0 : value1;<br>    条件        如果条件true    如果条件false</p>
-<pre><code>public class exercise {
-    public static void main(String[] args) {
-        System.out.println(ternary(9));
-        System.out.println(ternary(10));
-        System.out.println(standard(9));
-        System.out.println(standard(10));
-    }
-    static int ternary(int i) {
-        return i &lt; 10 ? i * 100 : i * 10;
-    }
-    static int standard(int i) {
-        if(i &lt; 10)
-            return i * 100;
-        else
-            return i * 10;
-    }
-}</code></pre><h2 id="String-operator"><a href="#String-operator" class="headerlink" title="String operator"></a>String operator</h2><p>+, +=<br>concatenate<br>如果string object + int object<br>会返回string值<br>如果“”+int object 等价于 Integer.toString()</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/21/JAVA-Operators-Three/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JAVA-Operators-Two" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/20/JAVA-Operators-Two/">JAVA Operators Two</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/20/JAVA-Operators-Two/" class="archive-article-date">
-  	<time datetime="2020-07-20T16:51:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="自动加减1"><a href="#自动加减1" class="headerlink" title="自动加减1"></a>自动加减1</h2><p>++ 自动加1；<br>– 自动减1；<br>若a为整数，prefix（++a，–a）先算加减一再显示a加减后的值<br>若a为整数，postfix（a++，a–）先显示a的值，再计算加减一但不显示结果。</p>
-<h2 id="判断符号"><a href="#判断符号" class="headerlink" title="判断符号"></a>判断符号</h2><p>产生boolean值，true/false</p>
-<blockquote>
-<p>大于，&lt; 小于，&lt;= 小于等于， &gt;= 大于等于， == 等于，!= 不等于</p>
-</blockquote>
-<h2 id="对象一致"><a href="#对象一致" class="headerlink" title="对象一致"></a>对象一致</h2><pre><code>public class exercise {
-    public static void main(String[] args) {
-        Integer n1 = new Integer(47);
-        Integer n2 = new Integer(47);
-        System.out.println(n1 == n2);
-        System.out.println(n1 != n2);
-    }
-} /* Output:
-false
-true
-*///:~</code></pre><p>n1 n2 通过wrapper在Integer类建立指代相同但不同代表名字的两个对象。<br>n1 n2 的equivalence的比较不仅比较指代的值，还比较指代物是否一致。</p>
-<p>若不改变对象设置，又要比较指代内容的一致性<br>    public class exercise {<br>        public static void main(String[] args) {<br>            Integer n1 = new Integer(47);<br>            Integer n2 = new Integer(47);<br>            System.out.println(n1.equals(n2));<br>        }<br>    } /* Output:<br>    true<br>    *///:~    </p>
-<p>若也是采用equals(),且不改变对象设置，但是class为自定义<br>    class Value {<br>        int i;<br>    }<br>    public class exercise {<br>        public static void main(String[] args) {<br>            Value v1 = new Value();<br>            Value v2 = new Value();<br>            v1.i = v2.i = 100;<br>            System.out.println(v1.equals(v2));<br>        }<br>    } /* Output:<br>    false<br>    <em>///:~<br>原因：equals()默认是比较reference的，除非</em>override*（后面的章节会回顾）</p>
-<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><pre><code>1. Create a class called Dog containing two Strings: name and says. In main(), create two dog objects with names &quot;spot&quot; (who says, &quot;Ruff!&quot;) and &quot;scruffy&quot; (who says, &quot;Wurf!&quot;). Then display their names and what they say.
-    public class exercise {
-        public static void main(String[] args) {
-            Dog spot = new Dog();
-            spot.setName(&quot;Spot&quot;);
-            spot.setSays(&quot;Ruff!&quot;);
-            Dog scruffy = new Dog();
-            scruffy.setName(&quot;Scruffy&quot;);
-            scruffy.setSays(&quot;Wurf!&quot;);
-            spot.speak();
-            scruffy.speak();
-        }
-  }
-    class Dog {
-        String name;
-        void setName(String n) {
-            name = n;
-        }
-        String says;
-        void setSays(String s) {
-            says = s;
-        }
-        void speak() {
-            System.out.println(name + &quot; says: &quot; + says);
-        }
-    }</code></pre><h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>&amp;&amp; AND, || OR, ! NOT<br>产生boolean值</p>
-<h2 id="短路"><a href="#短路" class="headerlink" title="短路"></a>短路</h2><pre><code>public class exercise {
-    static boolean test1(int val) {
-        System.out.println(&quot;test1(&quot;+val+&quot;)&quot;);
-        System.out.println(&quot;result: &quot;+(val &lt; 1));
-        return val &lt; 1;
-    }
-    static boolean test2(int val) {
-        System.out.println(&quot;test2(&quot;+val+&quot;)&quot;);
-        System.out.println(&quot;result: &quot;+(val &lt; 2));
-        return val &lt; 2;
-    }
-    static boolean test3(int val) {
-        System.out.println(&quot;test3(&quot;+val+&quot;)&quot;);
-        System.out.println(&quot;result: &quot;+(val &lt; 3));
-        return val &lt; 3;
-    }
-    public static void main(String[] args) {
-        boolean b = test1(0) &amp;&amp; test2(2) &amp;&amp; test3(2);
-        System.out.println(&quot;expression is &quot;+b);
-    }
-}</code></pre><p>在执行test2时，static method返还了false, 那么这整个expression就提前终止，且返还false。</p>
-<h2 id="大小写"><a href="#大小写" class="headerlink" title="大小写"></a>大小写</h2><p>十六进制的大小写没有区别，表示float，double大小写没区别，表示long时用L<br><em>0x7f</em> 十六进制中最大的单字节<br><em>0x7fff</em> 十六进制中最大的short<br><em>Integer.toBinaryString()</em><br><em>Long.toBinaryString()</em><br>将其他进制转换为二进制再以整数形式呈现，小数字用Integer，大数字用Long</p>
-<h2 id="科学计数"><a href="#科学计数" class="headerlink" title="科学计数"></a>科学计数</h2><p>大小写的e代表10的x次方<br>自然常数e的显示：Math.E</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/20/JAVA-Operators-Two/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JAVA-Operators-One" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/19/JAVA-Operators-One/">JAVA Operators One</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/19/JAVA-Operators-One/" class="archive-article-date">
-  	<time datetime="2020-07-20T02:28:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Operators"><a href="#Operators" class="headerlink" title="Operators"></a>Operators</h1><h2 id="副作用"><a href="#副作用" class="headerlink" title="副作用"></a>副作用</h2><p>运算符号和函数都可能会对主调用函数或被操作数产生附加影响。<br>除了“=”，“==”，“!=”可以作用于所有的对象，“+”和“+=”可以支援字符串，其他的运算符号只能作用于原始对象。</p>
-<h2 id="优先"><a href="#优先" class="headerlink" title="优先"></a>优先</h2><pre><code>public class exercise {
-    public static void main(String[] args) {
-        int x = 1, y = 2, z = 3;
-        int a = x + y - 2/2 +z;
-        int b = x + (y-2)/(2 + z);
-        System.out.println(&quot;a = &quot; + a + &quot; b = &quot; + b);
-    }
-}</code></pre><p>“+”作用是concatenate，但是如果一个string后跟着“+”那么后面的对象如果不是字符串会被自动转换为字符串。</p>
-<h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><p>“=”右边的值被覆盖到左边的对象<br>常数不能被lvalue赋值<br>a赋值给b之后，对b的改动不会影响a</p>
-<h2 id="aliasing"><a href="#aliasing" class="headerlink" title="aliasing:"></a>aliasing:</h2><pre><code>public class exercise {
-    public static void main(String[] args) {
-        Tank a = new Tank();
-        Tank b = new Tank();
-        a.level = 0.1f;
-        b.level = 1.9f;
-        System.out.println(&quot;a.level = &quot; + a.level +
-                &quot; b.level&quot; + b.level);
-        a = b;
-        System.out.println(&quot;a.level = &quot; + a.level +
-                &quot; b.level&quot; + b.level);
-        a.level = 2.1f;
-        System.out.println(&quot;a.level = &quot; + a.level +
-                &quot; b.level&quot; + b.level);
-    }
-}   
-class Tank {
-    float level;
-}</code></pre><h2 id="当使用method时发生的aliasing"><a href="#当使用method时发生的aliasing" class="headerlink" title="当使用method时发生的aliasing"></a>当使用method时发生的aliasing</h2><pre><code>public class exercise {
-    static void f(Letter y) {
-        y.c = &apos;z&apos;;
-    }
-    public static void main(String[] args) {
-        Letter x = new Letter();
-        x.c = &apos;a&apos;;
-        System.out.println(&quot;x.c: &quot; + x.c);
-        f(x);
-        System.out.println(&quot;x.c: &quot; + x.c);
-    }
-}   
-class Letter {
-    char c;
-}</code></pre><p>当x被带入f(), 作为函数外的对象x，也被修改了。</p>
-<h2 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h2><p>+，-，<em>，/，%（余数），+=（右加左），-=，</em>=，/=</p>
-<h4 id="随机数"><a href="#随机数" class="headerlink" title="随机数"></a>随机数</h4><p>a = rand.nextInt();<br>如果没有参数，当前的时间就是seed<br>nextFloat(), nextLong(), nextDouble()</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/19/JAVA-Operators-One/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JAVA-Object-Nine" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/19/JAVA-Object-Nine/">JAVA Object Nine</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/19/JAVA-Object-Nine/" class="archive-article-date">
-  	<time datetime="2020-07-19T13:17:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h4 id="6-Write-a-program-that-includes-and-calls-the-storage-method-defined-as-a-code-fragment-in-this-chapter"><a href="#6-Write-a-program-that-includes-and-calls-the-storage-method-defined-as-a-code-fragment-in-this-chapter" class="headerlink" title="6. Write a program that includes and calls the storage() method defined as a code fragment in this chapter."></a>6. Write a program that includes and calls the storage() method defined as a code fragment in this chapter.</h4><pre><code>public class exercise {
-    public static void main(String[] args) {
-        /* Write a program that includes and 
-         * calls the storage() method defined as a code 
-         * fragment in this chapter
-         */
-        Store st = new Store();
-        System.out.println(st.storage(&quot;Hello&quot;));
-        }
-}
-class Store {
-    int storage(String s) {
-    return s.length() * 2;
-    }
-}</code></pre><h4 id="7-Turn-the-Incrementable-code-fragments-into-a-working-program"><a href="#7-Turn-the-Incrementable-code-fragments-into-a-working-program" class="headerlink" title="7. Turn the Incrementable code fragments into a working program."></a>7. Turn the Incrementable code fragments into a working program.</h4><pre><code>public class exercise {
-    public static void main(String[] args) {
-        /* Turn the Incrementable code fragments
-         * into a working program.
-         */
-        Incrementable.increment();
-        System.out.println(StaticTest.i);
-    }
-}
-class StaticTest {
-    static int i = 47;
-}
-class Incrementable {
-    static void increment() {
-    StaticTest.i++;
-    }
-}</code></pre><h4 id="8-Write-a-program-that-demonstrates-that-no-matter-how-many-objects-you-create-of-a-particular-class-there-is-only-one-instance-of-a-particular-static-field-in-that-class"><a href="#8-Write-a-program-that-demonstrates-that-no-matter-how-many-objects-you-create-of-a-particular-class-there-is-only-one-instance-of-a-particular-static-field-in-that-class" class="headerlink" title="8. Write a program that demonstrates that, no matter how many objects you create of a particular class, there is only one instance of a particular static field in that class."></a>8. Write a program that demonstrates that, no matter how many objects you create of a particular class, there is only one instance of a particular static field in that class.</h4><pre><code>public class exercise {
-    public static void main(String[] args) {
-        /* Turn the Incrementable code fragments
-         * into a working program.
-         */
-        StaticTest ex1 = new StaticTest();
-        StaticTest ex2 = new StaticTest();
-        System.out.println(ex1.i);
-    }
-}
-class StaticTest {
-    static int i = 47;
-}</code></pre><h4 id="9-2-Write-a-program-that-demonstrates-that-autoboxing-works-for-all-the-primitive-types-and-their-wrappers"><a href="#9-2-Write-a-program-that-demonstrates-that-autoboxing-works-for-all-the-primitive-types-and-their-wrappers" class="headerlink" title="9. (2) Write a program that demonstrates that autoboxing works for all the primitive types and their wrappers."></a>9. (2) Write a program that demonstrates that autoboxing works for all the primitive types and their wrappers.</h4><pre><code>public class exercise {
-    public static void main(String[] args) {
-        /* Write a program that demonstrates 
-         * that autoboxing works for all the 
-         * primitive types and their wrappers. 
-         */
-        boolean b = true;
-        char a = &apos;x&apos;;
-        byte c = 3;
-        short d = 10000;
-        int e = 10;
-        long f = 10000000l;
-        float g = 0.4f;
-        double h = 0.11d;
-        Boolean B = b;
-        Character A = a;
-        Byte C = c;
-        Short D = d;
-        Integer E = e;
-        Long F = f;
-        Float G = g;
-        Double H = h;
-        System.out.println(&quot;boolean b = &quot; + b);
-        System.out.println(&quot;Boolean B = &quot; + B);
-        System.out.println(&quot;char a = &quot; + a);
-        System.out.println(&quot;Character A = &quot; + A);
-        System.out.println(&quot;byte c = &quot; + c);
-        System.out.println(&quot;Byte C = &quot; + C);
-        System.out.println(&quot;short d = &quot; + d);
-        System.out.println(&quot;Short D = &quot; + D);
-        System.out.println(&quot;int e = &quot; + e);
-        System.out.println(&quot;Integer E = &quot; + E);
-        System.out.println(&quot;long f = &quot; + f);
-        System.out.println(&quot;Long F = &quot; + F);
-        System.out.println(&quot;float g = &quot; + g);
-        System.out.println(&quot;Float G = &quot; + G);
-        System.out.println(&quot;double h = &quot; + h);
-        System.out.println(&quot;Double H = &quot; + H);
-    }
-}</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/19/JAVA-Object-Nine/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JAVA-Object-Eight" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/18/JAVA-Object-Eight/">JAVA Object Eight</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/18/JAVA-Object-Eight/" class="archive-article-date">
-  	<time datetime="2020-07-18T18:34:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Compile-编译"><a href="#Compile-编译" class="headerlink" title="Compile 编译"></a>Compile 编译</h2><p>编译的过程就是把程序语言通过JDK翻译成机器语言。</p>
-<h2 id="comment"><a href="#comment" class="headerlink" title="comment"></a>comment</h2><p>多行comment /* 中间的文字 */<br>单行comment //后的文字</p>
-<h2 id="风格"><a href="#风格" class="headerlink" title="风格"></a>风格</h2><p>class name所有单词首字母答谢<br>object name除第一个但此外所有首字母大写</p>
-<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h4 id="1-Create-a-class-containing-an-int-and-a-char-that-are-not-initialized-and-print-their-values-to-verify-that-Java-performs-default-initialization"><a href="#1-Create-a-class-containing-an-int-and-a-char-that-are-not-initialized-and-print-their-values-to-verify-that-Java-performs-default-initialization" class="headerlink" title="1. Create a class containing an int and a char that are not initialized, and print their values to verify that Java performs default initialization."></a>1. Create a class containing an int and a char that are not initialized, and print their values to verify that Java performs default initialization.</h4><pre><code>package Learnign;
-
-public class exercise {
-    public static void main(String[] args) {
-        /* Create a class containing an int and a char that are not
-         * initialized, and print their values to verify that Java performs
-         * default initialization.
-         */
-        Initiate a = new Initiate();
-        System.out.println(a.charVariable);
-        System.out.println(a.intNum);
-    }
-}
-class Initiate {
-    char charVariable;
-    int intNum;
-}</code></pre><h4 id="2-Following-the-HelloDate-java-example-in-this-chapter-create-a-“hello-world”-program-that-simply-displays-that-statement-You-need-only-a-single-method-in-your-class-the-“main”-one-that-gets-executed-when-the-program-starts-Remember-to-make-it-static-and-to-include-the-argument-list-even-though-you-don’t-use-the-argument-list-Compile-the-program-with-javac-and-run-it-using-java-If-you-are-using-a-different-development-environment-than-the-JDK-learn-how-to-compile-and-run-programs-in-that-environment"><a href="#2-Following-the-HelloDate-java-example-in-this-chapter-create-a-“hello-world”-program-that-simply-displays-that-statement-You-need-only-a-single-method-in-your-class-the-“main”-one-that-gets-executed-when-the-program-starts-Remember-to-make-it-static-and-to-include-the-argument-list-even-though-you-don’t-use-the-argument-list-Compile-the-program-with-javac-and-run-it-using-java-If-you-are-using-a-different-development-environment-than-the-JDK-learn-how-to-compile-and-run-programs-in-that-environment" class="headerlink" title="2. Following the HelloDate.java example in this chapter, create a “hello, world” program that simply displays that statement. You need only a single method in your class (the “main” one that gets executed when the program starts). Remember to make it static and to include the argument list, even though you don’t use the argument list. Compile the program with javac and run it using java. If you are using a different development environment than the JDK, learn how to compile and run programs in that environment."></a>2. Following the HelloDate.java example in this chapter, create a “hello, world” program that simply displays that statement. You need only a single method in your class (the “main” one that gets executed when the program starts). Remember to make it static and to include the argument list, even though you don’t use the argument list. Compile the program with javac and run it using java. If you are using a different development environment than the JDK, learn how to compile and run programs in that environment.</h4><pre><code>package Learnign;
-
-public class HelloDate {
-    public static void main(String[] args) {
-        System.out.println(&quot;Hello World&quot;);
-    }
-}</code></pre><h4 id="3-Find-the-code-fragments-involving-ATypeName-and-turn-them-into-a-program-that-compiles-and-runs"><a href="#3-Find-the-code-fragments-involving-ATypeName-and-turn-them-into-a-program-that-compiles-and-runs" class="headerlink" title="3. Find the code fragments involving ATypeName and turn them into a program that compiles and runs"></a>3. Find the code fragments involving ATypeName and turn them into a program that compiles and runs</h4><pre><code>package Learnign;
-
-public class exercise {
-    public static void main(String[] args) {
-        /* Find the code fragments involving ATypeName and
-        * turn them into a program that compiles and runs
-        */
-    ATypeName a = new ATypeName();
-    System.out.println(a.intNum);
-    }
-}
-
-class ATypeName {
-    int intNum;
-}</code></pre><h4 id="4-Turn-the-DataOnly-code-fragments-into-a-program-that-compiles-and-runs"><a href="#4-Turn-the-DataOnly-code-fragments-into-a-program-that-compiles-and-runs" class="headerlink" title="4. Turn the DataOnly code fragments into a program that compiles and runs."></a>4. Turn the DataOnly code fragments into a program that compiles and runs.</h4><h4 id="5-Modify-the-previous-exercise-so-that-the-values-of-the-data-in-DataOnly-are-assigned-and-printed-in-main"><a href="#5-Modify-the-previous-exercise-so-that-the-values-of-the-data-in-DataOnly-are-assigned-and-printed-in-main" class="headerlink" title="5. Modify the previous exercise so that the values of the data in DataOnly are assigned and printed in main()."></a>5. Modify the previous exercise so that the values of the data in DataOnly are assigned and printed in main().</h4><pre><code>package Learnign;
-
-public class exercise {
-    public static void main(String[] args) {
-        /* Turn the DataOnly code fragments into 
-         * a program that compiles and runs.
-         */
-    DataOnly data = new DataOnly();
-    data.i = 47;
-    data.d = 1.1;
-    data.b = false;
-    System.out.println(data.i);
-    System.out.println(data.d);
-    System.out.println(data.b);
-        /* The method does nothing but only hold and print values
-         */
-    }
-}
-
-class DataOnly {
-    int i;
-    double d;
-    boolean b;
-}</code></pre><h4 id=""><a href="#" class="headerlink" title=""></a></h4>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/18/JAVA-Object-Eight/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JAVA-Object-Seven" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/17/JAVA-Object-Seven/">JAVA Object Seven</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/17/JAVA-Object-Seven/" class="archive-article-date">
-  	<time datetime="2020-07-17T20:28:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h2><p>通常情况下一个class中的名字不会和另一个class中的名字冲突，但是不排除与全局function name冲突。解决这一问题可以通过在名字前加入逆写的域名。</p>
-<h2 id="使用功能"><a href="#使用功能" class="headerlink" title="使用功能"></a>使用功能</h2><p>如果要使用统一源代码文件中的其他功能可以直接call，如果是其他文件中的功能需要先在编译器里import。<br>    例：import java.util.ArrayList;<br>    意味从standard java library调用ArrayList class<br>    若有多于一个的功能需要import，则：import java.util.*;</p>
-<h2 id="静态关键字"><a href="#静态关键字" class="headerlink" title="静态关键字"></a>静态关键字</h2><p>复：创建一个class，实际上是在描述这个class中的对象是什么样子并且会发出什么行为。而对象不会被实际存储，除非使用了new。<br>但有的情况：<br>    1. 只需要一个空间存储field，而不存储其他对象；<br>    2. 需要call与当前class中的对象无关的method；<br>建立static的field或method：<br>    class StaticTest{<br>        static int i = 5;<br>    }<br>在建立上述class之后，即使在建立同为StaticTest这个class下的新的对象，如：<br>    StaticTest st1 = new StaticTest();<br>    StaticTest st2 = new StaticTest();<br>它们实际只有一个存储单位，即StaticTest.i，而st1.i与st2.i与前者共享相同的值。<br>需要引用静态变量，既可以通过object名字引用，如st1.i，或可以通过它的class引用，如StaticTest.i<br>当静态field变动，如：<br>    StaticTest.i++; /++是原值加1/<br>那么共享统一变量的st1.i, st2.i的值也为48.<br>这些特性同样也可以应用在静态method，如：<br>    class Incrementable{<br>        static void increment(){StaticTest.i++;}<br>    }<br>需要引用这个incerment()功能，可以直接通过他的class：<br>    Incrementable.increment();<br>也可以与其他non-static对象一样，通过将static对象赋值给在同一class下的新对象进行引用：<br>    Incrementable sf = new Incrementable();<br>    sf.increment();</p>
-<h2 id="第一个程序"><a href="#第一个程序" class="headerlink" title="第一个程序"></a>第一个程序</h2><p>打印一串字符和日期<br>    // HelloDate.java<br>    import java.util*;</p>
-<pre><code>public class HelloDate {
-    public static void main(String[] args) {
-        System.out.println(&quot;Hello, it&apos;s: &quot;);
-        System.out.println(new Date());
-    }
-}</code></pre><p>out是一个static对象，因此可以直接通过class名字，System，引用。而println()是out中的功能之一。独立的程序的class名字最好要和文件名一致，且必须包含main()功能，且固定为static void的signature与return类型。<br>public的意思是这个程序可以被外部使用。<br>    System.out.println(new Date());<br>Date对象被引用后其返回值自动被转换成了字符串发送给了println()。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/17/JAVA-Object-Seven/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JAVA-Object-Six" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/16/JAVA-Object-Six/">JAVA Opject Six</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/16/JAVA-Object-Six/" class="archive-article-date">
-  	<time datetime="2020-07-16T18:40:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h2><p>一段程序内所有动作由对象发出，<strong>class</strong>则定义了这些对象的类型。<br>    class Name {/Class body/}</p>
-<h2 id="Field-和-Method"><a href="#Field-和-Method" class="headerlink" title="Field 和 Method"></a>Field 和 Method</h2><h4 id="Field：数据与数据相关的对象（reference，primitive-object）。"><a href="#Field：数据与数据相关的对象（reference，primitive-object）。" class="headerlink" title="Field：数据与数据相关的对象（reference，primitive object）。"></a>Field：数据与数据相关的对象（reference，primitive object）。</h4><p>reference必须与实际对象连接。<br>每一个对象都有他各自的存储，互不共享。<br>    class DataOnly{<br>        int i;<br>        double d;<br>        boolean b;<br>    }<br>这个class本身因为没有method而不能做任何功能，但是可以用于存储数据。class中所有对象都可以通过对DataOnly class设置新的对象进行统一操作。<br>    DataOnly data = new DataOnly();<br>再对DataOnly class中的reference对象通过句号连接可以进行引用<br>    data.i = 1;<br>    data.d = 1.1;<br>    data.b = True;<br>如果需要引用的对象有更多的层级，可以通过多个句号来进行引用<br>    myPlane.leftTank.capacity = 100;</p>
-<h4 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h4><p>原始对象的初始设置的值<br>    | Primitive Type               | Default   |<br>    | boolean                      | false     |<br>    | char                         | ‘\uoooo’  |<br>    | byte                         | byte 0    |<br>    | short                        | (short) 0 |<br>    | int                          | 0         |<br>    | long                         | 0L        |<br>    | float                        | 0.0f      |<br>    | double                       | 0.0d      |</p>
-<h4 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h4><p>Method决定了一个对象会接收到什么信息。其构成<br>    ReturnType methodName(/Argument List/){<br>        /Method Body/<br>    }<br>return type描述了这个method执行之后会返回什么类型的值。argument list确定了那些类型和名字的信息会被method用到。<br>method是class的一部分。method可以被对象呼叫使用。<br>    objectName.methodName(/argument list/);<br>假设有一个method没有任何argument，叫做f()，可返回一个整数值。此时有一个a对象，需要呼叫并作用于f(),其返回的值可以被存储到x。<br>    int x = a.f();</p>
-<h4 id="Argument-List"><a href="#Argument-List" class="headerlink" title="Argument List"></a>Argument List</h4><p>决定了什么类型和什么内容的对象会被带入到这个method中并进行动作。其对象的类型和带入的内容的类型必须一致。<br>    int storage(String s){<br>        return s.length()*2;<br>    }<br>这个method返回的整数代表了s字符串所占用的字节长度（一个字符占2个字节或16比特）。String s确定了这个method中只有对象名字为s的字符串会被带入，带入后对象s再作用于length()method。<br>return代表着method执行完毕，同时返回return后的返回值。如果希望返回空值，可以再return后直接结束或者不加return。<br>但是如果method中已经返还了非空值，return却要求返还空值，系统会提示错误。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/16/JAVA-Object-Six/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JAVA-Object-Five" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/14/JAVA-Object-Five/">JAVA Object Five</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/14/JAVA-Object-Five/" class="archive-article-date">
-  	<time datetime="2020-07-15T02:52:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>String s;<br>String是对象属性，s是对象的指代。<br>但是指代唔不能单独存在，完整的写法为<br>String s = “abcd”;</p>
-<p>JAVA允许直接用引号内文字创建字符对象，更为通用的办法是：<br>String s = new String (“abcd”);<br>等号前后的对象类型一致</p>
-<h2 id="存储位置"><a href="#存储位置" class="headerlink" title="存储位置"></a>存储位置</h2><pre><code>1. Register: 最快，也最无法控制，位于处理器内部；
-2. The stack: 也拥有十分高效的读写速度，位于内存，通过stack pointer与处理器互动。需要对位于此的程序设定明确的存在时长；
-3. The heap: 位于内存中的general-purpos pool of memory。不需要设定存在时长，编译器会自动清理并写入，拥有更强的灵活性，但是效率更慢；
-4. Constant storage: ROM中存储需要持续提供相同功能的程序；
-5. Non-RAM storage: 程序运行所需的数据存储位置。包括了streamed object和persistent object；</code></pre><p>String s = new String (“abcd”);<br>new 在heap中创建对象，但是指代的变量是被自动创建在stack中，因此更高效。</p>
-<h2 id="原始类别"><a href="#原始类别" class="headerlink" title="原始类别"></a>原始类别</h2><pre><code>| Primitive |  Size   |  Minimum  |    Maximum     |  Warpper  |
-|   type    |         |           |                |   type    |
-| --------- | ------- | --------- | -------------- | --------- |
-| boolean   |         |           |                | Boolean   |
-| --------- | ------- | --------- | -------------- | --------- |
-| char      | 16 bits | Unicode 0 | Unicode 2^16-1 | Character |
-| --------- | ------- | --------- | -------------- | --------- |
-| byte      | 8 bits  | -128      | +127           | Byte      |
-| --------- | ------- | --------- | -------------- | --------- |
-| short     | 16 bits | -2^15     | +2^15-1        | Short     |
-| --------- | ------- | --------- | -------------- | --------- |
-| int       | 32 bits | -2^31     | +2^31-1        | Integer   |
-| --------- | ------- | --------- | -------------- | --------- |
-| long      | 64 bits | -2^63     | +2^63-1        | Long      |
-| --------- | ------- | --------- | -------------- | --------- |
-| float     | 32 bits | IEEE~754~ | IEEE~754~      | Float     |
-| --------- | ------- | --------- | -------------- | --------- |
-| double    | 64 bits | IEEE~754~ | IEEE~754       | Double    |
-| --------- | ------- | --------- | -------------- | --------- |
-| void      |         |           |                | Void      |</code></pre><p> wrapper type允许在heap中创建用于指代原始对象的非原始对象。<br> char c = “x”;<br> Character ch = new Character(c);</p>
-<h4 id="高精度数字"><a href="#高精度数字" class="headerlink" title="高精度数字"></a>高精度数字</h4><p> <strong>BigInteger</strong>，<strong>BigDecimal</strong><br> 两者都是大致符合wrapper class模拟出来的类比物，但是都没有原始对象。<br> 两者可以做int或float的运算，但是只能用method calls，而且速度偏慢。<br> BigInteger的范围要比long大。<br> BigDecimal同样，范围没有限制。</p>
-<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p> 数组占用了内存中的一块区域，程序对数组的读取不能超出这块区域或者不能提前读取。JAVA中数组必须被提前产生并且其范围检查总是会在建立的数组之上占用一小块内存空间。<br> 在JAVA中若数组中的内容是无指代的变量，那其本质还是null，JAVA会进行出错。</p>
-<h2 id="Scoping"><a href="#Scoping" class="headerlink" title="Scoping"></a>Scoping</h2><p> 用于确定对象是否可视及其可以存在的时长。用{}表示开始与结束。<br> {<br>     int x = 12;<br>     //Now, only x available<br>     {<br>         int q = 96;<br>         //Now, both x and q available<br>     }<br>     //Now, only x available<br> }</p>
-<h2 id="对象的scope"><a href="#对象的scope" class="headerlink" title="对象的scope"></a>对象的scope</h2><p>原始对象的scope不受{}限制。<br>{<br>    String s = new String(“a string”)<br>}<br>a string是原始对象，s是指代物。s会随着}的出现而消失，”a string”则会继续在heap中存在。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA Note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/14/JAVA-Object-Five/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -1293,8 +345,8 @@ class DataOnly {
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
